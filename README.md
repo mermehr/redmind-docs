@@ -12,7 +12,7 @@ This repo holds:
 3. Update **shadow-resume.md** anytime you gain a new skill, complete a project, or get a certification.
 
 ## Notes
->
+>**journal/** Holds only recent/future information regarding time spent on 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMDA4MTYyXX0=
+eyJoaXN0b3J5IjpbNDA0ODcxNjI4XX0=
 -->
