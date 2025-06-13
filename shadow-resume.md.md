@@ -44,7 +44,6 @@ Team communication, pattern recognition, analytical thinking, self‑driven rese
 
 ---
 
-*(Use this file as your master list—when applying for roles, pull relevant bullets into your official, tailored resume.)*
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxOTYzMzczXX0=
+eyJoaXN0b3J5IjpbLTUwOTAwNTc4XX0=
 -->
