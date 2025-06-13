@@ -8,6 +8,14 @@ Security-focused IT professional skilled in network analysis, SOC operations, an
 
 ---
 
+## Technical Focus Areas
+
+- **Completed**: SOC Level 1 – Zeek, Suricata, Elastic Stack, incident triage
+- **Current**: Red Team Pathway  – Privilege escalation, lateral movement, exploit development
+- Blue Team ↔ Red Team perspective: I study both defensive detection and offensive methodology
+
+---
+
 ## Work Experience
 
 ### Self‑Employed Technician (2018–Present)  
@@ -46,5 +54,5 @@ Team communication, pattern recognition, analytical thinking, self‑driven rese
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ2MDk0NTA1XX0=
+eyJoaXN0b3J5IjpbMTAzMzA0NzY3Myw0NDYwOTQ1MDVdfQ==
 -->
