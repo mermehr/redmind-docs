@@ -1,14 +1,15 @@
 
 #### **shadow-resume.md**
 ```markdown
-# Shadow Resume – [Your Name]
+# Shadow Resume
 
 ## Professional Summary
 Security-focused IT professional skilled in network analysis, SOC operations, and systems troubleshooting.
 
 ---
 
-## Work Experience  
+## Work Experience
+
 ### Self‑Employed Technician (2018–Present)  
 - Configured enterprise and residential network infrastructure  
 - Troubleshot routing and switching issues in SMB environments  
@@ -22,28 +23,28 @@ Security-focused IT professional skilled in network analysis, SOC operations, an
 
 ## Education & Certifications  
 - Network Security Diploma (2025)  
-- TryHackMe SOC Level 1 (in progress)  
+- SOC Level 1 (in progress)  
 - CompTIA A+, Network+, Security+  
 - Cisco CCNA  
 
 ---
 
-## 🛠️ Tools & Technologies  
+## Tools & Technologies  
 Zeek, Suricata, Wazuh, ELK, Splunk, Bash, Python, PowerShell, Cisco IOS, VLANs, ACLs
 
 ---
 
-## 🚀 Projects & Achievements  
+## Projects & Achievements  
 - Created virtual SOC lab with IDS + ELK  
 - Reverse‑engineered malware sample in VM  
 
 ---
 
-## 🧠 Soft Skills & Traits  
+## Soft Skills & Traits  
 Team communication, pattern recognition, analytical thinking, self‑driven research
 
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzc2MzA3MDRdfQ==
+eyJoaXN0b3J5IjpbLTEzNjY1MTU2ODBdfQ==
 -->
