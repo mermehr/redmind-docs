@@ -3,12 +3,12 @@
 ```markdown
 # Shadow Resume – [Your Name]
 
-## 🧑‍💼 Professional Summary
+## Professional Summary
 Security-focused IT professional skilled in network analysis, SOC operations, and systems troubleshooting.
 
 ---
 
-## 💼 Work Experience  
+## Work Experience  
 ### Self‑Employed Technician (2018–Present)  
 - Configured enterprise and residential network infrastructure  
 - Troubleshot routing and switching issues in SMB environments  
@@ -20,7 +20,7 @@ Security-focused IT professional skilled in network analysis, SOC operations, an
 
 ---
 
-## 🏆 Education & Certifications  
+## Education & Certifications  
 - Network Security Diploma (2025)  
 - TryHackMe SOC Level 1 (in progress)  
 - CompTIA A+, Network+, Security+  
@@ -45,5 +45,5 @@ Team communication, pattern recognition, analytical thinking, self‑driven rese
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwOTAwNTc4XX0=
+eyJoaXN0b3J5IjpbLTExNzc2MzA3MDRdfQ==
 -->
