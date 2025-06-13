@@ -10,3 +10,9 @@ This repo holds:
 1. In **journal/**, create a new file named `YYYY‑MM‑DD.md`.
 2. Follow the template structure: goals, what I learned, commands, reflections.
 3. Update **shadow-resume.md** anytime you gain a new skill, complete a project, or get a certification.
+
+## Notes
+>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTIwMDA4MTYyXX0=
+-->
