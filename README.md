@@ -12,7 +12,7 @@ This repo holds:
 3. Update **shadow-resume.md** anytime you gain a new skill, complete a project, or get a certification.
 
 ## Notes
->**journal/** Holds only recent/future information regarding time spent on activities directly pertaining to future pathway and career desisions. 
+>journal/ Holds only recent/future information regarding time spent on activities directly pertaining to future pathway and career development journy. All other past milesotnes and acomplishments will be populated in shadow-resume.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxNTU1NDYwXX0=
+eyJoaXN0b3J5IjpbLTM3MzIxNjk3MV19
 -->
