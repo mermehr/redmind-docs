@@ -23,7 +23,7 @@ Security-focused IT professional skilled in network analysis, SOC operations, an
 
 ## Education & Certifications  
 - Network Security Diploma (2025)  
-- SOC Level 1 (in progress)  
+- SOC Level 1
 - CompTIA A+, Network+, Security+  
 - Cisco CCNA  
 
@@ -46,5 +46,5 @@ Team communication, pattern recognition, analytical thinking, self‑driven rese
 ---
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjY1MTU2ODBdfQ==
+eyJoaXN0b3J5IjpbNDQ2MDk0NTA1XX0=
 -->
