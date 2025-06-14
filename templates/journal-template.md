@@ -27,6 +27,7 @@
 
 </details>
 
+<details>
 <summary><strong>Thoughts</strong></summary>
 
 </details>
@@ -37,6 +38,6 @@
 ```bash
 # Example commands, payloads, or troubleshooting syntax
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDkwNTczOTksMTIzMTYzOTYyMiwtMT
-I0Nzg0MTkyOV19
+eyJoaXN0b3J5IjpbLTUzNTczNjU3OSwxMjMxNjM5NjIyLC0xMj
+Q3ODQxOTI5XX0=
 -->
