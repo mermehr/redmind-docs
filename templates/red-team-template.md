@@ -3,7 +3,7 @@
 <details>
 <summary><strong>Objectives</strong></summary>
 
-- [ ] Define specific lab task or module (e.g., privilege escalation on Linux)
+- [ ] Define specific lab task or module
 - [ ] Identify techniques/tools to practice
 
 </details>
@@ -29,5 +29,5 @@
 ```bash
 # example payload or exploit
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDI0MzU2MDddfQ==
+eyJoaXN0b3J5IjpbMTYzMTgxNzM3OV19
 -->
