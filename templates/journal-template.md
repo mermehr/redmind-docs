@@ -27,11 +27,16 @@
 
 </details>
 
+<summary><strong>Thoughts</strong></summary>
+
+</details>
+
 <details>
 <summary><strong>Commands & Examples</strong></summary>
 
 ```bash
 # Example commands, payloads, or troubleshooting syntax
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzMTYzOTYyMiwtMTI0Nzg0MTkyOV19
+eyJoaXN0b3J5IjpbLTE2NDkwNTczOTksMTIzMTYzOTYyMiwtMT
+I0Nzg0MTkyOV19
 -->
