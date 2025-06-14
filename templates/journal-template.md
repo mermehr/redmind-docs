@@ -32,12 +32,11 @@
 
 </details>
 
-<details>
 <summary><strong>Commands & Examples</strong></summary>
 
 ```bash
 # Example commands, payloads, or troubleshooting syntax
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk2MDEzNzU2LDEyMzE2Mzk2MjIsLTEyND
-c4NDE5MjldfQ==
+eyJoaXN0b3J5IjpbMTM4Njk3MDAsMTIzMTYzOTYyMiwtMTI0Nz
+g0MTkyOV19
 -->
