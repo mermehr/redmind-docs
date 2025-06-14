@@ -1,17 +1,37 @@
-## Day Log - July 13th, 2025
 
-## Goals
-- [ ] Finish Zeek DNS module on TryHackMe
-- [ ] Review Suricata logging options
+# Daily Journal – YYYY-MM-DD
 
-## What I Learned
-- Observed differences between `dns.log` and `conn.log`.
-- Learned how to filter `conn.log` entries by port.
+<details>
+<summary><strong>Goals</strong></summary>
 
-## Commands Sample
+- [ ] Goal 1  
+- [ ] Goal 2  
+- [ ] Goal 3  
+
+</details>
+
+<details>
+<summary><strong>Completed Tasks</strong></summary>
+
+- [x] Task 1  
+- [x] Task 2  
+
+</details>
+
+<details>
+<summary><strong>What I Learned</strong></summary>
+
+- Concept 1 or key insight  
+- Comparison between tools, logs, or behaviors  
+- Clarified workflow or common mistakes  
+
+</details>
+
+<details>
+<summary><strong>Commands & Examples</strong></summary>
+
 ```bash
-zeek -Cr sample.pcap
-cat conn.log | zeek-cut id.orig_h id.resp_h
+# Example commands, payloads, or troubleshooting syntax
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDc4NDE5MjldfQ==
+eyJoaXN0b3J5IjpbMTIzMTYzOTYyMiwtMTI0Nzg0MTkyOV19
 -->
