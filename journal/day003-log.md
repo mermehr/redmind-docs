@@ -18,12 +18,12 @@ The OSINT work I did today, while valuable, had a slightly invasive feel to it. 
 - Recon methodology for OSINT (LinkedIn tracking etc, temporal activity inference)
 - Cisco Ethical Hacking platform (labs + theory)
 
-### 🔄 Decisions & Next Steps
-- Drop 100DoC course (not well-matched to skill level)
+### Decisions & Next Steps
+- Drop DoC course (not well-matched to skill level)
 - Begin integrating **code challenges** with **red team labs** moving forward
 - Prioritize **health-conscious scheduling** to avoid cognitive overload and seizure risk
 - Prep for **VM breach + Python task** challenge tomorrow (RedMind project)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzgxNDEyODldfQ==
+eyJoaXN0b3J5IjpbMTQ5OTc4OTUxNV19
 -->
