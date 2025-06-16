@@ -1,4 +1,4 @@
-## Journal – Day 001 - June 13th, 2025
+## Day Log – Day 001 - June 13th, 2025
 
 ## #Tasks
 <summary><strong>Completed Tasks</strong></summary>
@@ -42,5 +42,5 @@
 > tools that reflect common red team tasks.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNzgwNDY5OV19
+eyJoaXN0b3J5IjpbOTU0OTU2NDIwLDE3Mjc4MDQ2OTldfQ==
 -->
