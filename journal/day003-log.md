@@ -24,6 +24,9 @@ The OSINT work I did today, while valuable, had a slightly invasive feel to it. 
 - Prioritize **health-conscious scheduling** to avoid cognitive overload and seizure risk
 - Prep for **VM breach + Python task** challenge tomorrow (RedMind project)
 
+
+> _"Even machines crash under broadcast storms—I'm no different. If I don't throttle my own signal, it will burn the whole system down."_  
+> — Me
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5OTc4OTUxNV19
+eyJoaXN0b3J5IjpbMTI1ODk1NTU4MywxNDk5Nzg5NTE1XX0=
 -->
