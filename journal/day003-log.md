@@ -6,9 +6,9 @@ Another productive day in motion. Built on a solid flow of learning, refining to
 
 ### What I Worked On
 
-    Refined my Python development environment
-	  Unified scripting and journaling workflows into one workspace
-	  Autosave and Git sync functioning as intended
+Refined my Python development environment
+* Unified scripting and journaling workflows into one workspace
+* Autosave and Git sync functioning as intended
 
     Maintained structured learning
     Focused more on logic building and workflow clarity than volume
@@ -26,5 +26,5 @@ Another productive day in motion. Built on a solid flow of learning, refining to
 
     Dropping what doesn’t serve me is becoming easier. That alone shows growth.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNzM4MzU3NywtMjA4MjIzMTgzOV19
+eyJoaXN0b3J5IjpbMTMwMjU4MjM2MSwtMjA4MjIzMTgzOV19
 -->
