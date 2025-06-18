@@ -1,6 +1,5 @@
 ## Day Log – Day 001 - June 13th, 2025
 
-## Tasks
 <summary><strong>Completed Tasks</strong></summary>
 
  - [x] Setup GIT for logging
@@ -42,5 +41,6 @@
 > tools that reflect common red team tasks.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU0OTU2NDIwLDE3Mjc4MDQ2OTldfQ==
+eyJoaXN0b3J5IjpbMzQzMDM2MzM3LDk1NDk1NjQyMCwxNzI3OD
+A0Njk5XX0=
 -->
