@@ -1,4 +1,4 @@
-## Day Log - June 16th, 2025
+## Daily Journal – June 16th, 2025
 
 ### Completed Tasks
 - Finished **Module 2** of the Cisco *Ethical Hacking* course
@@ -28,5 +28,6 @@ The OSINT work I did today, while valuable, had a slightly invasive feel to it. 
 > _"Even machines crash under broadcast storms—I'm no different. If I don't throttle my own signal, it will burn the whole system down."_  
 > — Me
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1ODk1NTU4MywxNDk5Nzg5NTE1XX0=
+eyJoaXN0b3J5IjpbLTIxMjAxODI4MywxMjU4OTU1NTgzLDE0OT
+k3ODk1MTVdfQ==
 -->
