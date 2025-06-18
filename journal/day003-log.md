@@ -6,12 +6,12 @@ Another productive day in motion. Built on a solid flow of learning, refining to
  What I Worked On
 
     Refined my Python development environment
-    ↳ Unified scripting and journaling workflows into one workspace
-    ↳ Autosave and Git sync functioning as intended
+	  Unified scripting and journaling workflows into one workspace
+	  Autosave and Git sync functioning as intended
 
     Maintained structured learning
-    ↳ Focused more on logic building and workflow clarity than volume
-    ↳ Skipped through lower-value material, filtering better signal from noise
+    Focused more on logic building and workflow clarity than volume
+    Skipped through lower-value material, filtering better signal from noise
 
     Prepped for upcoming labs and practical recon
     ↳ Took mental notes on what kind of work excites me most—more analysis and infiltration angles than pure exploitation
@@ -37,5 +37,5 @@ Closing Notes
 
 I'll be back at it tomorrow with fresh eyes and new resources. No need to carry dead weight forward. This approach feels sustainable and aligned with where I want to go.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODIyMzE4MzldfQ==
+eyJoaXN0b3J5IjpbNjAzNjkwODQ5LC0yMDgyMjMxODM5XX0=
 -->
