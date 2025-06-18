@@ -1,5 +1,3 @@
-
-
 ## Red Team Journal – June 15, 2025
 
 ## 🖥️ Target: VulnHub – Basic Pentesting 1  
@@ -110,5 +108,5 @@ No persistence or root flag grabbed — purpose was shell lifecycle practice.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTg5MDE0OTEzXX0=
+eyJoaXN0b3J5IjpbLTExOTgwMzk2NDNdfQ==
 -->
