@@ -1,4 +1,3 @@
-
 # Daily Journal – YYYY-MM-DD
 
 <summary><strong>Goals</strong></summary>
@@ -24,6 +23,6 @@
 ```bash
 # Example commands, payloads, or troubleshooting syntax
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyNDYzNjYzNCwxMjMxNjM5NjIyLC0xMj
-Q3ODQxOTI5XX0=
+eyJoaXN0b3J5IjpbNTAwODEzNzE2LDEyMzE2Mzk2MjIsLTEyND
+c4NDE5MjldfQ==
 -->
