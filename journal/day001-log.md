@@ -1,6 +1,6 @@
-## Day Log – Day 001 - June 13th, 2025
+## Daily Journal – June 13th, 2025
 
-<summary><strong>Completed Tasks</strong></summary>
+### Completed Tasks
 
  - [x] Setup GIT for logging
  - [x] Checked latest cybersecurity feeds/blogs
@@ -8,13 +8,13 @@
  - [x] Cleaned up old C# repo's
  - [x] MITRE, DLP, EDR
 
-<summary><strong>What I Learned</strong></summary>
+### What I Learned
 
 - You're never too old for cybersecurity
 - Take a day job - worry about certs later
 - Nothing much other than what I've already pulled from blue teaming
 
-<summary><strong>Notes</strong></summary>
+### Notes
 
 > Today was a focused and productive day of consolidating and moving
 > forward with red team preparation. Took some time to reflect on my
@@ -41,6 +41,6 @@
 > tools that reflect common red team tasks.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQzMDM2MzM3LDk1NDk1NjQyMCwxNzI3OD
-A0Njk5XX0=
+eyJoaXN0b3J5IjpbLTEwOTQ4MzUxNjAsOTU0OTU2NDIwLDE3Mj
+c4MDQ2OTldfQ==
 -->
