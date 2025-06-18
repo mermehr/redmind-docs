@@ -1,6 +1,6 @@
 ## Day Log – Day 001 - June 13th, 2025
 
-## #Tasks
+## Tasks
 <summary><strong>Completed Tasks</strong></summary>
 
  - [x] Setup GIT for logging
