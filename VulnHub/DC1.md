@@ -16,6 +16,3 @@ Goal: Don’t just "pwn root" — practice writing a _playbook_ for each stage: 
     
 
 📥 Download: https://www.vulnhub.com/entry/dc-1,292/
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjgzODk2OTRdfQ==
--->

@@ -52,7 +52,3 @@ Zeek, Suricata, Wazuh, ELK, Splunk, Bash, Python, PowerShell, Cisco IOS, VLANs, 
 Team communication, pattern recognition, analytical thinking, self‑driven research
 
 ---
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzMzA0NzY3Myw0NDYwOTQ1MDVdfQ==
--->

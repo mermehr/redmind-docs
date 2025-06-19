@@ -5,7 +5,18 @@
 - Performed targeted **OSINT research** on a prospective employer's technology stack and leadership activity patterns
 - Completed **light Python scripting practice**
 - Conducted a high-level **self-assessment** on learning path direction and cognitive load management
-
+---
+###  Tools & Techniques Touched
+- Python scripting (light automation and exploration)
+- Recon methodology for OSINT (LinkedIn tracking etc, temporal activity inference)
+- Cisco Ethical Hacking platform (labs + theory)
+---
+### Decisions & Next Steps
+- Drop DoC course (not well-matched to skill level)
+- Begin integrating **code challenges** with **red team labs** moving forward
+- Prioritize **health-conscious scheduling** to avoid cognitive overload and seizure risk
+- Prep for **VM breach + Python task** challenge tomorrow (RedMind project)
+---
 ### Reflections
 Today marked a deliberate shift in direction; away from slow-paced tutorials and toward more integrated, hands-on work. After revisiting previous used python course, I made the conscious decision to step away from it. While structured, its basic pacing doesn't suit my current level or needs.
 
@@ -13,21 +24,5 @@ In its place, I’ll lean into agile code challenges that pair with real-world r
 
 The OSINT work I did today, while valuable, had a slightly invasive feel to it. I set some internal boundaries for future recon work on companies I might be working with; it’s important to keep a clean ethical line when mixing research and job prospects.
 
-###  Tools & Techniques Touched
-- Python scripting (light automation and exploration)
-- Recon methodology for OSINT (LinkedIn tracking etc, temporal activity inference)
-- Cisco Ethical Hacking platform (labs + theory)
-
-### Decisions & Next Steps
-- Drop DoC course (not well-matched to skill level)
-- Begin integrating **code challenges** with **red team labs** moving forward
-- Prioritize **health-conscious scheduling** to avoid cognitive overload and seizure risk
-- Prep for **VM breach + Python task** challenge tomorrow (RedMind project)
-
-
 > _"Even machines crash under broadcast storms—I'm no different. If I don't throttle my own signal, it will burn the whole system down."_  
 > — Me
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMjAxODI4MywxNjcxNzg2Mzk3LDEyNT
-g5NTU1ODMsMTQ5OTc4OTUxNV19
--->

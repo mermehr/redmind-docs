@@ -1,33 +1,47 @@
-# Red Team Journal – YYYY-MM-DD
+## Red Team Journal – June **, 2025
 
-<details>
-<summary><strong>Objectives</strong></summary>
+## Target: VulnHub –  
 
-- [ ] Define specific lab task or module
-- [ ] Identify techniques/tools to practice
+### Engagement Overview
+**Target:**   
+**Box IP:**  
+**Attacker IP:**   
+**Methodology:** Web enumeration → WordPress admin access → reverse shell → privesc via CVE-2021-4034 (PwnKit)  
 
-</details>
+---
 
-<details>
-<summary><strong>Recon & Enumeration</strong></summary>
+### Objectives
+- 
+- 
+- 
 
-**Target:**  
-**Tools Used:** nmap, rustscan, enum4linux, smbclient, gobuster, etc.  
+---
 
-**Findings:**
-- Open ports: 
-- OS/Services: 
-- Interesting files/directories: 
+### Initial Foothold
 
-</details>
+**Method:**
 
-<details>
-<summary><strong>Initial Access</strong></summary>
+**Payload used:**
 
-**Exploit Used:**  
-**Command/POC:**
-```bash
-# example payload or exploit
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMTgxNzM3OV19
--->
+**Listener setup on Kali:**
+
+**Enumeration Highlights**
+
+**Key Findings:**
+
+**Privilege Escalation**
+
+**Cleanup Actions**
+
+**Tools Utilized**
+
+* 
+* 
+* 
+* 
+
+**Key Takeaways**
+
+* 
+* 
+* 

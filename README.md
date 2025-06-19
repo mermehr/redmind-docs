@@ -13,7 +13,3 @@ This repo holds:
 
 ## Notes
 >**journal/** contains recent and ongoing entries related to time spent on activities that directly support career development and future goals. Past milestones and accomplishments are documented in **shadow-resume.md**.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzA5ODc1NzYsLTEyNjgzMDU2MjRdfQ
-==
--->
