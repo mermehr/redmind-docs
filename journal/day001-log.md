@@ -6,13 +6,17 @@
  - Completed red team room
  - Cleaned up old C# repo's
  - MITRE, DLP, EDR
+
 ---
+
 ### What I Learned
 
 - You're never too old for cybersecurity
 - Take a day job - worry about certs later
 - Nothing much other than what I've already pulled from blue teaming
+
 ---
+
 ### Reflections
 
 Today was a focused and productive day of consolidating and moving forward with red team preparation. Took some time to reflect on my technical direction and reaffirmed my decision to pivot fully into red teaming. After completing the SOC path previously, I feel confident enough to dive deeper.
