@@ -2,6 +2,6 @@
 
 You can run these scripts together without any additional dependencies.
 
-deep_recon.sh will call recon_parse.py.
+deep_recon.sh will call recon_parse.py
 
 Usage: ./deep_recon.sh <target-ip>
