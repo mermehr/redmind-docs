@@ -23,5 +23,4 @@ s.send(b'VRFY ' + user + b'\r\n')
 result = s.recv(1024)
 
 print(result)
-
 # Close the socket
