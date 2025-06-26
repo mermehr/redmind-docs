@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Scripts/basic_recon/README.md",
+                "file": "journal/2025-06-25.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "2025-06-25"
             }
           }
         ]
@@ -126,8 +126,8 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false,
-                "showSearch": false,
+                "useHierarchy": true,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
@@ -176,21 +176,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8d2aae440bc2b5c1",
+  "active": "3c30adfd0c1e9ca1",
   "lastOpenFiles": [
+    "journal/2025-06-13.md",
+    "journal/2025-06-16.md",
+    "journal/2025-06-18.md",
+    "journal/2025-06-19.md",
+    "journal/2025-06-20.md",
+    "journal/2025-06-21.md",
+    "journal/2025-06-23.md",
+    "journal/2025-06-24.md",
+    "journal/2025-06-25.md",
+    "notes/enumeration_cheat_sheet.md",
+    "notes/mysql_cheat_sheet.md",
+    "scripts/basic_recon/README.md",
+    "Scripts/smtp-verify.py.md",
     "CodexOfFire/README.md",
-    "Journal/2025-06-23.md",
-    "Journal/2025-06-24.md",
-    "Journal/2025-06-13.md",
     "CodexOfFire/2025-06-20.md",
     "CodexOfFire/2025-06-17.md",
     "CodexOfFire/2024-10-01.md",
-    "Journal/2025-06-21.md",
-    "Journal/2025-06-20.md",
-    "Journal/2025-06-19.md",
-    "Journal/2025-06-18.md",
-    "Journal/2025-06-16.md",
-    "Scripts/basic_recon/README.md",
     "Templates/codex-entry.md",
     "CodexOfFire",
     "Templates/red-team-box.md",
@@ -199,7 +203,7 @@
     "Templates/Journal 1.md",
     "Templates",
     "Research",
-    "Notes",
-    "RedTeam"
+    "notes",
+    "redteam"
   ]
 }
