@@ -18,7 +18,6 @@ Daily technical logs and summaries from security studies, lab setups, and script
 
 ### 🐍 [Python Ops Toolkit](https://github.com/mermehr/custom-python-scripts)
 - Python scripts and tools for parsing, automation, and log analysis in red team workflows. Examples include Nmap/Gobuster parsers, utility functions, and terminal tools.
-
 - Smart Bash script to install Kali tools on Linux Mint, with GitHub/Flatpak fallback and minimal dependency risk. Includes safeguards and custom installer logic.
 
 > **Skills shown:** Secure scripting, CLI tools, subprocess control, I/O parsing.
