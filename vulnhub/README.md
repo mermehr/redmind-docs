@@ -1,1 +1,1 @@
-Collection of VulnHub VM penetration reports
+Collection of VulnHub VM and HTN penetration reports.

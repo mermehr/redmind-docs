@@ -1,7 +1,7 @@
 ## 🗓️ Daily Journal – {{date}}
 
 ### General Status:
-> _(Mood, energy level, clarity, etc.)_
+>
 
 ### 🔧 Completed Tasks
 - [ ] 
