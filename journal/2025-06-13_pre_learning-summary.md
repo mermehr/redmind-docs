@@ -1,4 +1,4 @@
-# Red Team Learning Summary – Prior to June 25, 2025
+# Red Team Learning Summary – Prior to June 13, 2025
 
 ## Foundation
 
