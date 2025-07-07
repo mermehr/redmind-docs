@@ -1,51 +1,65 @@
-# 🛡️ Cybersecurity & Red Team Portfolio
+# 🧠 RedMind Docs
 
-Hands-on cybersecurity practitioner focused on offensive security, network defense, and Python automation. Former infrastructure tech turned red team enthusiast with a strong foundation in Linux systems, endpoint hardening, and incident response.
+A living repository of cybersecurity practice, offensive security labs, system scripts, and field notes. This repo serves as a tactical logbook and personal portfolio — documenting both technical growth and red team execution.
 
----
-
-## 🔗 Featured Projects
-
-### 🗂️ [Red Team Journal](https://github.com/mermehr/journal)
-Ongoing collection of lab-based penetration tests, CTF walkthroughes, and vulnerability research. Includes initial access, privilege escalation, and post-exploitation notes.
-
-> **Skills shown:** Offensive recon, CVE exploitation, Linux escalation, methodical documentation.
-
-Daily technical logs and summaries from security studies, lab setups, and scripting practice. Lightly formatted for clarity and long-term reference.
-
-> **Skills shown:** Self-guided learning, structured note-taking, system config tracking.
----
-
-### 🐍 [Python Ops Toolkit](https://github.com/mermehr/custom-python-scripts)
-- Python scripts and tools for parsing, automation, and log analysis in red team workflows. Examples include Nmap/Gobuster parsers, utility functions, and terminal tools.
-- Smart Bash script to install Kali tools on Linux Mint, with GitHub/Flatpak fallback and minimal dependency risk. Includes safeguards and custom installer logic.
-
-> **Skills shown:** Secure scripting, CLI tools, subprocess control, I/O parsing, Bash scripting, system detection, package management, error handling.
+Former infrastructure tech turned offensive security practitioner. Strong grounding in Linux systems, endpoint hardening, scripting, and adversarial methodology.
 
 ---
 
-📄 [Shadow Resume](https://github.com/mermehr/journal/blob/main/shadow-resume.md) – Security-focused snapshot of my experience, tools, labs, and skills
+## 🗂️ What’s Inside
+
+### 📘 Daily Logs  
+Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and toolchains.
+
+> _Skills shown:_ Self-directed learning, documentation discipline, workflow evolution
 
 ---
 
-## 🧰 Tools & Technologies
+### 💣 Pwned Boxes  
+Walkthroughs of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
 
-- **Languages:** Python, Bash, PowerShell
-- **Systems:** Linux (Mint, Arch, Kali), Windows Server
-- **Platforms:** VirtualBox, QEMU/KVM, WSL2
-- **Security Stack:** Nmap, Zeek, Suricata, Burp Suite, Wireshark, Fail2Ban, OpenVAS
+> _Skills shown:_ Vulnerability exploitation, Linux enumeration, methodology refinement
+
+---
+
+### 🧰 Cheat Sheets  
+Quick-access references for enumeration, reverse shells, SQL injection, privilege escalation, and more — formatted for fast ops recall.
+
+> _Skills shown:_ Curated research, operational speed, technique consolidation
+
+---
+
+### 🐍 [Scripts & Tooling](https://github.com/mermehr/custom-python-scripts)  
+- Python and Bash tools for automation, parsing, and red team support.
+- Includes smart Kali installer for Linux Mint with fallback logic (GitHub/Flatpak).
+  
+> _Skills shown:_ CLI development, subprocess control, system detection, defensive tool integration
+
+---
+
+### 📄 [Shadow Resume](https://github.com/mermehr/journal/blob/main/shadow-resume.md)  
+A focused snapshot of hands-on skills, toolkits, labs, and security focus areas.
+
+---
+
+## 🔧 Tools & Technologies
+
+- **Languages:** Python, Bash, PowerShell  
+- **Systems:** Linux (Mint, Arch, Kali), Windows Server  
+- **Platforms:** VirtualBox, QEMU/KVM, WSL2  
+- **Security Stack:** Nmap, Zeek, Suricata, Burp Suite, Wireshark, Fail2Ban, OpenVAS  
 - **Version Control:** Git, GitHub CLI
 
 ---
 
-## 📅 Current Focus
+## 🚩 Current Focus
 
-- Red team methodology and exploit development  
-- Linux and Windows privilege escalation  
-- Building custom tooling and automation with Python  
-- Preparing for OSCP certification
+- Red team workflows and exploit dev  
+- Privilege escalation (Linux & Windows)  
+- Python scripting for automation and recon  
+- OSCP-aligned methodology
 
 ---
 
-> ⚠️ Some repositories are private or contain personal journals. Reach out for access or specific samples.
+> ⚠️ Some material is stored privately or offline. Message for access or context.
 
