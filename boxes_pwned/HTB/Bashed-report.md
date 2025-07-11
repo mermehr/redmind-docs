@@ -3,6 +3,7 @@
 ## Engagement Overview
 **Target:** HTB – Bashed  
 **Box IP:** 10.10.10.68
+**Date:** 2025-07-06
 
 ---
 
