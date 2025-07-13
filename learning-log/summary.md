@@ -8,9 +8,9 @@
   - CompTIA Network+
   - CompTIA Security+
 
-- **Courses Underway**:
+- **Courses**:
   - *Cisco Certified Ethical Hacker* 
-  - *100 Days of Code: Python Pro Bootcamp (Udemy)*
+  - *SoC Analyst - Try Hack Me*
   - *Python Programming MOOC 2023 (University of Helsinki)*  
     - Restarted from scratch to rebuild memory pathways and reinforce fundamentals
 
@@ -35,8 +35,8 @@
 ## Process & Infrastructure
 
 - Journaling infrastructure:
-  - Red Team journal: [https://github.com/mermehr/journal](https://github.com/mermehr/journal)
-  - Enumeration notes: `notes/enumeration_cheat_sheet.md`
+  - Red Team journal: [https://github.com/mermehr/redmind-docs](https://github.com/mermehr/redmind-docs)
+  - Enumeration notes: `notes/`
 
 - Adopted Daily Loadout Strategy:
   - Mix of: Course modules OSCP Bible + HTB lab box + Python practice

@@ -1,4 +1,4 @@
-# 🧠 RedMind Docs
+# RedMind Docs
 
 A living repository of cybersecurity practice, offensive security labs, system scripts, and field notes. This repo serves as a tactical logbook and personal portfolio — documenting both technical growth and red team execution.
 
@@ -6,30 +6,30 @@ Former infrastructure tech turned offensive security practitioner. Strong ground
 
 ---
 
-## 🗂️ What’s Inside
+## What’s Inside
 
-### 📘 Daily Logs  
+### Learning Logs  
 Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and toolchains.
 
 > _Skills shown:_ Self-directed learning, documentation discipline, workflow evolution
 
 ---
 
-### 💣 Pwned Boxes  
+### Pwned Boxes  
 Walkthroughs of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
 
 > _Skills shown:_ Vulnerability exploitation, Linux enumeration, methodology refinement
 
 ---
 
-### 🧰 Cheat Sheets  
+### Cheat Sheets  
 Quick-access references for enumeration, reverse shells, SQL injection, privilege escalation, and more — formatted for fast ops recall.
 
 > _Skills shown:_ Curated research, operational speed, technique consolidation
 
 ---
 
-### 🐍 [Scripts & Tooling](https://github.com/mermehr/custom-python-scripts)  
+### [Scripts & Tooling](https://github.com/mermehr/custom-python-scripts)  
 - Python and Bash tools for automation, parsing, and red team support.
 - Includes smart Kali installer for Linux Mint with fallback logic (GitHub/Flatpak).
   
@@ -37,12 +37,12 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 
 ---
 
-### 📄 [Shadow Resume](https://github.com/mermehr/journal/blob/main/shadow-resume.md)  
+### [Shadow Resume](https://github.com/mermehr/journal/blob/main/shadow-resume.md)  
 A focused snapshot of hands-on skills, toolkits, labs, and security focus areas.
 
 ---
 
-## 🔧 Tools & Technologies
+## Tools & Technologies
 
 - **Languages:** Python, Bash, PowerShell  
 - **Systems:** Linux (Mint, Arch, Kali), Windows Server  
@@ -52,7 +52,7 @@ A focused snapshot of hands-on skills, toolkits, labs, and security focus areas.
 
 ---
 
-## 🚩 Current Focus
+## Current Focus
 
 - Red team workflows and exploit dev  
 - Privilege escalation (Linux & Windows)  

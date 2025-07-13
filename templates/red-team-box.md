@@ -1,39 +1,74 @@
-# 🎯 Target: 
+# Box Name
+**OS** - **Difficulty**
 
+---
 ## Engagement Overview
-**Box Name:**  
-**IP Address:**  
+**Target:**   
+**Box IP:**   
+**Local IP:** 
+**Date:**
+
+---
+### Objectives
+-
+-
 
 ---
 
-### 🎯 Objectives
-- [ ] Gain initial access
-- [ ] Escalate privileges
-- [ ] Document post-exploitation
+### Service Enumeration
+- `nmap` result summary
+- Service version notes
+- Unusual responses
 
 ---
 
-## 🔎 Service Enumeration
+## Methodologies
 
-## 🛠 Methodology
+### Initial Access –
 
-## 🚪 Initial Access
 **Vulnerability:**  
-**Exploitation Steps:**  
+CVE-
+
+**Tools & Payloads Used:**
+- Metasploit
+- Manual
+
+**Penetration Result:**  
+- Direct shell access obtained via Python payload modification
 
 ---
 
-## 📈 Privilege Escalation
+## Privilege Escalation
 
-## 🧹 House Cleaning (removal/logs/artifacts)
+Not applicable. Initial exploit yielded SYSTEM-level shell.
 
-## 🎁 Post-Exploitation
+---
 
-### Tools Used:
-- 
-- 
-- 
+## House Cleaning
 
-### Key Takeaways:
-- 
-- 
+- No post-exploitation persistence left on target
+- Exploit did not require uploads beyond shell payload
+
+---
+
+## Post-Exploitation
+
+### Credentials & Flags
+
+- `User.txt`: `0c4f3a9386dba985686ce78e58237c6d`  
+- `Root.txt`: `b6b9cccdf6904e9ffdb0110122a50a43`
+
+---
+
+## Tools Utilized
+
+* 
+* 
+* 
+
+---
+
+## Key Takeaways
+
+* 
+* 
