@@ -16,7 +16,7 @@ Structured summaries of hands-on practice, script development, system configurat
 ---
 
 ### Pwned Boxes  
-Walkthroughs of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
+Reports of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
 
 > _Skills shown:_ Vulnerability exploitation, Linux enumeration, methodology refinement
 
