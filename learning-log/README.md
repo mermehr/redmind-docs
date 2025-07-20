@@ -4,7 +4,7 @@ This folder contains my red team learning progression, structured weekly and dai
 
 ## Structure
 
-- `summary.md`  
+- `summary-pre-log.md`  
   Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
 
 - `day-logs/`  
