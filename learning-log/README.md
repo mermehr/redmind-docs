@@ -9,6 +9,7 @@ This folder contains my red team learning progression, structured weekly and dai
 
 - `day-logs/`  
   Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
+  This area will be change going forward as of July 21, 2025 and will include an ongoing updated weekly log instead.
 
 - `week-logs/`  
   Summarized, high-level overviews of weekly progress. Useful for quick review, interviews, or journaling retrospectives.
