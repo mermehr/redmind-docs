@@ -78,27 +78,21 @@
 - https://www.hackthebox.com/blog/kerberoasting-attack-detection
 
 ---
-## 🟥 Day 4 – Red Team + Python  
+## 🟥 Day 4 – Python  
 **Date:** Thursday, July 31, 2025  
-**Focus:** Red Team + Python  
+**Focus:** Python  
 
 **HTB**  
-**Target Box:** Mirai  
-- Services targeted: (TBD upon enumeration)  
-- Techniques practiced: (Initial access, enumeration, privesc)  
-
+**Target Box:**
 
 **Challenges**  
-- Catch-up or focus on 1-2 HTB challenges
 
 **PWK Sections:**  
 
 - Ch. 19.2 – Linux Privilege Escalation Vectors
 
 **Python (ATBS or Ops):**  
-- Chapter: 10  
-- Pages: 235–240  
-- Notes: Read and practice 5–10 pages per day, continue building tooling logic  
+- Coding practice 1-hr
 
 
 ---
@@ -107,22 +101,22 @@
 **Focus:** Red Team + Python  
 
 **HTB**  
-**Target Box:** Devel  
-- Services targeted: (TBD upon enumeration)  
-- Techniques practiced: (Initial access, enumeration, privesc)  
-
+**Target Box:** `Blue` - returned out of spite
+- Went back to figure out why metasploit exploit did not work
+- Figures out the issue with reverse shell and executed the exploit successfully
+- This was an older box from 2019
+- Lots of tooling issues with older box, very beneficial for learning
 
 **Challenges**  
-- Catch-up or focus on 1-2 HTB challenges
+- `Simple Encryptor` (Rev), `Pdfy` (Web), `BabyEncryption`(Cry)
 
 **PWK Sections:**  
 
 - Ch. 19.3 – Windows Privilege Escalation Techniques
 
 **Python (ATBS or Ops):**  
-- Chapter: 11  
-- Pages: 241–246  
-- Notes: Read and practice 5–10 pages per day, continue building tooling logic  
+- Chapter: 11 - Organizing files
+- Pages: 241–246
 
 
 ---
@@ -154,7 +148,7 @@
 **Date:** Sunday, August 03, 2025  
 **Focus:** Journal, Codex, and Git Commit  
 
-**HTB**  
+**HTB**  Devel
 **Target Box:** N/A  
 - Services targeted: (TBD upon enumeration)  
 - Techniques practiced: (Initial access, enumeration, privesc)  
