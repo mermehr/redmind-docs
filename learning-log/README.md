@@ -7,24 +7,23 @@ This folder contains my red team learning progression, structured weekly and dai
 - `summary-pre-log.md`  
   Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
 
-- `day-logs/`  
+- daily/`  
   Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
-  This area will be change going forward as of July 21, 2025 and will include an ongoing updated weekly log instead.
-
-- `week-logs/`  
-  Summarized, high-level overviews of weekly progress. Useful for quick review, interviews, or journaling retrospectives.
+  
+- `weekly/`  + `monthly/`
+  Summarised, high-level overviews of weekly/monthly progress. Useful for quick review, interviews, or journaling retrospectives.
 
 ## Purpose
 
 This learning log serves as a timeline of technical development — documenting:
 - Hands-on red team practice
-- Python scripting for offense
+- Python scripting for offence
 - Enumeration and exploitation workflows
-- Study milestones (OSCP, ATBS, TryHackMe, etc.)
+- Study milestones (OSCP, ATBS, HTB, etc.)
 
 All logs feed into the broader red team documentation repo:  
 📎 [`redmind-docs`](https://github.com/mermehr/redmind-docs)
 
 ---
 
->  Built with intention — not for school, not for show. This is the real path forward.
+>  Built with intention
