@@ -7,5 +7,3 @@
 - [tmux Cheat Sheet](https://tmuxcheatsheet.com/)
 - [vim Cheat Sheet](https://vimsheet.com/)
 - [HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
-
-<--! TAGS: htb, links, tmux, vim, owasp, cheat_sheet -->
