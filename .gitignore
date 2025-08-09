@@ -20,10 +20,12 @@ Thumbs.db
 *.sublime-workspace
 .vscode/
 .idea/
-.obsidian
+.obsidian/
+.templates/
+
 
 # Virtual environments
-venv/
+.venv/
 .env/
 .Python
 

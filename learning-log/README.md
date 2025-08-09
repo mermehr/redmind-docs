@@ -16,6 +16,7 @@ This folder contains my red team learning progression, structured weekly and dai
 ## Purpose
 
 This learning log serves as a timeline of technical development — documenting:
+
 - Hands-on red team practice
 - Python scripting for offence
 - Enumeration and exploitation workflows
