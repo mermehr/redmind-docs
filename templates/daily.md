@@ -1,20 +1,23 @@
 # Daily Journal - Tuesday, August 5th, 2025
 
-**Focus Areas**: Python, Red Team, HTB
+**Focus Areas**: Python,  HTB
 
 ---
 
 ## HTB
 
 **Target Box:**
-- 
 
-**Challenges**  
-- 
+-
+
+**Challenges**
+
+-
 
 **Penetration Tester Section:**
 
-- Module 
+- Module:
+  
   -
   -
 
@@ -23,8 +26,8 @@
 **ATBS or Ops:**
 
 - Chapter:
-- Pages: 0–0 – 
-  - 
+- Pages: 0–0
+  -  
   -
 
 ## Challenges Faced
@@ -40,4 +43,3 @@
 - 
 
 ## Notes
-

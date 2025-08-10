@@ -9,7 +9,7 @@
   - CompTIA Security+
 
 - **Courses**:
-  - *Cisco Certified Ethical Hacker* 
+  - *Cisco Certified Ethical Hacker*
   - *SoC Analyst - Try Hack Me*
   - *Python Programming MOOC 2023 (University of Helsinki)*  
     - Restarted from scratch to rebuild memory pathways and reinforce fundamentals
@@ -20,6 +20,7 @@
   - Prioritized HTB labs and personal tooling over passive course watching
 
 ---
+
 ## Python Development
 
 - Learning focus: Offensive scripting and automation
@@ -41,3 +42,4 @@
 - Adopted Daily Loadout Strategy:
   - Mix of: Course modules OSCP Bible + HTB lab box + Python practice
   - Reports to be written for boxes with real value
+  - 
