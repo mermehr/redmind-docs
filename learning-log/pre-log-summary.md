@@ -42,4 +42,3 @@
 - Adopted Daily Loadout Strategy:
   - Mix of: Course modules OSCP Bible + HTB lab box + Python practice
   - Reports to be written for boxes with real value
-  - 

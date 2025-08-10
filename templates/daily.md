@@ -1,6 +1,4 @@
-# Daily Journal - Tuesday, August 5th, 2025
-
-**Focus Areas**: Python,  HTB
+**Focus Areas**: Python, HTB Academy
 
 ---
 
@@ -10,7 +8,7 @@
 
 -
 
-**Challenges**
+**Challenges:**
 
 -
 
@@ -23,16 +21,16 @@
 
 ## Python
 
-**ATBS or Ops:**
+**ATBS:**
 
 - Chapter:
 - Pages: 0–0
   -  
   -
 
+**Scripts:**
+
 ## Challenges Faced
-
-
 
 ## Concepts Reinforced
 
