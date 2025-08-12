@@ -7,5 +7,14 @@ links:
 https://nmap.org/book/host-discovery-strategies.html
 https://nmap.org/book/man-port-scanning-techniques.html
 https://www.f5.com/pdf/white-papers/sctp-introduction-wp.pdf
+https://nmap.org/book/performance-timing-templates.html
 
 take aways:
+Firewall and IDS/IPS Evasion - Easy Lab - Answer: Ubuntu
+Found on adjoining /24 netwrok
+Medium Lab
+Hard Lab
+
+1. 	There is more than meets the eye. Consider all points of view.
+2. 	Distinguish between what we see and what we do not see.
+3. 	There are always ways to gain more information. Understand the target.

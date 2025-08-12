@@ -18,12 +18,15 @@ This folder contains my red team learning progression, structured weekly and dai
 This learning log serves as a timeline of technical development — documenting:
 
 - Hands-on red team practice
-- Python scripting for offence
+- Python scripting for offense
 - Enumeration and exploitation workflows
 - Study milestones (OSCP, ATBS, HTB, etc.)
 
 All logs feed into the broader red team documentation repo:  
 📎 [`redmind-docs`](https://github.com/mermehr/redmind-docs)
+
+All mentioned scripts are fed into my scripts repo:  
+📎 [`custom-python-scripts`](https://github.com/mermehr/custom-python-scripts/)
 
 ---
 
