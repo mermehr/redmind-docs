@@ -4,14 +4,17 @@ This folder contains my red team learning progression, structured weekly and dai
 
 ## Structure
 
-- `summary-pre-log.md`  
-  Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
+**`summary-pre-log.md`**
 
-- daily/`  
-  Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
+Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
+
+**`daily/`**
+
+Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
   
-- `weekly/`  + `monthly/`
-  Summarised, high-level overviews of weekly/monthly progress. Useful for quick review, interviews, or journaling retrospectives.
+**`weekly/` | `monthly/`**
+
+Summarized, high-level overviews of weekly/monthly progress. Useful for quick review, interviews, or journaling retrospectives.
 
 ## Purpose
 
@@ -22,12 +25,21 @@ This learning log serves as a timeline of technical development — documenting:
 - Enumeration and exploitation workflows
 - Study milestones (OSCP, ATBS, HTB, etc.)
 
-All logs feed into the broader red team documentation repo:  
-📎 [`redmind-docs`](https://github.com/mermehr/redmind-docs)
+---
 
-All mentioned scripts are fed into my scripts repo:  
-📎 [`custom-python-scripts`](https://github.com/mermehr/custom-python-scripts/)
+All logs feed into the broader red team documentation repo:  
+📎 [`github.com/mermehr/redmind-docs`](https://github.com/mermehr/redmind-docs)
 
 ---
 
->  Built with intention
+Scripts can be found in:  
+📎 [`github.com/mermehr/custom-python-scripts/`](https://github.com/mermehr/custom-python-scripts/)
+
+---
+
+Hack The Box machine reports and academy notes:  
+📎 [`github.com/mermehr/HTB/`](https://github.com/mermehr/HTB/)
+
+---
+
+> Built with intention
