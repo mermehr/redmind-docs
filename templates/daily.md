@@ -19,7 +19,6 @@
 **Penetration Tester Pathway:**
 
 - Module:
-  
   -
   -
 
@@ -29,7 +28,7 @@
 
 - Chapter:
 - Pages: 0–0
-  -  
+  -
   -
 
 **Scripts:**
@@ -40,8 +39,8 @@
 
 ## Tools / Resource(s) Used
 
--  
+-
+-
 - 
-- 
-
+  
 ## Notes
