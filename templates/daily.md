@@ -19,17 +19,16 @@
 **Penetration Tester Pathway:**
 
 - Module:
-  -
+  - null
   -
 
 ## Python
 
-**ATBS:**
+**Black Hat Python:**
 
-- Chapter:
-- Pages: 0–0
-  -
-  -
+- Chapter
+- Page 0 - 0
+  - null
 
 **Scripts:**
 
@@ -41,6 +40,6 @@
 
 -
 -
-- 
+-
   
 ## Notes
