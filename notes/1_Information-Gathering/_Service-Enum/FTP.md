@@ -1,4 +1,6 @@
-Footprining:
+# FTP 
+
+## Footprining
 
 `sudo nmap -sV -p21 -sC -A 10.129.14.136`
 
@@ -13,6 +15,8 @@ wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
 `
 find / -type f -name ftp\* 2>/dev/null | grep scripts
 `
+
+## Command Reference
 
 ### **FTP Command Line**
 

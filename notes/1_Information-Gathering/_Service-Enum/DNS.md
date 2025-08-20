@@ -1,34 +1,66 @@
-UDP
+# DNS UDP 53
 
-### DIG:
+## Passive Enumeration
 
-### Relying heavily on having acceess to the internal dns, can try without
+**[DIG](./../Web-Enum/Tools/Dig.md)**
 
--   NS Quuery
+* Reverse lookup
+
+`dig -x`, `host`
+
+- NS Query
 
 `dig ns inlanefreight.htb @10.129.14.128`
 
--   Version Query
+- Version Query
 
 `dig CH TXT version.bind 10.129.120.85`
 
--   Any
+- Any
 
 `dig any inlanefreight.htb @10.129.14.128`
 
--   Zone transfers external
+- Zone transfer
 
-`dig axfr inlanefreight.htb @10.129.14.128`
+`dig axfr @nsztm1.digi.ninja zonetransfer.me`
 
--   Zone transfers internal
+---
 
-`dig axfr inlanefreight.htb @10.129.14.128`
+## Active Enumeration
 
 ### Subdomain Brute Forcing
+
+**[DNSEnum](./../Web-Enum/Tools/DNSEnum.md)**
+
+*Recursive Scan:*
+
+`dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r`
+
+*Other:*
 
 `for sub in $(cat /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt);do dig $sub.inlanefreight.htb @10.129.14.128 | grep -v ';\|SOA' | sed -r '/^\s*$/d' | grep $sub | tee -a subdomains.txt;done`
 
 `dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb`
+
+---
+
+### Tools
+
+| Tool | Description |
+| --- |  --- |
+| [dnsenum](https://github.com/fwaeytens/dnsenum) | Comprehensive DNS enumeration tool that supports dictionary and brute-force attacks for discovering subdomains. |
+| --- |  --- |
+| [fierce](https://github.com/mschwager/fierce) | User-friendly tool for recursive subdomain discovery, featuring wildcard detection and an easy-to-use interface. |
+| [dnsrecon](https://github.com/darkoperator/dnsrecon) | Versatile tool that combines multiple DNS reconnaissance techniques and offers customisable output formats. |
+| [amass](https://github.com/owasp-amass/amass) | Actively maintained tool focused on subdomain discovery, known for its integration with other tools and extensive data sources. |
+| [assetfinder](https://github.com/tomnomnom/assetfinder) | Simple yet effective tool for finding subdomains using various techniques, ideal for quick and lightweight scans. |
+| [puredns](https://github.com/d3mondev/puredns) | Powerful and flexible DNS brute-forcing tool, capable of resolving and filtering results effectively. |
+
+---
+
+## Service Information
+
+### Servers
 
 | Server Type | Description |
 | --- |  --- |
@@ -38,6 +70,8 @@ UDP
 | Caching DNS Server | Caching DNS servers cache information from other name servers for a specified period. The authoritative name server determines the duration of this storage. |
 | Forwarding Server | Forwarding servers perform only one function: they forward DNS queries to another DNS server. |
 | Resolver | Resolvers are not authoritative DNS servers but perform name resolution locally in the computer or router. |
+
+### Records
 
 | DNS Record | Description |
 | --- |  --- |
