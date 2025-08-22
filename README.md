@@ -8,7 +8,7 @@ Former infrastructure tech turned offensive security practitioner. Strong ground
 
 ## What’s Inside
 
-### Learning Logs
+### Logs
 
 Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and toolchains.
 
@@ -18,7 +18,7 @@ See: [`custom-python-scripts`](https://github.com/mermehr/custom-python-scripts/
 
 ---
 
-### CTFs
+### Engagements
 
 Reports of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
 

@@ -9,7 +9,7 @@
 - [ ] DNS
 - [ ] MySQL - [Security Issues](https://dev.mysql.com/doc/refman/8.0/en/general-security-issues.html)
 
-## Return and do submodule practice over again
+## Return and do sub-module practice over again
 
 **Footprinting:**
 

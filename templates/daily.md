@@ -18,28 +18,31 @@
 
 **Penetration Tester Pathway:**
 
-- Module:
-  - null
-  -
+- ***Module - ***
+  - 
+
+### Tools / Resource(s) Used
+
+- 
+
+### HTB Notes
+
+---
 
 ## Python
 
 **Black Hat Python:**
 
-- Chapter
+- ***Chapter 2***
 - Page 0 - 0
   - null
 
 **Scripts:**
 
-## Challenges Faced
+### Py Tools / Resource(s) Used
 
-## Concepts Reinforced
-
-## Tools / Resource(s) Used
-
--
--
--
+- 
   
-## Notes
+### Python Notes
+
+---

@@ -1,4 +1,4 @@
-Cheat Sheet
+Information Gathering - Web Edition
 ===========
 
 * * * *

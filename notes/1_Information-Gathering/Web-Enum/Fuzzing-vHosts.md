@@ -2,9 +2,17 @@
 
 >Virtual host discovery can generate significant traffic and might be detected by intrusion detection systems (IDS) or web application firewalls (WAF). Exercise caution and obtain proper authorization before scanning any targets.
 
-**General:**
+**gobuster:**
+
+Find vHosts:
 
 `gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain`
+
+**ffuf:**
+
+Fuzz the vHost:
+
+`ffuf -u http://web1337.inlanefreight.htb:52746/FUZZ -w /usr/share/seclists/Discovery/Web-Content/common.txt:FUZZ -e .html -v`
 
 **Append IP to domain:**
 
