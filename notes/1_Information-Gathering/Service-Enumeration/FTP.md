@@ -1,24 +1,29 @@
-# FTP 
+---
+title: "File Transfer Protocol"
+date: 2025-08-23
+tags: [ftp, service]
+port: [tcp, 21]
+---
 
-## Footprining
+# File Transfer Protocol
 
-`sudo nmap -sV -p21 -sC -A 10.129.14.136`
+## Enumeration
 
-**Download all available files:**
+*Common Commands:*
 
-`
-wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
-`
+```bash
+sudo nmap -sV -p21 -sC -A 10.129.14.136
 
-**Find NSE scripts:**
-
-`
+# Find NSE Scripts
 find / -type f -name ftp\* 2>/dev/null | grep scripts
-`
+
+# Pilage all files
+wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
+```
 
 ## Command Reference
 
-### **FTP Command Line**
+### FTP Command Line
 
 | Type | Command | What it Does |
 | --- |  --- |  --- |
@@ -32,7 +37,7 @@ find / -type f -name ftp\* 2>/dev/null | grep scripts
 | Command Line | \-w:windowsize | Overrides the default transfer buffer size of 4096. |
 | Command Line | \-computer | Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line. |
 
-### **FTP Command List**
+### FTP Command List
 
 | Type | Command | What it Does |
 | --- |  --- |  --- |
@@ -53,31 +58,3 @@ find / -type f -name ftp\* 2>/dev/null | grep scripts
 | Command | glob | Toggles filename globbing (wildcard characters) (default = ON) |
 | Command | hash | Toggles hash sign (#) printing for each data block transferred (default = OFF) |
 | Command | help | Displays descriptions for ftp commands |
-
-| Type | Command | What it Does |
-| --- |  --- |  --- |
-| Command | lcd | Changes the working directory on the local computer |
-| Command | literal | Sends arguments, verbatim, to the remote FTP server |
-| Command | ls | Displays an abbreviated list of a remote directory's files and subdirectories |
-| Command | mdelete | Deletes one or more files on a remote computer |
-| Command | mdir | Displays a list of a remote directory's files and subdirectories |
-| Command | mget | Copies one or more remote files to the local computer |
-| Command | mkdir | Creates a remote directory |
-| Command | mls | Displays an abbreviated list of a remote directory's files and subdirectories |
-| Command | mput | Copies one or more local files to the remote computer |
-| Command | open | Connects to the specified FTP server |
-| Command | prompt | Toggles prompting (default = ON) |
-| Command | put | Copies a single local file to the remote computer |
-| Command | pwd | Displays the current directory on the remote computer (literally, "print working directory") |
-| Command | quit | Ends the FTP session with the remote computer and exits ftp (same as "bye") |
-| Command | quote | Sends arguments, verbatim, to the remote FTP server (same as "literal") |
-| Command | recv | Copies a remote file to the local computer |
-| Command | remotehelp | Displays help for remote commands |
-| Command | rename | Renames remote files |
-| Command | rmdir | Deletes a remote directory |
-| Command | send | Copies a local file to the remote computer (same as "put") |
-| Command | status | Displays the current status of FTP connections |
-| Command | trace | Toggles packet tracing (default = OFF) |
-| Command | type | Sets or displays the file transfer type (default = ASCII) |
-| Command | user | Specifes a user to the remote computer |
-| Command | verbose | Toggles verbose mode (default = ON) |

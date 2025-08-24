@@ -1,18 +1,32 @@
-### Footprinting:
+---
+title: "R-services"
+date: 2025-08-23
+tags: [rcp, rsh, rexec, rlogin, service]
+port: [tcp, 512, 513, 514]
+---
+
+# R-Services
+
+## Enumeration
+
+*Common Commands:*
 
 `$ sudo nmap -sV -p 512,513,514 10.0.17.2`
 
-### Logging in
+*Login:*
 
-`rlogin 10.0.17.2 -l htb-student`
+```bash
+rlogin 10.0.17.2 -l htb-student`
 
-### Listing Authenticated Users Using Rwho
+# Listing Authenticated Users Using Rwho:
+rwho
 
-`$ rwho`
+# Listing Authenticated Users Using Rusers:
 
-### Listing Authenticated Users Using Rusers
+rusers -al 10.0.17.5
+```
 
-`rusers -al 10.0.17.5`
+### Service Information
 
 | Command | Service Daemon | Port | Transport Protocol | Description |
 | --- |  --- |  --- |  --- |  --- |
@@ -21,6 +35,6 @@
 | rexec | rexecd | 512 | TCP | Enables a user to run shell commands on a remote machine. Requires authentication through the use of a username and password through an unencrypted network socket. Authentication is overridden by the trusted entries in the /etc/hosts.equiv and .rhosts files. |
 | rlogin | rlogind | 513 | TCP | Enables a user to log in to a remote host over the network. It works similarly to telnet but can only connect to Unix-like hosts. Authentication is overridden by the trusted entries in the /etc/hosts.equiv and .rhosts files. |
 
-#### Access Control & Trusted Relationships
+*Access Control & Trusted Relationships*
 
-The primary concern for `r-services`, and one of the primary reasons `SSH` was introduced to replace it, is the inherent issues regarding access control for these protocols. R-services rely on trusted information sent from the remote client to the host machine they are attempting to authenticate to. By default, these services utilize [Pluggable Authentication Modules (PAM)](https://debathena.mit.edu/trac/wiki/PAM) for user authentication onto a remote system; however, they also bypass this authentication through the use of the `/etc/hosts.equiv` and `.rhosts` files on the system. The `hosts.equiv` and `.rhosts` files contain a list of hosts (`IPs` or `Hostnames`) and users that are `trusted` by the local host when a connection attempt is made using `r-commands`. Entries in either file can appear like the following:
+The primary concern for `r-services`, and one of the primary reasons `SSH` was introduced to replace it, is the inherent issues regarding access control for these protocols. R-services rely on trusted information sent from the remote client to the host machine they are attempting to authenticate to. By default, these services utilize [Pluggable Authentication Modules (PAM)](https://debathena.mit.edu/trac/wiki/PAM) for user authentication onto a remote system; however, they also bypass this authentication through the use of the `/etc/hosts.equiv` and `.rhosts` files on the system. The `hosts.equiv` and `.rhosts` files contain a list of hosts (`IPs` or `Hostnames`) and users that are `trusted` by the local host when a connection attempt is made using `r-commands`. 

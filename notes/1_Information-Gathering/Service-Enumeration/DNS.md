@@ -1,29 +1,23 @@
-# DNS UDP 53
+---
+title: "Domain Name System"
+date: 2025-08-23
+tags: [dns, dnsenum, dnsrecon, service]
+port: [udp, tcp, 53]
+---
+
+# Domain Name System
 
 ## Passive Enumeration
 
-**[DIG](./../Web-Enum/Tools/Dig.md)**
+*Common Commands:*
 
-* Reverse lookup
-
-`dig -x`, `host`
-
-- NS Query
-
-`dig ns inlanefreight.htb @10.129.14.128`
-
-- Version Query
-
-`dig CH TXT version.bind 10.129.120.85`
-
-- Any
-
-`dig any inlanefreight.htb @10.129.14.128`
-
-- Zone transfer
-
-`dig axfr @nsztm1.digi.ninja zonetransfer.me`
-
+```bash
+dig -x host
+dig ns inlanefreight.htb @10.129.14.128
+dig CH TXT version.bind 10.129.120.85
+dig any inlanefreight.htb @10.129.14.128
+dig axfr @nsztm1.digi.ninja zonetransfer.me
+```
 ---
 
 ## Active Enumeration
@@ -34,19 +28,16 @@
 
 *Recursive Scan:*
 
-`dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r`
+```bash
+dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r
 
-*Other:*
-
-`for sub in $(cat /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt);do dig $sub.inlanefreight.htb @10.129.14.128 | grep -v ';`
-
-`\|SOA' | sed -r '/^\s*$/d' | grep $sub | tee -a subdomains.txt;done`
-
-`dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb`
+# With alternate dns
+dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
+```
 
 ---
 
-### Tools
+## Tools
 
 | Tool | Description |
 | --- |  --- |
@@ -86,4 +77,3 @@
 | PTR | The PTR record works the other way around (reverse lookup). It converts IP addresses into valid domain names. |
 | SOA | Provides information about the corresponding DNS zone and email address of the administrative contact. |
 
-<!-- tags: dns, p53 -->

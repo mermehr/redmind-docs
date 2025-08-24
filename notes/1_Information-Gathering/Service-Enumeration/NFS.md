@@ -1,15 +1,27 @@
-### Footprinting:
+---
+title: "Network File System"
+date: 2025-08-23
+tags: [nfs, service]
+port: [tcp, 2049]
+---
 
-`sudo nmap 10.129.14.128 -p111,2049 -sV -sC`
+# Network File System
 
-`sudo nmap --script nfs* 10.129.14.128 -sV -p111,2049`
+## Enumeration
 
-### Show Available NFS Shares and mount
+*Common Commands*
 
-`showmount -e 10.129.14.128`
+```bash
+sudo nmap 10.129.14.128 -p111,2049 -sV -sC
+sudo nmap --script nfs* 10.129.14.128 -sV -p111,2049
+```
 
-`sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock`
+*Show Available NFS Shares | Mount*
 
-`ls -n mnt/nfs/`
+```bash
+showmount -e 10.129.14.128
+sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
 
-`ls -l mnt/nfs/`
+ls -n mnt/nfs/
+ls -l mnt/nfs/
+```

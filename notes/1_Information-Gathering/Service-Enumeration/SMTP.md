@@ -1,14 +1,27 @@
-### Footprinting:
+---
+title: "Simple Mail Transfer Protocol"
+date: 2025-08-23
+tags: [ipmi, service]
+port: [tcp, 25, 465, 587]
+---
 
-`$ sudo nmap 10.129.14.128 -sC -sV -p25`
+# Simple Mail Transfer Protocol
+
+## Enumeration
+
+*Common Commands*
+
+`sudo nmap 10.129.14.128 -sC -sV -p25`
 
 Open relay check:
 
-$ `sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v`
+`sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v`
 
-### Interacting with the service:
+### Interacting with the service
 
 `telnet 10.129.14.128 25`
+
+*Commands*
 
 | Command | Description |
 | --- |  --- |

@@ -1,23 +1,34 @@
-### Footprinting:
+---
+title: "Microsoft SQL Server"
+date: 2025-08-23
+tags: [mssql, service]
+port: [tcp, 1433]
+---
 
-```$ sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248```
+# Microsoft SQL Server
 
-### msfconsole:
+## Enumeration
 
-`msf6 auxiliary(scanner/mssql/mssql_ping) > set rhosts 10.129.201.248`
+```bash
+sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
+```
 
-### Connecting:
+### Msfconsole
 
-`python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth`
+```bash
+# msfconsole scan
+msf6 use auxiliary(scanner/mssql/mssql_ping
 
-[MSSQL Cheat Sheet](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)
+# Connecting 
+python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth
+```
 
-Clients:
+### Clients
 
-| mssql-cli | SQL Server PowerShell | HeidiSQL | SQLPro | Impacket's mssqlclient.py |
-| --- |  --- |  --- |  --- |  --- |
+- mssql-cli,  SQL Server PowerShell,  HeidiSQL,  SQLPro,  Impacket's mssqlclient.py
 
-Databases:
+
+### Database information
 
 | Default System Database | Description |
 | --- |  --- |
@@ -26,3 +37,7 @@ Databases:
 | msdb | The SQL Server Agent uses this database to schedule jobs & alerts |
 | tempdb | Stores temporary objects |
 | resource | Read-only database containing system objects included with SQL server |
+
+### Service Information
+
+- [MSSQL Cheat Sheet](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)

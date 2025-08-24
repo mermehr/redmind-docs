@@ -1,30 +1,33 @@
-Footprinting:
+---
+title: "Server Message Block"
+date: 2025-08-23
+tags: [smb, rcpclient, smbclient, smbmap service]
+port: [tcp, 445, 137, 138, 139]
+---
+
+# Server Message Block
+
+## Enumeration
+
+*Common Commands*
 
 `sudo nmap 10.129.14.128 -sV -sC -p139,445`
 
-#### Default Configuration
+#### SMBClient
 
-:
-
-`cat /etc/samba/smb.conf | grep -v "#\|\;" `
-
-#### Connecting to the Share
-
-:
-
--   List Shares:
+*List Shares:*
 
 `smbclient -N -L //10.129.14.128`
 
-\-Connect to share:
+*Connect to share:*
 
 `smbclient //10.129.14.128/notes`
 
-#### RPCclient
+### RPCclient
 
 `rpcclient -U "" 10.129.14.128`
 
-Enumeration:
+*Commands:*
 
 | Query | Description |
 | --- |  --- |
@@ -36,22 +39,22 @@ Enumeration:
 | enumdomusers | Enumerates all domain users. |
 | queryuser <RID> | Provides information about a specific user. |
 
-#### Brute Forcing User RIDs
+### Brute Forcing User RIDs
 
-```
+`
 for i in $(seq 500 1100);do rpcclient -N -U "" 10.129.14.128 -c "queryuser 0x$(printf '%x\\n' $i)" | grep "User Name\\|user\_rid\\|group\_rid" && echo "";done
-```
+`
 
-#### Impacket - Samrdump.py
+### Impacket - Samrdump.py
 
-```
+`
 samrdump.py 10.129.14.128
-```
+`
 
-#### SMBmap
+### SMBmap
 
 `smbmap -H 10.129.14.128`
 
-#### Enum4Linux-ng - Enumeration
+### Enum4Linux-ng - Enumeration
 
 `./enum4linux-ng.py 10.129.14.128 -A`

@@ -41,5 +41,3 @@ Hack The Box machine reports and academy notes:
 📎 [`github.com/mermehr/HTB/`](https://github.com/mermehr/HTB/)
 
 ---
-
-> Built with intention

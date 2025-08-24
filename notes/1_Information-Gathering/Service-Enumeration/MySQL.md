@@ -1,35 +1,25 @@
-# MySQL
-
-$ `sudo nmap 10.129.14.128 -sV -sC -p3306 --script mysql*`
-
-## Interacting
-
-`$ mysql -u root -h 10.129.14.132`
-
-`$ mysql -u root -pP4SSw0rd -h 10.129.14.128`
-
+---
+title: "MySQL"
+date: 2025-08-23
+tags: [mysql, service]
+port: [tcp, 3306]
 ---
 
-## Reference manuals
+# MySQL
 
-[MySQL Manual](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes)
+## Enumeration
 
-[MySQL Cheat Sheet](https://www.bytebase.com/reference/mysql/how-to/top-mysql-commands-with-examples/)
+*Common Commands*
 
-## Commands
+`sudo nmap 10.129.14.128 -sV -sC -p3306 --script mysql*`
 
+```bash
+mysql -u root -h 10.129.14.132
 
-| Command | Description |
-| --- |  --- |
-| mysql -u user -ppassword -h IP address | Connect to the MySQL server, no space on password |
-| show databases; | Show all databases. |
-| use database; | Select one of the existing databases. |
-| show tables; | Show all available tables in the selected database. |
-| show columns from table; | Show all columns in the selected table. |
-| select \* from table; | Show everything in the desired table. |
-| select \* from table> where column = "string>; | Search for needed string in the desired table. |
+mysql -u root -pP4SSw0rd -h 10.129.14.128
+```
 
-### Example 1
+*Example 1*
 
 ```bash
 mysql> show databases;
@@ -85,7 +75,7 @@ mysql> SELECT \* FROM users WHERE username LIKE "HTB";
 1 row in set (0.00 sec)
 ```
 
-### Example 2
+*Example 2*
 
 ```bash
 mysql> use sys;
@@ -120,4 +110,20 @@ mysql> select host, unique_users from host_summary;
 2 rows in set (0,01 sec)
 ```
 
----
+### Command Reference
+
+
+| Command | Description |
+| --- |  --- |
+| mysql -u user -ppassword -h IP address | Connect to the MySQL server, no space on password |
+| show databases; | Show all databases. |
+| use database; | Select one of the existing databases. |
+| show tables; | Show all available tables in the selected database. |
+| show columns from table; | Show all columns in the selected table. |
+| select \* from table; | Show everything in the desired table. |
+| select \* from table> where column = "string>; | Search for needed string in the desired table. |
+
+### Reference manuals
+
+- [MySQL Manual](https://dev.mysql.com/doc/refman/8.0/en/system-schema.html#:~:text=The%20mysql%20schema%20is%20the,used%20for%20other%20operational%20purposes)
+- [MySQL Cheat Sheet](https://www.bytebase.com/reference/mysql/how-to/top-mysql-commands-with-examples/)

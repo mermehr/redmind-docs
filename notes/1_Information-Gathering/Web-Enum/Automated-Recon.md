@@ -1,8 +1,14 @@
+---
+title: "Automating Recon"
+date: 2025-08-23
+tags: [recon, finalrecon, recon-ng, theharvester, spiderfoot, osint]
+---
+
 # Automating Recon
 
 ## Reconnaissance Frameworks
 
-- [FinalRecon](https://github.com/thewhiteh4t/FinalRecon)
+[FinalRecon](https://github.com/thewhiteh4t/FinalRecon)
 
 >A Python-based reconnaissance tool offering a range of modules for different tasks like SSL certificate checking, Whois information gathering, header analysis, and crawling. Its modular structure enables easy customisation for specific needs.
 
@@ -21,6 +27,8 @@
 [OSINT Framework](https://osintframework.com/)
 
 >A collection of various tools and resources for open-source intelligence gathering. It covers a wide range of information sources, including social media, search engines, public records, and more.
+
+---
 
 ## FinalRecon
 

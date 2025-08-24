@@ -1,9 +1,17 @@
-# Creepy Crawlies
+---
+title: "Web Crawling"
+date: 2025-08-23
+tags: [recon, scrappy, reconspider]
+---
 
-1. Burp Suite Spider
-2. OWASP ZAP
-3. Scrapy
-4. Apache Nutch
+# Web Crawling 
+
+## Frameworks
+
+- Burp Suite Spider
+- OWASP ZAP
+- Scrapy
+- Apache Nutch
 
 **Scrapy - Install:**
 
@@ -11,6 +19,8 @@
 
 **ReconSpider:**
 
-`wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip`
+```bash
+wget -O ReconSpider.zip https://academy.hackthebox.com/storage/modules/144/ReconSpider.v1.2.zip
 
-`python3 ReconSpider.py http://inlanefreight.com`
+python3 ReconSpider.py http://inlanefreight.com
+```
