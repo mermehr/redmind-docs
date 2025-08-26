@@ -1,13 +1,40 @@
 ---
-title: "Server Message Block"
-date: 2025-08-23
-tags: [smb, rcpclient, smbclient, smbmap service]
-port: [tcp, 445, 137, 138, 139]
+title: SMB
+tags: [service, enum, windows, fileshare]
+service: SMB
+protocol: ['tcp']
+port: [139, 445]
+auth: ['anonymous', 'password', 'ntlm', 'kerberos']
+tools: ['nmap', 'smbclient', 'crackmapexec', 'enum4linux', 'impacket']
+notes: "Null sessions, weak shares, SMB signing, relaying attacks"
 ---
 
 # Server Message Block
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Service discovery → `nmap -p 139,445 --script=smb*`
+- [ ] Null sessions → `smbclient -L //target/ -N`
+- [ ] User/group enumeration → `enum4linux -a`
+- [ ] Share listing → `smbmap -H target`
+
+### Attack Paths
+- Null session → gather usernames/shares → brute force / password spray
+- Weak/default creds → direct access to shares
+- SMB relay (Responder + ntlmrelayx)
+- Exploits → EternalBlue (MS17-010), SMBGhost
+- Lateral movement → Pass-the-Hash, Kerberos tickets
+
+### Auxiliary Notes
+- Always check for SMB signing (mitigates relays).
+- Scanning can trigger AV/IDS in corp environments.
+- Loot shares for configs, saved creds, cleartext passwords.
+- Post-exfil → dump SAM database (`impacket-secretsdump`).
+
+
+
+## General Enumeration
 
 *Common Commands*
 

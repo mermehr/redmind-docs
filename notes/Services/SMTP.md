@@ -1,13 +1,36 @@
 ---
-title: "Simple Mail Transfer Protocol"
-date: 2025-08-23
-tags: [ipmi, service]
-port: [tcp, 25, 465, 587]
+title: SMTP
+tags: [service, enum, mail]
+service: SMTP
+protocol: ['tcp']
+port: [25, 465, 587]
+auth: ['anonymous-relay', 'password', 'starttls']
+tools: ['nmap', 'smtp-user-enum', 'swaks', 'hydra']
+notes: "User enumeration, relay abuse, spoofing, weak auth"
 ---
 
 # Simple Mail Transfer Protocol
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Banner grab → `nc <target> 25`
+- [ ] VRFY/EXPN → `smtp-user-enum -U users.txt -t <target>`
+- [ ] Test relay → `swaks --server <target>`
+
+### Attack Paths
+- Open relay → send spoofed mail
+- User enumeration → valid usernames for brute force
+- Weak creds → brute force or spray
+- Exploits in mail server software (Exim, Postfix)
+
+### Auxiliary Notes
+- Good source of usernames in corp environments.
+- Relay tests can be noisy; proceed carefully.
+
+
+
+## General Enumeration
 
 *Common Commands*
 

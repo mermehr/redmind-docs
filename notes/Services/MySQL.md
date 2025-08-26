@@ -1,13 +1,37 @@
 ---
-title: "MySQL"
-date: 2025-08-23
-tags: [mysql, service]
-port: [tcp, 3306]
+title: MySQL
+tags: [service, enum, database]
+service: MySQL
+protocol: ['tcp']
+port: [3306]
+auth: ['password', 'default-creds', 'local-socket']
+tools: ['nmap', 'mysql', 'mysql-client', 'hydra']
+notes: "Try default creds; LOAD DATA INFILE for file read/write"
 ---
 
 # MySQL
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Banner grab → `mysql -u root -p -h <target>`
+- [ ] Nmap NSE → `nmap --script=mysql* -p3306 <target>`
+- [ ] Query version → `SELECT @@version;`
+
+### Attack Paths
+- Default creds (`root/root`, no password)
+- File read/write via `LOAD DATA INFILE` / `SELECT INTO OUTFILE`
+- User-defined functions (UDF) for local privilege escalation
+- Abuse MySQL for pivoting via user grants
+
+### Auxiliary Notes
+- Often exposed internally with weak auth.
+- Post-ex → dump user tables, look for creds in cleartext.
+- If filesystem accessible, webshell dropper via OUTFILE.
+
+
+
+## General Enumeration
 
 *Common Commands*
 

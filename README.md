@@ -12,13 +12,13 @@ Former infrastructure tech turned offensive security practitioner. Strong ground
 
 Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and tool-chains.
 
-See: [`redmind-scripts`](https://github.com/mermehr/redmind-scripts/) for all scripts mentioned in logs. As they will not be directly linked.
+See: [`redmind-scripts`](https://github.com/mermehr/redmind-scripts/) for all some scripts mentioned in logs. As they will not be directly linked.
 
 > _Skills shown:_ Self-directed learning, documentation discipline, workflow evolution
 
 ---
 
-### Engagements
+### Boxes
 
 Reports of Hack The Box, VulnHub, and other lab machines. Includes enumeration, exploit chains, privilege escalation, and cleanup steps.
 
@@ -26,9 +26,11 @@ Reports of Hack The Box, VulnHub, and other lab machines. Includes enumeration, 
 
 ---
 
-### Cheat Sheets
+### Notes
 
 Quick-access references for enumeration, reverse shells, SQL injection, privilege escalation, and more — formatted for fast ops recall.
+
+- This area will be in a state of flux, as it will be constantly updated and restructured.
 
 > _Skills shown:_ Curated research, operational speed, technique consolidation
 
@@ -37,9 +39,9 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 ### [Scripts & Tooling Repo](https://github.com/mermehr/remind-scripts)
 
 - Python and Bash tools for automation, parsing, and red team support.
-- Includes smart Kali installer for Linux Mint with fallback logic (GitHub/Flatpak).
-  
-> _Skills shown:_ CLI development, subprocess control, system detection, defensive tool integration
+- Includes Network, Reconnaissance, System and Note-taking scripts.
+- Mainly are custom scripts, some networking scripts are modified from ***Black Hat Python***.
+> _Skills shown:_ CLI development, subprocess control, system interfacing, offensive tool integration
 
 ---
 
@@ -48,7 +50,7 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 - **Languages:** Python, Bash, PowerShell  
 - **Systems:** Linux (Mint, Arch, Kali), Windows Server  
 - **Platforms:** VirtualBox, QEMU/KVM, WSL2  
-- **Security Stack:** Nmap, Zeek, Suricata, Burp Suite, Wireshark, Fail2Ban, OpenVAS  
+- **Offensive Toolkit:** Nmap, Burp Suite, Gobuster, Hydra, LinPEAS  
 - **Version Control:** Git, GitHub CLI
 
 ---
@@ -57,7 +59,7 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 
 - Red team workflows and exploit dev
 - Privilege escalation (Linux & Windows)
-- Python scripting for automation and recon
+- Python/Bash scripting for automation and recon
 - OSCP-aligned methodology
 - HTB Academy - Penetration Tester Pathway
 

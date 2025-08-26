@@ -1,14 +1,37 @@
 ---
-title: "Oracle Database Server"
-date: 2025-08-23
-tags: [orcl, sqlplus, odat, service]
-port: [tcp, 1521]
-
+title: Oracle DB
+tags: [service, enum, database]
+service: Oracle
+protocol: ['tcp']
+port: [1521]
+auth: ['password', 'default-creds', 'sid-bruteforce', 'oracle-net']
+tools: ['nmap', 'sqlplus', 'odat.py']
+notes: "SID brute force, weak creds, DB links, check PUBLIC roles"
 ---
 
 # Oracle Database Server
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Banner grab → `nmap -p1521 --script=oracle* <target>`
+- [ ] SID brute force → `odat sidguesser -s <target>`
+- [ ] Login test with `sqlplus user/pass@host:1521/sid`
+
+### Attack Paths
+- Default creds (scott/tiger, system/manager, etc.)
+- SID brute force → unauthorized DB access
+- Abuse PUBLIC role grants
+- DB links → pivot to other databases
+
+### Auxiliary Notes
+- Oracle client tools may be needed for full access.
+- Good chance of finding plaintext creds inside DB tables.
+- In labs, weak/default accounts are common footholds.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

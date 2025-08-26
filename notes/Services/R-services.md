@@ -1,13 +1,34 @@
 ---
-title: "R-services"
-date: 2025-08-23
-tags: [rcp, rsh, rexec, rlogin, service]
-port: [tcp, 512, 513, 514]
+title: R-services
+tags: [service, enum, legacy]
+service: R-services (rsh, rexec, rlogin)
+protocol: ['tcp']
+port: [512, 513, 514]
+auth: ['trusted-hosts', 'cleartext-passwords', '.rhosts/.netrc']
+tools: ['nmap', 'rsh', 'rexec']
+notes: "Legacy protocols, trust relationships exploitable; check .rhosts"
 ---
 
 # R-Services
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Banner grab with nmap → `nmap -p512,513,514 --script=rpc* <target>`
+- [ ] Check for trust files (.rhosts, hosts.equiv)
+
+### Attack Paths
+- Trusted host relationships → login without password
+- Cleartext passwords → sniffable traffic
+- Abuse `.rhosts` or `.netrc` for lateral movement
+
+### Auxiliary Notes
+- Rare in modern environments; often disabled.
+- If present, very high-value for lateral access.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

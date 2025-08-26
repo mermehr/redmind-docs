@@ -1,13 +1,38 @@
 ---
-title: "File Transfer Protocol"
-date: 2025-08-23
-tags: [ftp, service]
-port: [tcp, 21]
+title: FTP
+tags: [service, enum]
+service: FTP
+protocol: ['tcp']
+port: [21]
+auth: ['anonymous', 'password', 'tls-auth']
+tools: ['nmap', 'ftp', 'hydra', 'medusa']
+notes: "Check anonymous login, weak creds, cleartext vs AUTH TLS"
 ---
 
 # File Transfer Protocol
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Check for anonymous login → `ftp <target>`
+- [ ] Banner grab → `nc <target> 21`
+- [ ] Recursive directory listing → `ls -R`
+- [ ] Nmap NSE → `nmap --script=ftp* -p21 <target>`
+
+### Attack Paths
+- Anonymous login → file leaks / upload webshells
+- Weak passwords → brute force via hydra/medusa
+- Cleartext creds over network → sniff with Wireshark/tcpdump
+- Exploits in old vsftpd / ProFTPD versions
+
+### Auxiliary Notes
+- Try uploading test files if permissions allow.
+- Watch for writable web roots (easy shell).
+- Passive vs active FTP can matter in firewalled labs.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

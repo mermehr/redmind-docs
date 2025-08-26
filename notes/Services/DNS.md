@@ -1,11 +1,34 @@
 ---
-title: "Domain Name System"
-date: 2025-08-23
-tags: [dns, dnsenum, dnsrecon, service]
-port: [udp, tcp, 53]
+title: DNS
+tags: [service, enum]
+service: DNS
+protocol: ['udp', 'tcp']
+port: [53]
+auth: ['none']                    # TSIG exists but rare in CTF/HTB
+tools: ['nmap', 'dig', 'nslookup', 'fierce', 'dnsrecon']
+notes: "Often overlooked for zone transfers and internal enum"
 ---
 
 # Domain Name System
+
+## Common Attack Paths
+
+### Enumeration
+- [ ] Zone transfers → `dig axfr @<nameserver> <domain>`
+- [ ] Brute subdomains → `dnsrecon -d <domain> -t brt`
+- [ ] Reverse lookups → `dnsrecon -r <ip-range>`
+- [ ] Identify internal hostnames via misconfigured DNS
+
+### Attack Paths
+- Zone transfer → internal host discovery
+- Subdomain brute force → hidden apps / staging environments
+- Cache poisoning (rare, lab scenarios)
+- Exploiting dynamic DNS in AD → privilege escalation
+
+### Auxiliary Notes
+- Often overlooked; DNS can leak entire internal hostmap.
+- Check both UDP/53 and TCP/53 for transfer attempts.
+- Useful pivot point into Active Directory environments.
 
 ## Passive Enumeration
 
@@ -42,7 +65,6 @@ dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/use
 | Tool | Description |
 | --- |  --- |
 | [dnsenum](https://github.com/fwaeytens/dnsenum) | Comprehensive DNS enumeration tool that supports dictionary and brute-force attacks for discovering subdomains. |
-| --- |  --- |
 | [fierce](https://github.com/mschwager/fierce) | User-friendly tool for recursive subdomain discovery, featuring wildcard detection and an easy-to-use interface. |
 | [dnsrecon](https://github.com/darkoperator/dnsrecon) | Versatile tool that combines multiple DNS reconnaissance techniques and offers customisable output formats. |
 | [amass](https://github.com/owasp-amass/amass) | Actively maintained tool focused on subdomain discovery, known for its integration with other tools and extensive data sources. |

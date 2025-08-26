@@ -1,12 +1,36 @@
 ---
-title: "IMAP and POP3"
-date: 2025-08-23
-tags: [imap, pop3, service]
-port: [tcp, 143, 993, 110, 995]
+title: IMAP-POP3
+tags: [service, enum, mail]
+service: IMAP/POP3
+protocol: ['tcp']
+port: [110, 143, 993, 995]
+auth: ['password', 'starttls', 'ssl/tls']
+tools: ['nmap', 'openssl', 'hydra']
+notes: "Mail services; test plaintext vs TLS; creds often reused"
 ---
 # IMAP and POP3
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Banner grab → `openssl s_client -connect <target>:143`
+- [ ] Test plaintext login → `telnet <target> 143`
+- [ ] Nmap scripts → `nmap --script=imap* -p143,993 <target>`
+
+### Attack Paths
+- Weak creds → brute force common accounts
+- Cred reuse → mailboxes often store VPN/AD passwords
+- Downgrade STARTTLS → capture creds in cleartext
+- Exploits in old Dovecot/Courier servers
+
+### Auxiliary Notes
+- Look for creds inside inbox (VPN configs, password resets).
+- IMAP/POP3 often tied to corporate AD accounts.
+- Try both IMAP and POP3 — some hosts run both.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

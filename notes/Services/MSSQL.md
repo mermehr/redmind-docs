@@ -1,13 +1,38 @@
 ---
-title: "Microsoft SQL Server"
-date: 2025-08-23
-tags: [mssql, service]
-port: [tcp, 1433]
+title: MSSQL
+tags: [service, enum, database]
+service: MSSQL
+protocol: ['tcp']
+port: [1433]
+auth: ['password', 'integrated-auth', 'ntlm', 'kerberos', 'sa-default']
+tools: ['nmap', 'sqsh', 'impacket-mssqlclient']
+notes: "Check xp_cmdshell, weak creds, trusted links"
 ---
 
 # Microsoft SQL Server
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Nmap scripts → `nmap -p1433 --script=ms-sql* <target>`
+- [ ] Login test with `sqsh` or `mssqlclient.py`
+- [ ] Query server info → `SELECT @@version`
+- [ ] Check for linked servers
+
+### Attack Paths
+- Weak creds (`sa/blank`, `sa/password`)
+- Enable or abuse `xp_cmdshell` for OS command exec
+- Linked servers → pivot to other DBs/hosts
+- Pass-the-Hash / Kerberos authentication abuse
+
+### Auxiliary Notes
+- SQL authentication may fall back to NTLM — relay attacks possible.
+- Watch for stored procedures with elevated privileges.
+- Post-ex → dump DB contents or pivot deeper into AD.
+
+
+
+## General Enumeration
 
 ```bash
 sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248

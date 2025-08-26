@@ -1,13 +1,36 @@
 ---
-title: "Intelligent Platform Management Interface"
-date: 2025-08-23
-tags: [ipmi, service]
-port: [udp, 623]
+title: IPMI
+tags: [service, enum]
+service: IPMI
+protocol: ['udp', 'tcp']
+port: [623]
+auth: ['default-creds', 'password', 'null-auth (cipher0)']
+tools: ['nmap', 'ipmitool', 'hydra']
+notes: "Baseboard management; weak/default creds and cipher0"
 ---
 
 # Intelligent Platform Management Interface
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Check cipher 0 auth bypass → `ipmitool -I lanplus -C 0 -U "" -P ""`
+- [ ] Banner grab with nmap scripts → `nmap --script=ipmi* -p623 <target>`
+
+### Attack Paths
+- Default creds → `ADMIN/ADMIN`
+- Cipher 0 null authentication → full remote control
+- Dump hashes via IPMI auth → crack offline
+- Firmware upload / persistent backdoor
+
+### Auxiliary Notes
+- Dangerous: often runs out-of-band, gives BIOS/OS control.
+- Treat as high-value target if accessible.
+- Sometimes reachable only on management VLANs.
+
+
+
+## General Enumeration
 
 *Common Commands*
 

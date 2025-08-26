@@ -1,13 +1,34 @@
 ---
-title: "Simple Network Management Protocol"
-date: 2025-08-23
-tags: [snmp,snmpwalk, braa, onesixtyone service]
-port: [tcp, 25, 465, 587]
+title: SMTP
+tags: [service, enum, mail]
+service: SMTP
+protocol: ['tcp']
+port: [25, 465, 587]
+auth: ['anonymous-relay', 'password', 'starttls']
+tools: ['nmap', 'smtp-user-enum', 'swaks', 'hydra']
+notes: "User enumeration, relay abuse, spoofing, weak auth"
 ---
 
 # Simple Mail Transfer Protocol
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Check community strings → `snmpwalk -v2c -c public <target>`
+- [ ] Nmap NSE → `nmap --script=snmp* -p161 <target>`
+
+### Attack Paths
+- Default community strings (public/private) → system info leak
+- SNMPv3 weak creds → offline cracking
+- Routing tables, user lists, process info → recon gold
+
+### Auxiliary Notes
+- SNMP often exposes network maps and creds.
+- Easy win if misconfigured.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

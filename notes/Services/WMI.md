@@ -1,13 +1,34 @@
 ---
-title: "Windows Management Instrumentation"
-date: 2025-08-23
-tags: [wmi, service]
-port: [tcp, 135]
+title: WMI
+tags: [service, enum, windows, lateral]
+service: WMI
+protocol: ['tcp']
+port: [135]
+auth: ['ntlm', 'kerberos']
+tools: ['wmiexec.py', 'impacket', 'evil-winrm']
+notes: "Useful for lateral movement, remote command execution"
 ---
 
 # Windows Management Instrumentation
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Test with CrackMapExec → `cme winrm <target> -u user -p pass`
+- [ ] Banner grab → `nc <target> 5985`
+
+### Attack Paths
+- Valid domain creds → remote shell with Evil-WinRM
+- Kerberos ticket abuse for auth
+- Certificate-based authentication
+
+### Auxiliary Notes
+- One of the cleanest ways to get shell on Windows with creds.
+- Often used by admins, so less suspicious traffic.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 

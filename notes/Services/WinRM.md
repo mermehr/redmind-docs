@@ -1,16 +1,34 @@
 ---
-title: Windows Remote Management
-date: 2025-08-23
-tags:
-  - winrm
-  - evil-winrm
-  - service
-port:
+title: WinRM
+tags: [service, enum, windows, remote]
+service: WinRM
+protocol: ['tcp']
+port: [5985, 5986]
+auth: ['ntlm', 'kerberos', 'certificate']
+tools: ['evil-winrm', 'crackmapexec']
+notes: "Enabled by default in modern Windows; leverage domain creds"
 ---
 
 # Windows Remote Management
 
-## Enumeration
+## Common Attack Paths
+
+### Enumeration
+- [ ] Service probe → `nmap -p135 --script=msrpc-enum <target>`
+- [ ] Try `wmiexec.py` with creds
+
+### Attack Paths
+- Remote command exec with valid creds
+- Pivoting through AD environments
+- Credential dumping via WMI providers
+
+### Auxiliary Notes
+- Very stealthy compared to SMB/RDP.
+- Logs less obvious, good for lateral movement.
+
+
+
+## General Enumeration
 
 *Common Commands:*
 
