@@ -1,3 +1,5 @@
+# Footprinting
+
 Infrastructure-based Enumeration
 --------------------------------
 

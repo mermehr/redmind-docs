@@ -27,6 +27,8 @@
 
 ### HTB Notes
 
+
+
 ---
 
 ## Python
@@ -39,11 +41,13 @@
 
 **Scripts:**
 
-### Py Tools / Resource(s) Used
+### Tools / Resource(s) Used
 
 - 
   
 ### Python Notes
+
+
 
 
 ---

@@ -10,9 +10,9 @@ Former infrastructure tech turned offensive security practitioner. Strong ground
 
 ### Logs
 
-Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and toolchains.
+Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and tool-chains.
 
-See: [`custom-python-scripts`](https://github.com/mermehr/custom-python-scripts/) for all scripts mentioned in logs. As they will not be directly linked.
+See: [`redmind-scripts`](https://github.com/mermehr/redmind-scripts/) for all scripts mentioned in logs. As they will not be directly linked.
 
 > _Skills shown:_ Self-directed learning, documentation discipline, workflow evolution
 
@@ -34,7 +34,7 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 
 ---
 
-### [Scripts & Tooling](https://github.com/mermehr/custom-python-scripts)
+### [Scripts & Tooling Repo](https://github.com/mermehr/remind-scripts)
 
 - Python and Bash tools for automation, parsing, and red team support.
 - Includes smart Kali installer for Linux Mint with fallback logic (GitHub/Flatpak).

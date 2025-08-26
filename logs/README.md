@@ -11,7 +11,7 @@ Overview of foundational skills, certifications, and the pivot to red teaming pr
 **`daily/`**
 
 Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
-  
+
 **`weekly/` | `monthly/`**
 
 Summarized, high-level overviews of weekly/monthly progress. Useful for quick review, interviews, or journaling retrospectives.
@@ -33,11 +33,11 @@ All logs feed into the broader red team documentation repo:
 ---
 
 Scripts can be found in:  
-📎 [`github.com/mermehr/custom-python-scripts/`](https://github.com/mermehr/custom-python-scripts/)
+📎 [`github.com/mermehr/redmind-scripts/`](https://github.com/mermehr/redmind-scripts/)
 
 ---
 
 Hack The Box machine reports and academy notes:  
-📎 [`github.com/mermehr/HTB/`](https://github.com/mermehr/HTB/)
+📎 [`github.com/mermehr/boxes/`](https://github.com/mermehr/boxes/)
 
 ---
