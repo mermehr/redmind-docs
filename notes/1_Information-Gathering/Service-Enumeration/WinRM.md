@@ -1,8 +1,11 @@
 ---
-title: "Windows Remote Management"
+title: Windows Remote Management
 date: 2025-08-23
-tags: [winrm, evil-winrm, service]
-port: [tcp, 5985, 5986]
+tags:
+  - winrm
+  - evil-winrm
+  - service
+port:
 ---
 
 # Windows Remote Management
