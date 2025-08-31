@@ -17,7 +17,7 @@
 - **Path Direction**:
   - Switched from SOC/blue team to Red Team focus
   - Emphasis on hands-on hacking, enumeration, exploitation, and persistence
-  - Prioritized HTB labs and personal tooling over passive course watching
+  - Prioritised HTB labs and personal tooling over passive course watching
 
 ---
 
@@ -39,6 +39,6 @@
   - Red Team journal: [https://github.com/mermehr/redmind-docs](https://github.com/mermehr/redmind-docs)
   - Enumeration notes: `notes/`
 
-- Adopted Daily Loadout Strategy:
+- Adopted Daily Load-out Strategy:
   - Mix of: Course modules OSCP Bible + HTB lab box + Python practice
   - Reports to be written for boxes with real value
