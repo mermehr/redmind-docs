@@ -39,9 +39,12 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 ### [Scripts & Tooling Repo](https://github.com/mermehr/remind-scripts)
 
 - Python and Bash tools for automation, parsing, and red team support.
+
 - Includes Network, Reconnaissance, System and Note-taking scripts.
+
 - Mainly are custom scripts, some networking scripts are modified from ***Black Hat Python***.
-> _Skills shown:_ CLI development, subprocess control, system interfacing, offensive tool integration
+  
+  > _Skills shown:_ CLI development, subprocess control, system interfacing, offensive tool integration
 
 ---
 

@@ -11,16 +11,18 @@
 **Penetration Tester Pathway:**
 
 - ***Module - ***
-  - 
+  -
 
 ## Python
 
 **Black Hat Python:**
 
 - **Chapter 2** - ***SSH with Paramiko***
+  
   - Started work on a ssh server/client
 
 - **Scripts:**
+  
   - `ssh_cmd.py`
 
 ## Tools / Resource(s) Used
@@ -31,7 +33,5 @@
 ## Notes
 
 #### Python
-
-
 
 #### HTB

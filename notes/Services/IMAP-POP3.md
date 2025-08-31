@@ -7,28 +7,31 @@ port: [110, 143, 993, 995]
 auth: ['password', 'starttls', 'ssl/tls']
 tools: ['nmap', 'openssl', 'hydra']
 notes: "Mail services; test plaintext vs TLS; creds often reused"
+
 ---
+
 # IMAP and POP3
 
 ## Common Attack Paths
 
 ### Enumeration
+
 - [ ] Banner grab → `openssl s_client -connect <target>:143`
 - [ ] Test plaintext login → `telnet <target> 143`
 - [ ] Nmap scripts → `nmap --script=imap* -p143,993 <target>`
 
 ### Attack Paths
+
 - Weak creds → brute force common accounts
 - Cred reuse → mailboxes often store VPN/AD passwords
 - Downgrade STARTTLS → capture creds in cleartext
 - Exploits in old Dovecot/Courier servers
 
 ### Auxiliary Notes
+
 - Look for creds inside inbox (VPN configs, password resets).
 - IMAP/POP3 often tied to corporate AD accounts.
 - Try both IMAP and POP3 — some hosts run both.
-
-
 
 ## General Enumeration
 
@@ -53,33 +56,35 @@ openssl s_client -connect 10.129.14.128:imaps
 1 SELECT INBOX
 1 FETCH 1 BODY\[\]
 ```
+
 ## Command Reference
 
 ### IMAP Commands
-| Command | Description |
-| --- |  --- |
-| LOGIN username password | User's login. |
-| LIST "" \* | Lists all directories. |
-| CREATE "INBOX" | Creates a mailbox with a specified name. |
-| DELETE "INBOX" | Deletes a mailbox. |
-| RENAME "ToRead" "Important" | Renames a mailbox. |
-| LSUB "" \* | Returns a subset of names from the set of names that the User has declared as being active or subscribed. |
-| SELECT INBOX | Selects a mailbox so that messages in the mailbox can be accessed. |
-| UNSELECT INBOX | Exits the selected mailbox. |
-| FETCH <ID> all | Retrieves data associated with a message in the mailbox. |
-| CLOSE | Removes all messages with the Deleted flag set. |
-| LOGOUT | Closes the connection with the IMAP server. |
+
+| Command                     | Description                                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------------------------------- |
+| LOGIN username password     | User's login.                                                                                             |
+| LIST "" \*                  | Lists all directories.                                                                                    |
+| CREATE "INBOX"              | Creates a mailbox with a specified name.                                                                  |
+| DELETE "INBOX"              | Deletes a mailbox.                                                                                        |
+| RENAME "ToRead" "Important" | Renames a mailbox.                                                                                        |
+| LSUB "" \*                  | Returns a subset of names from the set of names that the User has declared as being active or subscribed. |
+| SELECT INBOX                | Selects a mailbox so that messages in the mailbox can be accessed.                                        |
+| UNSELECT INBOX              | Exits the selected mailbox.                                                                               |
+| FETCH <ID> all              | Retrieves data associated with a message in the mailbox.                                                  |
+| CLOSE                       | Removes all messages with the Deleted flag set.                                                           |
+| LOGOUT                      | Closes the connection with the IMAP server.                                                               |
 
 ### POP3 Commands
 
-| Command | Description |
-| --- |  --- |
-| USER username | Identifies the user. |
-| PASS password | Authentication of the user using its password. |
-| STAT | Requests the number of saved emails from the server. |
-| LIST | Requests from the server the number and size of all emails. |
-| RETR id | Requests the server to deliver the requested email by ID. |
-| DELE id | Requests the server to delete the requested email by ID. |
-| CAPA | Requests the server to display the server capabilities. |
-| RSET | Requests the server to reset the transmitted information. |
-| QUIT | Closes the connection with the POP3 server. |
+| Command       | Description                                                 |
+| ------------- | ----------------------------------------------------------- |
+| USER username | Identifies the user.                                        |
+| PASS password | Authentication of the user using its password.              |
+| STAT          | Requests the number of saved emails from the server.        |
+| LIST          | Requests from the server the number and size of all emails. |
+| RETR id       | Requests the server to deliver the requested email by ID.   |
+| DELE id       | Requests the server to delete the requested email by ID.    |
+| CAPA          | Requests the server to display the server capabilities.     |
+| RSET          | Requests the server to reset the transmitted information.   |
+| QUIT          | Closes the connection with the POP3 server.                 |
