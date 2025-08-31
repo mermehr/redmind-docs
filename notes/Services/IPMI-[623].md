@@ -23,7 +23,7 @@ notes: "Baseboard management; weak/default creds and cipher0"
 - Dump hashes via IPMI auth → crack offline
 - Firmware upload / persistent backdoor
 
-### Auxiliary Notes
+# Auxiliary Notes
 - Dangerous: often runs out-of-band, gives BIOS/OS control.
 - Treat as high-value target if accessible.
 - Sometimes reachable only on management VLANs.
@@ -47,7 +47,7 @@ msf6 > use auxiliary/scanner/ipmi/ipmi_dumphashes
 
 ### Crack the hashes with hascat
 
-```
+```bash
 hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
 
 # With other wordlist

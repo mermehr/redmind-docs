@@ -4,7 +4,7 @@ tags: [service, enum]
 service: DNS
 protocol: ['udp', 'tcp']
 port: [53]
-auth: ['none']                    # TSIG exists but rare in CTF/HTB
+auth: ['none']	# TSIG exists but rare in CTF/HTB
 tools: ['nmap', 'dig', 'nslookup', 'fierce', 'dnsrecon']
 notes: "Often overlooked for zone transfers and internal enum"
 ---
@@ -30,6 +30,10 @@ notes: "Often overlooked for zone transfers and internal enum"
 - Check both UDP/53 and TCP/53 for transfer attempts.
 - Useful pivot point into Active Directory environments.
 
+---
+
+
+
 ## Passive Enumeration
 
 *Common Commands:*
@@ -47,7 +51,7 @@ dig axfr @nsztm1.digi.ninja zonetransfer.me
 
 ### Subdomain Brute Forcing
 
-**[DNSEnum](./../Web-Enum/Tools/DNSEnum.md)**
+### **[DNSEnum](./../Web-Enum/Tools/DNSEnum.md)**
 
 *Recursive Scan:*
 
