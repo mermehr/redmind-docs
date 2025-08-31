@@ -4,7 +4,6 @@ tags: [download, upload, wget, curl, base64]
 tools: ['ftp', 'openssl', 'python']
 notes: "Various file transfer techniques for Linux"
 ---
-
 # Linux File Transfer
 
 ## Download Operations
