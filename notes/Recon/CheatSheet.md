@@ -1,8 +1,15 @@
-# 🧭 Enumeration Cheat Sheet
-
+---
+title: Enumeration Cheat Sheet
+tags: [service, enum, cheatsheet]
+tools: ['many']
+notes: "Enumeration cheat sheet for common services"
 ---
 
-## 🧠 DNS Enumeration
+
+
+# Enumeration Cheat Sheet
+
+## DNS Enumeration
 
 ### Custom Host Enumeration
 ```bash
@@ -33,7 +40,7 @@ nslookup
 
 ---
 
-## 🔌 TCP/UDP Enumeration
+## TCP/UDP Enumeration
 
 ### Netcat Scanning
 
@@ -75,7 +82,7 @@ Test-NetConnection -Port 445 <host>
 
 ---
 
-## 📁 SMB Enumeration
+## SMB Enumeration
 
 ```bash
 sudo nbtscan -r <network>/24
@@ -89,7 +96,7 @@ net view \\dc01 /all
 
 ---
 
-## 📧 SMTP Enumeration
+## SMTP Enumeration
 
 **Manual User Verification**
 ```bash
@@ -129,7 +136,7 @@ telnet <host> 25
 
 ---
 
-## 🛰 SNMP Enumeration
+## SNMP Enumeration
 
 ```bash
 sudo nmap -sU --open -p 161 192.168.50.1-254 -oG open-snmp.txt
@@ -157,7 +164,7 @@ snmpwalk -c public -v1 <host> 1.3.6.1.2.1.6.13.1.3       # Listening TCP Ports
 
 ---
 
-## ☁️ AWS S3 Bucket Enumeration
+## AWS S3 Bucket Enumeration
 
 ```bash
 # Check Auth

@@ -1,6 +1,6 @@
 # Red Team Learning Log
 
-This folder contains my red team learning progression, structured weekly and daily for accountability, review, and knowledge reinforcement.
+This folder contains my red team learning progression, structured weekly and monthly for accountability, review, and knowledge reinforcement.
 
 ## Structure
 
@@ -8,13 +8,15 @@ This folder contains my red team learning progression, structured weekly and dai
 
 Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
 
-**`daily/`**
+[daily/](./daily)
 
-Daily breakdowns of learning activity — Python progress, HTB engagements, study notes, tooling insights.
+> [!IMPORTANT]
+>
+> Daily logs ended as of August 31st, 2025. Weekly and monthly logs will still be maintained.
 
-**`weekly/` | `monthly/`**
+[weekly/](./weekly) + [monthly/](./monthly)
 
-Summarized, high-level overviews of weekly/monthly progress. Useful for quick review, interviews, or journaling retrospectives.
+Comprehensive yet concise progress overviews (weekly/monthly) tailored for rapid review, professional interviews, and reflective retrospectives.
 
 ## Purpose
 

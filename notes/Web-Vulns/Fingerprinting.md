@@ -1,7 +1,8 @@
 ---
-title: "Fingerprinting Web Services"
-date: 2025-08-23
-tags: [recon, nikto, wafw00f]
+title: Fingerprinting Web Services
+tags: [recon, enum]
+tools: ['nikto', 'wafw00f']
+notes: "Helpful information for enumerating web services"
 ---
 
 # Fingerprinting Web Services

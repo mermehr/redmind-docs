@@ -1,7 +1,8 @@
 ---
-title: "Automating Recon"
-date: 2025-08-23
-tags: [recon, finalrecon, recon-ng, theharvester, spiderfoot, osint]
+title: Automating Recon
+tags: [recon, automation]
+tools: ['finalrecon', 'recon-ng', 'theharvester', 'spiderfoot', 'osint']
+notes: " Automated reconnaissance tooling"
 ---
 
 # Automating Recon

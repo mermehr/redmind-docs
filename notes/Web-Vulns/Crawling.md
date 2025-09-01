@@ -1,7 +1,8 @@
 ---
-title: "Web Crawling"
-date: 2025-08-23
-tags: [recon, scrappy, reconspider]
+title: Web Crawling
+tags: [recon, enum]
+tools: ['scrappy', 'reconspider']
+notes: "Web crawling techniques"
 ---
 # Web Crawling 
 

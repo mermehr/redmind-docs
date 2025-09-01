@@ -1,3 +1,10 @@
+---
+title: Command Injection
+tags: [recon, exploit, command, webvuln, injection, automated, payload]
+tools: ['nulcei', 'burpsuite', 'metasploit']
+notes: "Common web service command injection ttp's"
+---
+
 # Command Injection
 
 **Command Injection** is a web security vulnerability  that allows an attacker to execute arbitrary system commands on the host operating system. This vulnerability occurs when an application passes  unsafe user supplied data to a system shell.
@@ -7,10 +14,7 @@
 Command injection occurs when an application executes system commands that  include user-supplied data without proper sanitization. For example, in  the code:
 
 ```php
-<?php
-$cmd = 'ping -c 4 ' . $_GET['host'];
-system($cmd);
-?>
+<?php $cmd = 'ping -c 4 ' . $_GET['host'];system($cmd);?>
 ```
 
 An attacker might input: `8.8.8.8; ls -la`, changing the command to:

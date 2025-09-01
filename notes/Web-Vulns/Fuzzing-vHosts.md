@@ -1,7 +1,8 @@
 ---
-title: "Virtual Host Discovery"
-date: 2025-08-23
-tags: [recon, vhost, gobuster, ffuf, feroxbuster]
+title: Virtual Host Discovery
+tags: [recon, vhost]
+tools: ['gobuster, 'ffuf', 'feroxbuster']
+notes: "Virtual host discovery techniques"
 ---
 
 # Virtual Host Discovery
