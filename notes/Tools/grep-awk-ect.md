@@ -16,8 +16,6 @@ Count the number of unique IP addresses:
 awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 ```
 
-## 
-
 ## Grep
 
 This command recursively searches for the term ‘ERROR’ in all files, demonstrating grep's text-searching prowess.
