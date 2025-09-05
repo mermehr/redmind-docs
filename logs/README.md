@@ -4,19 +4,21 @@ This folder contains my red team learning progression, structured weekly and mon
 
 ## Structure
 
-**`summary-pre-log.md`**
+[**summary-pre-log.md**](summary-pre-log.md)
 
 Overview of foundational skills, certifications, and the pivot to red teaming prior to June 13, 2025.
 
 [daily/](./daily)
 
-> [!IMPORTANT]
->
-> Daily logs ended as of August 31st, 2025. Weekly and monthly logs will still be maintained.
+Archived daily logs - no longer maintaining on GitHub.
 
-[weekly/](./weekly) + [monthly/](./monthly)
+[weekly/](./weekly)
 
-Comprehensive yet concise progress overviews (weekly/monthly) tailored for rapid review, professional interviews, and reflective retrospectives.
+Weekly breakdowns pulled from daily logs and learning activity — Python progress, HTB engagements, study notes, tooling insights.
+
+[monthly/](./monthly)
+
+Comprehensive yet concise progress overviews (monthly) tailored for rapid review, professional interviews, and reflective retrospectives.
 
 ## Purpose
 

@@ -3,17 +3,15 @@
 ## Foundation
 
 - **Certifications Completed**:
+  - Diploma in Network Security (Local College)
   - CCNA
   - CompTIA A+
   - CompTIA Network+
   - CompTIA Security+
-
 - **Courses**:
   - *Cisco Certified Ethical Hacker*
   - *SoC Analyst - Try Hack Me*
   - *Python Programming MOOC 2023 (University of Helsinki)*  
-    - Restarted from scratch to rebuild memory pathways and reinforce fundamentals
-
 - **Path Direction**:
   - Switched from SOC/blue team to Red Team focus
   - Emphasis on hands-on hacking, enumeration, exploitation, and persistence
