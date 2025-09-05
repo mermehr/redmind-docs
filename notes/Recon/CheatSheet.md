@@ -5,8 +5,6 @@ tools: ['many']
 notes: "Enumeration cheat sheet for common services"
 ---
 
-
-
 # Enumeration Cheat Sheet
 
 ## DNS Enumeration

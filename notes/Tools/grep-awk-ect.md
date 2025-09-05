@@ -46,8 +46,6 @@ Searching for open ports.
 nmap -p 1-100 localhost | grep 'open' | awk '{print $1, $3}'
 ```
 
-
-
 Here, grep, awk, and sort collaborate to list and organize open ports, providing valuable insights into system security.
 
 ```
