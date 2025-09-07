@@ -68,4 +68,4 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 
 ---
 
-> ⚠️ Some material is stored privately or offline. Message for access or context. T
+> ⚠️ Some material is stored privately or offline. Message for access or context.

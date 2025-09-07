@@ -1,3 +1,10 @@
+---
+title: Metasploit Command Reference
+tags: [cheatsheet, metasploit, msfconsole]
+category: tools
+notes: "Shamelessly stolen Metasploit cheatsheet from HTB Academy"
+---
+
 # Metasploit Command Reference
 
 ## MSFconsole Commands
