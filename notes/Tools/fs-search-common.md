@@ -25,6 +25,8 @@ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}'
 sed 's/bin/sbin/g'
 ```
 
+---
+
 ## Awk
 
 Extract usernames from the `/etc/passwd` file
@@ -42,6 +44,8 @@ Count the number of unique IP addresses and sort
 awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 ```
 
+---
+
 ## Grep
 
 ```
@@ -51,6 +55,8 @@ grep -r 'ERROR' /var/log/
 # RegEx
 grep -E "(my|false)" /etc/passwd
 ```
+
+---
 
 ## Find
 
@@ -72,6 +78,8 @@ Find a given file with parameters and list by amount found
 find / -type f -name *.conf -user root -size +25k -size -28k -newermt 2020-03-03 -exec ls -al {} \; 2>/dev/null | wc -l
 ```
 
+---
+
 ## Open ports
 
 Searching for open ports.
@@ -86,3 +94,4 @@ Here, grep, awk, and sort collaborate to list and organize open ports, providing
 netstat -tuln | grep 'LISTEN' | awk '{print $4}' | sort
 ```
 
+---

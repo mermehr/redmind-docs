@@ -5,8 +5,6 @@ tools: [linpeas, ssh]
 notes: "General Linux checklist"
 ---
 
-
-
 # 🐧 Linux Engagement Checklist
 
 ## Initial Access
@@ -30,6 +28,7 @@ notes: "General Linux checklist"
 - [ ] Kernel exploits (if old version) → searchsploit / exploit-db
 - [ ] Installed packages with known vulns → `dpkg -l` / `rpm -qa`
 - [ ] Misconfigured services (NFS, Docker, etc.)
+- [ ] Check for processes and sudo sessions for hijacking/caching
 - [ ] Run `linpeas.sh` (even if you already have root)
 
 ## Post-Exploitation
