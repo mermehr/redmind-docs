@@ -1,9 +1,4 @@
-# Nibbles  
-**OS:** Linux  
-**Difficulty:** Easy
-
----
-
+# HTB: Nibbles  
 ## Engagement Overview
 **Target:** HTB Nibbles  
 **Box IP:** 10.10.10.75  

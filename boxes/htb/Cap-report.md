@@ -1,4 +1,4 @@
-# HTB – Cap
+# HTB: Cap
 
 **OS:** Ubuntu 20.04.2  
 **Difficulty:** Easy  

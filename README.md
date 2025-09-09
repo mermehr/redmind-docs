@@ -31,6 +31,7 @@ Reports of Hack The Box, VulnHub, and other lab machines. Includes enumeration, 
 Quick-access references for enumeration, reverse shells, SQL injection, privilege escalation, and more — formatted for fast ops recall.
 
 - This area will be in a state of flux, as it will be constantly updated and restructured.
+- `penetration-testing`, `hackthebox`, `privilege-escalation`
 
 > _Skills shown:_ Curated research, operational speed, technique consolidation
 

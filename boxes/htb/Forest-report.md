@@ -1,8 +1,4 @@
 # HTB: Forest
-**Windows – Easy**
-
----
-
 ## Engagement Overview
 **Target:** Forest  
 **Box IP:** 10.10.10.161  

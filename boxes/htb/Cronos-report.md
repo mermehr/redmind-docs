@@ -1,8 +1,4 @@
-## HTB Cronos
-**Linux** - **Medium**
-
----
-
+# HTB: Cronos
 ## Engagement Overview
 **Target:Cronos**   
 **Box IP:10.10.10.13**   

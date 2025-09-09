@@ -1,4 +1,4 @@
-# Target: HTB – Shocker
+# HTB: Shocker
 
 ## Engagement Overview  
 **Target:** Shocker (HTB)  

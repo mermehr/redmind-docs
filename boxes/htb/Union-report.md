@@ -1,4 +1,4 @@
-# Target: HTB – Union
+# HTB: Union
 
 ## Engagement Overview
 **Target:** Union  

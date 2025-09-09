@@ -1,4 +1,4 @@
-# TwoMillion – Hack The Box
+# HTB: TwoMillion
 
 **Operating System:** Linux  
 **Difficulty:** Easy  

@@ -35,7 +35,7 @@
 
 - Journaling infrastructure:
   - Red Team journal: [https://github.com/mermehr/redmind-docs](https://github.com/mermehr/redmind-docs)
-  - Enumeration notes: `notes/`
+  - Pentest notes: `notes/`
 
 - Adopted Daily Load-out Strategy:
   - Mix of: Course modules OSCP Bible + HTB lab box + Python practice

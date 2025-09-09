@@ -1,9 +1,4 @@
-# Netmon
-
-**OS:** Windows  
-**Difficulty:** Easy
-
----
+# HTB: Netmon
 
 ## Engagement Overview
 

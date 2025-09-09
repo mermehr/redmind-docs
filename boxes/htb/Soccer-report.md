@@ -1,4 +1,4 @@
-# Target: HTB – Soccer
+# HTB: Soccer
 
 ## Engagement Overview
 **Target:** Soccer (HTB)  

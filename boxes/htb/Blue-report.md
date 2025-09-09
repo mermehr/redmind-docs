@@ -1,4 +1,4 @@
-# Target: HTB – Blue (aka Legacy)
+# HTB: Blue
 
 ## Engagement Overview
 **Target:** HTB: Blue  

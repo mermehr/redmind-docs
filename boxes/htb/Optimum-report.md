@@ -1,4 +1,4 @@
-## HTB: Cronos  
+# HTB: Cronos  
 **OS:** Linux  
 **Difficulty:** Medium  
 
