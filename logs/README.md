@@ -42,6 +42,6 @@ Scripts can be found in:
 ---
 
 Hack The Box machine reports and academy notes:  
-📎 [`github.com/mermehr/boxes/`](https://github.com/mermehr/boxes/)
+📎 [`github.com/mermehr/redmind-docs/boxes/`](https://github.com/mermehr/boxes/)
 
 ---
