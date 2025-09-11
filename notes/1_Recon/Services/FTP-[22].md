@@ -32,8 +32,6 @@ notes: "Check anonymous login, weak creds, cleartext vs AUTH TLS"
 
 ---
 
-
-
 ## General Enumeration
 
 ### Common Commands

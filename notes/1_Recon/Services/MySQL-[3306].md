@@ -29,7 +29,7 @@ notes: "Try default creds; LOAD DATA INFILE for file read/write"
 - Post-ex → dump user tables, look for creds in cleartext.
 - If filesystem accessible, webshell dropper via OUTFILE.
 
-
+---
 
 ## General Enumeration
 

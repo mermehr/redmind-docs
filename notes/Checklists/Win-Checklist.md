@@ -8,6 +8,7 @@ notes: "General Active Directory and Windows systems checklist"
 # 🏰 Active Directory Engagement Checklist
 
 ## Recon / Enumeration
+- [ ] Identify local user rights and sids → `whoami /all` /  `wmic useraccount get name,sid`
 - [ ] Identify domain name + forest → `nltest /dclist:<domain>` / `systeminfo`
 - [ ] Map domain trusts → BloodHound / `nltest /trusted_domains`
 - [ ] Users & groups → `net user /domain`, `net group "Domain Admins" /domain`

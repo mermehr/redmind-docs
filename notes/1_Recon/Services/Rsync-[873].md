@@ -26,7 +26,7 @@ notes: "Anonymous modules often expose sensitive files; check configs"
 - Great for pulling configs, DB dumps, and backups.
 - Writable modules = potential privilege escalation.
 
-
+---
 
 ## General Enumeration
 

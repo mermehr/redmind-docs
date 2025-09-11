@@ -1,9 +1,9 @@
----
+## Engagements & Modules  
 
-## Engagements & Operations  
-- **Target(s):**  
-- **Objectives:**  
-- **Status:**  
+| Target | Type | Status |
+| :----: | :--: | :----: |
+|        |      |        |
+|        |      |        |
 
 ---
 
@@ -21,9 +21,33 @@
 ---
 
 ## Knowledge & Skill Development  
-- Training modules completed (CEH, Cisco, HTB, etc.).  
-- New techniques, attack paths, or enumeration tricks learned.  
-- Python or scripting progress.  
+
+### Hack The Box  
+
+#### Academy - *Module*  
+Outline
+
+**Key Takeaways:**  
+- *Something*  
+
+**Notes:**  
+
+> *Note*
+
+---
+
+#### HTB – Additional Work  
+- Something
+
+---
+
+### Python  
+
+#### Source material  
+Outline
+
+**Scripts Produced:**  
+- `some_script.py` – Brief details 
 
 ---
 

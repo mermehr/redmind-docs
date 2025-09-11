@@ -26,7 +26,7 @@ notes: "Legacy protocols, trust relationships exploitable; check .rhosts"
 - Rare in modern environments; often disabled.
 - If present, very high-value for lateral access.
 
-
+---
 
 ## General Enumeration
 

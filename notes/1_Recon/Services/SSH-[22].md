@@ -27,7 +27,7 @@ notes: "Password brute force, weak keys, outdated versions"
 - Check `.ssh/authorized_keys` for persistence.
 - Privilege escalation via SSH keys found elsewhere.
 
-
+---
 
 ## General Enumeration
 

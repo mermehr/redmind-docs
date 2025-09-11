@@ -30,7 +30,7 @@ notes: "Check xp_cmdshell, weak creds, trusted links"
 - Watch for stored procedures with elevated privileges.
 - Post-ex → dump DB contents or pivot deeper into AD.
 
-
+---
 
 ## General Enumeration
 
