@@ -86,12 +86,3 @@ hydra -C user_pass.list ssh://10.100.38.23
 pip3 install defaultcreds-cheat-sheet
 creds search linksys
 `````
-
-
-
-
-
-
-
-
-

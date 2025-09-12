@@ -6,6 +6,8 @@ tools: ['john', 'hashcat', 'cewl']
 
 # Custom Wordlist with CeWL & Hashcat
 
+[Username Anarchy](https://github.com/urbanadventurer/username-anarchy) -Generator for usernames during pentest
+
 ## Gather Target OSINT & Build a Minimal HTML Base
 
 Focusing on personal details (names, dates, pets, locations) yields far
