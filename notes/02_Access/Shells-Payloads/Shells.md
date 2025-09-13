@@ -1,8 +1,8 @@
 ---
 title: Reverse Shells
+category: Access
 tags: [shell, netcat, exploit]
 tools: ['nc', 'netcat', 'ncat']
-notes: 'Various terminal reverse/bind shell commands'
 ---
 
 # Reverse Shells

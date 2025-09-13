@@ -1,12 +1,10 @@
 ---
-title: tmux
+title: Tmux commands and shortcuts
+category: Reference
 tags: [tool, terminal, multiplexing, cheatsheet]
-service: Terminal Multiplexer
-tools: ['tmux']
-notes: "Session management, windows, panes, copy mode, and configuration"
 ---
 
-# tmux Cheat Sheet
+# Tmux commands and shortcuts
 
 ## Session Management
 - Start new session:  

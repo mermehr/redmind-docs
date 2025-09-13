@@ -1,15 +1,15 @@
 ---
 title: Command Injection
+category: Web-Attacks
 tags: [recon, exploit, command, webvuln, injection, automated, payload]
 tools: ['nulcei', 'burpsuite', 'metasploit']
-notes: "Common web service command injection ttp"
 ---
 
 # Command Injection
 
 **Command Injection** is a web security vulnerability  that allows an attacker to execute arbitrary system commands on the host operating system. This vulnerability occurs when an application passes  unsafe user supplied data to a system shell.
 
-## How It Works
+## How
 
 Command injection occurs when an application executes system commands that  include user-supplied data without proper sanitization. For example, in  the code:
 
@@ -24,6 +24,20 @@ ping -c 4 8.8.8.8; ls -la
 ```
 
 This executes both the ping command and lists directory contents.
+
+---
+
+## Tools
+
+| Tool                                                         | Description                      | Primary Use Case                 |
+| ------------------------------------------------------------ | -------------------------------- | -------------------------------- |
+| [Commix](https://github.com/commixproject/commix)            | Automated command injection tool | Discovery and exploitation       |
+| Burp Suite                                                   | Web vulnerability scanner        | Traffic interception and testing |
+| NetCat                                                       | Network utility                  | Reverse shell handling           |
+| Metasploit                                                   | Exploitation framework           | Advanced payload delivery        |
+| [PowerSploit](https://github.com/PowerShellMafia/PowerSploit) | PowerShell post-exploitation     | Windows command execution        |
+
+---
 
 ## Detection
 

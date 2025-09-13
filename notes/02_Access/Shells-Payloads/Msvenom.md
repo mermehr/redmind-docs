@@ -1,11 +1,11 @@
 ---
 title: msfvenom
+category: Access
 tags: [tool, payload, exploits, cheatsheet]
 tools: ['msfvenom']
-notes: "Quick reference for generating reverse/bind shells and file format payloads"
 ---
 
-# msfvenom Cheat Sheet
+# msfvenom
 
 ## General Syntax
 `msfvenom -p <payload> LHOST=<ip> LPORT=<port> -f <format> -o <outfile>`

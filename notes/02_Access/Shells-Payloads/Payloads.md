@@ -1,8 +1,8 @@
 ---
 title: Windows Payload Generation
+category: Access
 tags: [download, upload, wget, curl]
 tools: ['ftp', 'openssl', 'python', 'impacket-smb-server']
-notes: "Various file transfer techniques for Windows/Active Directory"
 ---
 
 # Windows Payloads

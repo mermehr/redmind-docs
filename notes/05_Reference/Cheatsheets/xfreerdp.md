@@ -1,14 +1,10 @@
 ---
 title: xfreerdp3
+category: Reference
 tags: [tool, rdp, remote, cheatsheet]
-service: RDP
-protocol: ['tcp']
-port: [3389]
-tools: ['xfreerdp3']
-notes: "Common RDP connections, screen resizing, and drive/file sharing"
 ---
 
-# xfreerdp3 Cheat Sheet
+# xfreerdp3
 
 ## Basic Connection
 `xfreerdp3 +clipboard /size:1920x1080 /u:<user> /p:<pass> /v:<target>`

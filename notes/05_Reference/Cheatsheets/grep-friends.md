@@ -1,8 +1,8 @@
 ---
 title: Grep & Text Processing
+category: Reference
 tags: [cheatsheet, grep, awk, sed, ripgrep, text, cli]
-category: tools
-notes: "Focus on practical, memorable incantations. Prefer ripgrep (rg) where available for speed and sane defaults. GNU grep/awk/sed syntax assumed."
+tools: ['grep', 'rg', 'awk', 'sed']
 ---
 
 # Grep & Friends – Fast Text-Fu

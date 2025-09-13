@@ -1,8 +1,8 @@
 ---
 tittle: Linux Engagement Checklist
+category: Reference
 tags: [linux, enum, privesc, recon, exploit, checklist]
 tools: [linpeas, ssh]
-notes: "General Linux checklist"
 ---
 
 # 🐧 Linux Engagement Checklist

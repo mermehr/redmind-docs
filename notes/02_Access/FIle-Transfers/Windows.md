@@ -1,8 +1,8 @@
 ---
 title: Windows File Transfer
+category: Access
 tags: [download, upload, wget, curl, rdp, powershell]
 tools: ['ftp', 'openssl', 'python', 'impacket-smb-server']
-notes: "Various file transfer techniques for Windows/Active Directory"
 ---
 
 # Windows File Transfer

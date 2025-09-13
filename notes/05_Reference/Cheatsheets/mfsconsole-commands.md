@@ -1,8 +1,7 @@
 ---
 title: Metasploit Command Reference
+category: Reference
 tags: [cheatsheet, metasploit, msfconsole]
-category: tools
-notes: "Shamelessly stolen cheatsheet"
 ---
 
 # Metasploit Command Reference

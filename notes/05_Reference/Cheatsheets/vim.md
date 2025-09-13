@@ -1,12 +1,11 @@
 ---
 title: Vim
+category: Reference
 tags: [tool, editor, cheatsheet]
-service: Editor
 tools: ['vim', 'vi']
-notes: "Modal text editor; essential navigation, editing, search, and configuration commands"
 ---
 
-# Vim Cheat Sheet
+# Vim
 
 ## Modes
 - **Normal mode** → default mode (navigate, issue commands)  

@@ -1,7 +1,7 @@
 ---
 title: Enumeration Cheat Sheet
+category: Recon
 tags: [service, enum, cheatsheet]
-tools: ['many']
 notes: "Enumeration cheat sheet for common services"
 ---
 
