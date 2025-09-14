@@ -6,7 +6,7 @@ tags: [tool, pcap, wireshark, cheatsheet]
 
 # Wireshark
 
-[Wireshark](https://www.wireshark.org/) is a well-known packet analyzer that comes pre-installed in nearly all  penetration testing Linux distributions. It features a powerful [filter engine](https://www.wireshark.org/docs/man-pages/wireshark-filter.html) that allows for efficient searching through both live and captured network traffic. Some basic but useful filters include:
+Some basic but useful filters include:
 
 | Wireshark filter                                  | Description                                                  |
 | ------------------------------------------------- | ------------------------------------------------------------ |

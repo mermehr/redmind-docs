@@ -45,7 +45,7 @@ Microsoft Windows Server 2012 R2
 
 ## Methodologies
 
-### Initial Access –
+### Initial Access
 
 **Metasploit**
 - Found credentials:
