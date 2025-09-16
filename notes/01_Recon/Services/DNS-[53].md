@@ -41,9 +41,9 @@ notes: "Often overlooked for zone transfers and internal enum"
 
 ```bash
 dig -x host
-dig ns inlanefreight.htb @10.129.14.128
+dig ns example.com @10.129.14.128
 dig CH TXT version.bind 10.129.120.85
-dig any inlanefreight.htb @10.129.14.128
+dig any example.com @10.129.14.128
 dig axfr @nsztm1.digi.ninja zonetransfer.me
 ```
 
@@ -58,10 +58,10 @@ dig axfr @nsztm1.digi.ninja zonetransfer.me
 *Recursive Scan:*
 
 ```bash
-dnsenum --enum inlanefreight.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r
+dnsenum --enum example.com -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -r
 
 # With alternate dns
-dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
+dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt example.com
 ```
 
 ---
