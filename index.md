@@ -12,6 +12,6 @@
 - Commands are kept minimal; context often lives in adjacent files.
 - If you clone this, adapt the structure to *your* brain — don’t follow blindly.
 
-## License / Use
+## Use
 - Free to read. Don’t treat as a course.
-- If something helps you, great. If not, build your own scaffolding.
+- If something helps you, great. If not, you'll have to build your own scaffolding.

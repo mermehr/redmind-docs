@@ -1,1 +1,1 @@
-# Collection of VulnHub VM and HTB penetration reports
+# Collection of completed CTF boxes

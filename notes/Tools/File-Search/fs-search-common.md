@@ -48,7 +48,7 @@ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 
 ## Grep
 
-```
+```bash
 # Recursive
 grep -r 'ERROR' /var/log/
 
@@ -68,7 +68,7 @@ find / -perm -4000 -type f 2>/dev/null
 
 This command locates files `/path/to/dir` modified in the last 24 hours, demonstrating the find's capability to search based on criteria.
 
-```
+```bash
 find /path/to/dir -type f -mtime -1
 ```
 
@@ -90,7 +90,7 @@ nmap -p 1-100 localhost | grep 'open' | awk '{print $1, $3}'
 
 Here, grep, awk, and sort collaborate to list and organize open ports, providing valuable insights into system security.
 
-```
+```bash
 netstat -tuln | grep 'LISTEN' | awk '{print $4}' | sort
 ```
 

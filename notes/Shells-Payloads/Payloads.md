@@ -9,21 +9,19 @@ tools: ['ftp', 'openssl', 'python', 'impacket-smb-server']
 
 ## Payload Generation
 
-We have plenty of good options for dealing with generating payloads  to use against Windows hosts. We touched on some of these already in  previous sections. For example, the Metasploit-Framework and MSFVenom is a very handy way to generate payloads since it is OS agnostic. The  table below lays out some of our options. However, this is not an  exhaustive list, and new resources come out daily.
+### Tools
 
-| **Resource**                      | **Description**                                              |
-| --------------------------------- | ------------------------------------------------------------ |
-| `MSFVenom & Metasploit-Framework` | [Source](https://github.com/rapid7/metasploit-framework) MSF is an extremely versatile tool for any pentester's toolkit. It  serves as a way to enumerate hosts, generate payloads, utilize public  and custom exploits, and perform post-exploitation actions once on the  host. Think of it as a swiss-army knife. |
-| `Payloads All The Things `        | [Source](https://github.com/swisskyrepo/PayloadsAllTheThings) Here, you can find many different resources and cheat sheets for payload generation and general methodology. |
-| `Mythic C2 Framework`             | [Source](https://github.com/its-a-feature/Mythic) The Mythic C2 framework is an alternative option to Metasploit as a  Command and Control Framework and toolbox for unique payload generation. |
-| `Nishang`                         | [Source](https://github.com/samratashok/nishang) Nishang is a framework collection of Offensive PowerShell implants and  scripts. It includes many utilities that can be useful to any pentester. |
-| `Darkarmour`                      | [Source](https://github.com/bats3c/darkarmour) Darkarmour is a tool to generate and utilize obfuscated binaries for use against Windows hosts. |
+| **Resource**                                                 | **Description**                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [MSFVenom & Metasploit-Framework](https://github.com/rapid7/metasploit-framework) | MSF is an extremely versatile tool for any pentester's toolkit. It  serves as a way to enumerate hosts, generate payloads, utilize public  and custom exploits, and perform post-exploitation actions once on the  host. Think of it as a swiss-army knife. |
+| [Payloads All The Things](https://github.com/swisskyrepo/PayloadsAllTheThings) | Many different resources and cheat sheets for payload generation and general methodology. |
+| [Mythic C2 Framework](https://github.com/its-a-feature/Mythic) | An alternative option to Metasploit as a  Command and Control Framework and toolbox for unique payload generation. |
+| [Nishang](https://github.com/samratashok/nishang)            | Framework collection of Offensive PowerShell implants and  scripts. It includes many utilities that can be useful to any pentester. |
+| [Darkarmour](https://github.com/bats3c/darkarmour)           | A tool to generate and utilize obfuscated binaries for use against Windows hosts. |
 
-## [MSVENOM](../Exploitation/msvenom.md) 
+### [MSVENOM](../Exploitation/msvenom.md) 
 
-**Common**
-
-## Example: Generating a Windows Meterpreter Payload
+## Quick example: Generating a Windows Meterpreter Payload
 
 A common approach is to use `windows/meterpreter/reverse_tcp` payload:
 
@@ -35,7 +33,7 @@ This command generates an executable that, when run on the target system,  estab
 
 ## Bypassing UAC for Privilege Escalation
 
-Once a foothold is gained, attackers can attempt to bypass User Account Control (UAC):
+Once a foothold is gained, attempt to bypass User Account Control (UAC):
 
 ```
 use exploit/windows/local/bypassuac
