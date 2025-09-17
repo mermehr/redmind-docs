@@ -6,5 +6,5 @@ Small, pragmatic scripts that support my pentest workflow. Expect rough edges an
 
 - **[network_tools/](./network_tools/)** — Network utilities (Bash/Python)
 - **[system_tools/](./system_tools/)** —  System utilities (Bash/Python)
-- **[reporting_tools/](./logging_tools)** —  Reporting/Logging utilities (Bash/Python)
+- **[logging_tools/](./logging_tools)** —  Reporting/Logging utilities (Bash/Python)
 - **[recon_tools/](./recon_tools/)** — Recon utilities (Bash/Python)
