@@ -37,7 +37,7 @@ Quick-access references for enumeration, reverse shells, SQL injection, privileg
 
 ---
 
-### [Scripts & Tooling Repo](https://github.com/mermehr/redmind-scripts)
+### Scripts
 
 - Python and Bash tools for automation, parsing, and red team support.
 
