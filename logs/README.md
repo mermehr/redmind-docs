@@ -31,17 +31,3 @@ This learning log serves as a timeline of technical development — documenting:
 
 ---
 
-All logs feed into the broader red team documentation repo:  
-📎 [`github.com/mermehr/redmind-docs`](https://github.com/mermehr/redmind-docs)
-
----
-
-Scripts can be found in:  
-📎 [`github.com/mermehr/redmind-scripts/`](https://github.com/mermehr/redmind-scripts/)
-
----
-
-Hack The Box machine reports and academy notes:  
-📎 [`github.com/mermehr/redmind-docs/boxes/`](https://github.com/mermehr/boxes/)
-
----

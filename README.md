@@ -12,7 +12,7 @@ Former infrastructure tech turned offensive security practitioner. Strong ground
 
 Structured summaries of hands-on practice, script development, system configuration, and red team study. Tracks progress across platforms and tool-chains.
 
-See: [`redmind-scripts`](https://github.com/mermehr/redmind-scripts/) for all some scripts mentioned in logs. As they will not be directly linked.
+See: [scripts](./scripts) for some scripts mentioned in logs. As they will not be directly linked.
 
 > _Skills shown:_ Self-directed learning, documentation discipline, workflow evolution
 

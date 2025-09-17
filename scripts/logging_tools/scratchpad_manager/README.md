@@ -6,11 +6,11 @@ A simple **bash-based project scratchpad manager** for red team pentest workflow
 
 ## Features
 
--   Projects live under `~/scratchpad/<name>`
+- Projects live under `~/scratchpad/<name>`
 
--   Active project symlink at `~/current`
+- Active project symlink at `~/current`
 
--   Pre-populated structure:
+Pre-populated structure:
 
         README.md
         notes.md
@@ -21,37 +21,35 @@ A simple **bash-based project scratchpad manager** for red team pentest workflow
         data/
         screens/
 
--   `flameshot` integration:
-
-    -   Screenshots saved into `~/current/screens/`
-    -   Automatically appended to `~/current/notes.md` as Markdown image
-        links
+- `flameshot` integration:
+  - Screenshots saved into `~/current/screens/`
+  - Automatically appended to `~/current/notes.md` as Markdown image
+      links
 
 ------------------------------------------------------------------------
 
 ## Installation
 
-1.  Save the script to `~/bin/scratchpad`:
+1.Save the script to `~/bin/scratchpad`:
 
-    ``` bash
-    chmod +x scratchpad.sh
-    mv scratchpad.sh ~/bin/scratchpad
-    ```
+```bash
+chmod +x scratchpad.sh
+mv scratchpad.sh ~/bin/scratchpad
+```
 
-    (Make sure `~/bin` is in your `$PATH`.)
+(Make sure `~/bin` is in your `$PATH`.)
 
-2.  Install [flameshot](https://flameshot.org/) if not already
-    installed:
+2.Install [flameshot](https://flameshot.org/) if not already installed:
 
-    ``` bash
-    sudo apt install flameshot
-    ```
+```bash
+sudo apt install flameshot
+```
 
 ------------------------------------------------------------------------
 
 ## Usage
 
-``` bash
+```bash
 scratchpad <command> [options] [name]
 ```
 
@@ -73,7 +71,7 @@ scratchpad <command> [options] [name]
   
   Point `~/current` to an existing project.
   
-- `list` 
+- `list`
   
   List all projects under `~/scratchpad`  (marks the active one with `*`).
   
@@ -107,10 +105,10 @@ scratchpad shot
 
 ## Safety Notes
 
--   `~/current` is always a symlink.
+- `~/current` is always a symlink.
     If a real directory exists at `~/current`, the script aborts with a
     warning.
--   Projects are never overwritten unless you explicitly pass `--force`.
+- Projects are never overwritten unless you explicitly pass `--force`.
 
 ------------------------------------------------------------------------
 
