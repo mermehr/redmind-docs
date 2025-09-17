@@ -41,8 +41,8 @@ Dumping local SAM hashes (uid:rid:lmhash:nthash)
 
 ### Cracking hashes with Hashcat
 
-Populate retrieved hashes into > hashestocrack.txt
-For LM '-m' code see [wiki page](https://hashcat.net/wiki/doku.php?id=example_hashes)
+- Populate retrieved hashes into > hashestocrack.txt
+- For LM '-m' code see [wiki page](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
 #### Running Hashcat against NT hashes
 

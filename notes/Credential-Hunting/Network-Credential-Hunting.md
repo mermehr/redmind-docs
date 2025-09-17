@@ -13,7 +13,7 @@ tools: ['pcredz', 'wireshark', 'snaffler', 'powerhuntshares', 'manspider', 'nete
 
 If you're targeting just credentials, this works fine and may save some time other than using Wireshark.
 
-> This tool extracts Credit card numbers, NTLM(DCE-RPC, HTTP, SQL, LDAP, etc), Kerberos (AS-REQ Pre-Auth etype 23), HTTP Basic, SNMP, POP, SMTP, FTP,  IMAP, etc from a pcap file or from a live interface.
+> Tool extracts Credit card numbers, NTLM(DCE-RPC, HTTP, SQL, LDAP, etc), Kerberos (AS-REQ Pre-Auth etype 23), HTTP Basic, SNMP, POP, SMTP, FTP,  IMAP, etc from a pcap file or from a live interface.
 
 ```bash
 # Install Kali - need to use venv

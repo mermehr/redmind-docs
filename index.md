@@ -14,4 +14,4 @@
 
 ## Use
 - Free to read. Don’t treat as a course.
-- If something helps you, great. If not, you'll have to build your own scaffolding.
+- If something helps you, great.

