@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# I meed to finish comments
+
 set -euo pipefail
+
 eval $(/usr/bin/keychain --quiet --eval id_ed25519)
 # Put your real git URLs here (SSH recommended)
 SCRIPTS_DIR="$HOME/path-scripts"                     # <-- change local repo path

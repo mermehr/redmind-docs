@@ -35,14 +35,14 @@ class Server(paramiko.ServerInterface):
     # Allow opening "session" channels only
     def check_channel_request(self, kind, chanid):
         if kind == "session":
-            return paramiko.OPEN_SUCCEEDED
-        return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
+            return paramiko.OPEN_SUCCEEDED # type: ignore
+        return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED # type: ignore
 
     # Password authentication
     def check_auth_password(self, username, password):
         if username == "tim" and password == "sekret":
-            return paramiko.AUTH_SUCCESSFUL  # <-- fixed constant name
-        return paramiko.AUTH_FAILED
+            return paramiko.AUTH_SUCCESSFUL  # type: ignore # <-- fixed constant name
+        return paramiko.AUTH_FAILED # type: ignore
 
     # Tell clients which auth methods are allowed (helps some clients)
     def get_allowed_auths(self, username):

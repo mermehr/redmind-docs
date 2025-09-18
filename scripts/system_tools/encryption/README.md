@@ -7,7 +7,7 @@ Various scripts made to speed up manual decryption process. General use, here fo
 | Script                        | Language | Summary                               |
 | ----------------------------- | -------- | ------------------------------------- |
 | `xor_stream_reuse_recover.py` | python   | Recover keystream                     |
-| eval_solver.py                | python   | Infix evaluator - HTB code challenges |
+| `eval_solver.py`                | python   | Infix evaluator - HTB code challenges |
 
 ## Usage
 

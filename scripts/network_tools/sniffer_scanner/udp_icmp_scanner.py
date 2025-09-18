@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-# Purpose: send UDP datagrams across SUBNET; listen for ICMP unreachable
-# (Type 3 / Code 3) replies that include our magic MESSAGE, and report hosts up.
-#
-# Run (Linux/macOS): sudo python3 udp_icmp_scanner.py <bind-ip>
-#   Example: sudo python3 udp_icmp_scanner.py 0.0.0.0
-# Run (Windows, admin): python udp_icmp_scanner.py <your-local-ip>
-#
-# Notes:
-# - Needs root/admin (raw sockets).
-# - On Linux/macOS we sniff IPPROTO_ICMP; on Windows IPPROTO_IP + promiscuous mode.
+"""
+Purpose: send UDP datagrams across SUBNET; listen for ICMP unreachable
+(Type 3 / Code 3) replies that include our magic MESSAGE, and report hosts up.
+(Linux/macOS): sudo python3 udp_icmp_scanner.py <bind-ip>
+(Windows, admin): python udp_icmp_scanner.py <your-local-ip>
 
+Notes:
+- Needs root/admin (raw sockets).
+- On Linux/macOS we sniff IPPROTO_ICMP; on Windows IPPROTO_IP + promiscuous mode.
+"""
 import ipaddress
 import os
 import socket

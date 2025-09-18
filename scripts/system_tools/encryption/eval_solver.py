@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # Safe infix evaluator (Python-like)
-
 import ast
 import operator as op
 import re

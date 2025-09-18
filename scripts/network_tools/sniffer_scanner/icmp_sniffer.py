@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-# Run (Linux/macOS): sudo python3 icmp_sniffer.py 0.0.0.0
-# Run (Windows, admin): python icmp_sniffer.py <your-local-ip>
-#
-# Notes:
-# On Linux/macOS you need root (raw sockets).
-# On Windows you must run as admin; we enable promiscuous mode.
+"""
+(Linux/macOS): sudo python3 icmp_sniffer.py 0.0.0.0
+(Windows, admin): python icmp_sniffer.py <your-local-ip>
+
+Notes:
+- On Linux/macOS you need root (raw sockets).
+- On Windows you must run as admin; we enable promiscuous mode.
+"""
 import ipaddress
 import os
 import socket
