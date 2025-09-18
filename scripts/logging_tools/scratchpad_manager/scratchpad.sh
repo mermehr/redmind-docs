@@ -24,7 +24,7 @@ Options (init):
 EOF
 }
 
-# --- helpers ---------------------------------------------------------------
+# --- helpers
 
 safe_link() {
   local target="$1" link="$2"
@@ -44,7 +44,7 @@ mkfile_if_absent() {
   fi
 }
 
-# --- commands --------------------------------------------------------------
+# --- commands
 
 init_project() {
   local force=0 norelink=0 name=""
@@ -131,7 +131,7 @@ take_screenshot() {
 }
 
 
-# --- dispatcher ------------------------------------------------------------
+# --- dispatcher
 
 cmd="${1:-}"; shift || true
 case "$cmd" in

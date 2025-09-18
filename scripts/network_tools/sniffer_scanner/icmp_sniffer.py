@@ -3,8 +3,8 @@
 # Run (Windows, admin): python icmp_sniffer.py <your-local-ip>
 #
 # Notes:
-# - On Linux/macOS you need root (raw sockets).
-# - On Windows you must run as admin; we enable promiscuous mode.
+# On Linux/macOS you need root (raw sockets).
+# On Windows you must run as admin; we enable promiscuous mode.
 import ipaddress
 import os
 import socket
