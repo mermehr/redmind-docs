@@ -1,92 +1,83 @@
 # HTB: Blue
 
 ## Engagement Overview
-**Target:** HTB: Blue  
-**Box IP:** 10.10.10.40  
+**Target:** Blue (HTB)
+**Box IP:** 10.10.10.40
 **Local IP:** 10.10.14.10
 **Date:** 2025-07-10
 
 ---
 
 ### Objectives
-- Exploit SMBv1 vulnerability to gain remote shell access
-- Capture both user and root flags
+- Exploit SMBv1 vulnerability (EternalBlue/MS17-010) to gain remote shell access
+- Capture user and root flags
 
 ---
 
 ## Service Enumeration
 
+```bash
+# Nmap (condensed)
+nmap -sC -sV -oN nmap.txt 10.10.10.40
 ```
-Nmap 7.94SVN scan initiated...
 
+**Relevant output (condensed):**
+```
 PORT    STATE SERVICE      VERSION
 135/tcp open  msrpc        Microsoft Windows RPC
 139/tcp open  netbios-ssn  Microsoft Windows netbios-ssn
 445/tcp open  microsoft-ds Windows 7 Professional 7601 SP1
-
-Host Details:
-- Hostname: HARIS-PC
-- OS: Windows 7 Professional SP1
-- Workgroup: WORKGROUP
-- Message signing: disabled (smb1), optional (smb2)
-- Guest account access: allowed
 ```
 
-Scripts & Host Discovery:
-- OS Fingerprinting confirmed Windows 7
-- SMBv1 enabled and vulnerable
-- No clock skew issues that impact payloads
+Host details indicate Windows 7 Professional SP1, SMBv1 enabled and vulnerable; guest account access allowed.
 
 ---
 
-## Methodologies
+## Initial Access
 
-### Initial Access – EternalBlue Exploit (MS17-010)
+### Methodologies & Exploitation
+**Vulnerability:** CVE-2017-0144 (EternalBlue / SMBv1 RCE)
 
-**Vulnerability:**  
-CVE-2017-0144 – Microsoft SMBv1 Remote Code Execution
+**Attempts & tools used:**
+- Metasploit `windows/smb/ms17_010_eternalblue` (initial attempt — failed)
+- Manual PoC from ExploitDB (`42031.py`) — modified and executed successfully
 
-**Tools & Payloads Used:**
-- Metasploit `windows/smb/ms17_010_eternalblue` (❌ failed)
-- Manual conversion and execution of ExploitDB PoC `42031.py` (✅ success)
+**Notes:** Modern tooling sometimes fails against older exploits; manual adaptation of PoC/payload was required to get a working shell.
 
-**Penetration Result:**  
-- Direct shell access obtained via Python payload modification
+**Execution (conceptual):**
+```bash
+# adapted PoC execution (details preserved in original notes)
+python3 42031.py --target 10.10.10.40 --payload <adjusted-shell>
+```
+
+**Result:** Remote shell obtained (SYSTEM level in this case).
 
 ---
 
 ## Privilege Escalation
 
-Not applicable. Initial exploit yielded SYSTEM-level shell.
+Not applicable — initial exploit yielded SYSTEM-level access.
 
 ---
 
-## House Cleaning
+## House Cleaning / Post-Exploitation
 
-- No post-exploitation persistence left on target
-- Exploit did not require uploads beyond shell payload
+- No persistence left on target
+- No extra uploads beyond exploit payload
 
----
-
-## Post-Exploitation
-
-### Credentials & Flags
-
-- `User.txt`: `0c4f3a9386dba985686ce78e58237c6d`  
-- `Root.txt`: `b6b9cccdf6904e9ffdb0110122a50a43`
+**Flags (captured):**
+- `user.txt`: `0c4f3a9386dba985686ce78e58237c6d`
+- `root.txt`: `b6b9cccdf6904e9ffdb0110122a50a43`
 
 ---
 
 ## Tools Utilized
-
-* Nmap
-* Python (customized ExploitDB script)
-* Metasploit (initial attempt)
+- nmap
+- Python (modified ExploitDB PoC `42031.py`)
+- Metasploit (attempted)
 
 ---
 
 ## Key Takeaways
-
-* EternalBlue remains a notorious legacy vulnerability
-* This box was extremely straightforward, with exploitation depending on manually patched scripts
-* Sometimes modern tools fail on old exploits—manual modification and understanding of payloads is essential
+- EternalBlue remains a high-value legacy exploit; manual tuning of PoCs/payloads may be necessary.
+- Understand the exploit internals — modern modules can fail on older targets without adjustments.

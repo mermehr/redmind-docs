@@ -1,14 +1,9 @@
 # HTB: Cronos  
-**OS:** Linux  
-**Difficulty:** Medium  
-
----
-
 ## Engagement Overview
-- **Target:** Cronos  
-- **Box IP:** 10.10.10.13  
-- **Local IP:** 10.10.14.10  
-- **Date:** 2025-07-12  
+**Target:** Cronos
+**Box IP:** 10.10.10.13
+**Local IP:** 10.10.14.10
+**Date:** 2025-07-12  
 
 ---
 
