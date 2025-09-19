@@ -1,16 +1,16 @@
 ---
 title: Parrot Docker Lab
 category: Reference
-tags: [cheatsheet, docker, parrot]
+tags: [docker, parrot]
 ---
 
-# Parrot Lab (Docker) — Quick Start
+# Parrot Lab (Docker)
 
 A minimal, no-bullshit Parrot Security workstation running in Docker with GUI apps, host networking, and a persistent home. No VM drama, full CPU, reverse shells “just work”.
 
 ---
 
-## TL;DR (first run)
+## First run
 
 ```bash
 # Allow GUI apps from containers to show on your desktop
@@ -89,7 +89,7 @@ xhost +local:docker
 
 ---
 
-## One-liner re-create (if you nuke the container)
+## One-liner re-create
 
 ```bash
 xhost +local:docker && docker run -it --name parrot-x11 \
@@ -102,7 +102,7 @@ xhost +local:docker && docker run -it --name parrot-x11 \
   parrotsec/security bash
 ```
 
-Reinstall tools (copy/paste inside):
+Reinstall tools:
 
 ```bash
 apt update && apt install -y \
@@ -114,7 +114,7 @@ apt update && apt install -y \
 
 ---
 
-## Optional: tiny launcher script (host)
+## Tiny launcher script (host)
 
 `~/bin/parrot.sh`:
 
@@ -154,7 +154,7 @@ docker run -it --name parrot-x11 \
 
 ---
 
-## noVNC desktop option (Wayland/remote-friendly)
+## noVNC desktop option
 
 If X11 is annoying, run a lightweight XFCE desktop in-browser (quick sketch):
 
@@ -191,5 +191,3 @@ rm -rf $HOME/parrot-home
 ```
 
 ---
-
-**That’s it.** You’ve got a fast, persistent Parrot lab with full GUI and clean networking.

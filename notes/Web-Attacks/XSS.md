@@ -9,8 +9,6 @@ tools: ['xsstrike', 'xsstrike', 'knoxss', 'asshunter', 'beef']
 
 **Cross-Site Scripting (XSS)** is a web security  vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts execute in the victim's  browser within the security context of the vulnerable website.
 
-## How
-
 XSS occurs when a web application includes untrusted data in a web page  without proper validation or escaping. For example, when a website  reflects user input:
 
 ```html

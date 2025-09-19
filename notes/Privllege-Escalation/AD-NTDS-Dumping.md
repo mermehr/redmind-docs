@@ -4,8 +4,6 @@ category: Post-Exploitation
 tags: [active-directory, ntds, credential-dumping, impacket, evil-winrm]
 tools: ['kerbrute', 'username-anarchy', 'netexec', 'evil-winrm', 'hashcat']
 ---
-This file documents techniques for extracting credentials from Active Directory domain controllers, including username enumeration, NTDS.dit capture, and hash cracking. Useful after gaining DC-level access.
-
 # Active Directory CReds and NTDS.dit
 
 ## Username dictionary attacks against AD accounts

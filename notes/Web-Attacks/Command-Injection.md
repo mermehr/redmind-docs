@@ -9,8 +9,6 @@ tools: ['nulcei', 'burpsuite', 'metasploit']
 
 **Command Injection** is a web security vulnerability  that allows an attacker to execute arbitrary system commands on the host operating system. This vulnerability occurs when an application passes  unsafe user supplied data to a system shell.
 
-## How
-
 Command injection occurs when an application executes system commands that  include user-supplied data without proper sanitization. For example, in  the code:
 
 ```php

