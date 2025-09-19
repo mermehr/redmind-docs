@@ -6,22 +6,18 @@ This dir contains a set of Python scripts built using the **Paramiko** library t
 
 ## Scripts Overview
 
-### 1. `ssh_cmd.py`
+`ssh_cmd.py`
+
 A simple SSH client that connects to a target server and executes a single command.
 
 - Prompts the user for credentials and server details.  
 - Executes a command (default: `id`).  
 - Prints standard output and error streams from the remote host.
 
-**Usage Example:**
-
-```bash
-python3 ssh_cmd.py
-```
-
 ---
 
-### 2. `ssh_rcmd.py`
+`ssh_rcmd.py`
+
 A client-side script that establishes a reverse SSH session to a server.  
 Once connected, it can receive and execute commands issued by the server.
 
@@ -29,25 +25,16 @@ Once connected, it can receive and execute commands issued by the server.
 - Waits for server instructions and executes commands locally.  
 - Sends command results back to the server.
 
-**Usage Example:**
-```bash
-python3 ssh_rcmd.py
-```
-
 ---
 
-### 3. `ssh_server.py`
+`ssh_server.py`
+
 A custom SSH server that listens for incoming connections and provides an interactive command execution environment.
 
 - Uses Paramiko’s `Transport` and `ServerInterface`.  
 - Authenticates with hardcoded credentials (`tim:sekret`).  
 - Supports interactive command execution until `exit` is issued.  
 - Requires an RSA host key (`test_rsa.key`) in the same directory.
-
-**Usage Example:**
-```bash
-python3 ssh_server.py
-```
 
 ---
 

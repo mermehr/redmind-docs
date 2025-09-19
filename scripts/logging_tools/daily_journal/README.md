@@ -1,13 +1,13 @@
 # Daily Journal
 
-This dir contains a reusable **daily journal template** (`daily.md`) and a Python helper script that generates dated entries from it.
+Reusable **daily journal template** (`daily.md`) and a Python helper script that generates dated entries from it.
 
 ## Structure
 
-```
+```bash
 daily-journal/
-├── daily_template.md                 # Template file for new journal entries
-├── daily_journal.py         # Python script to create/open daily entries
+├── daily_template.md
+├── daily_journal.py
 └── daily/
     └── YYYY-MM-DD.md
     └── ...        
@@ -43,36 +43,15 @@ Sunday, August 10th, 2025
 ## Installation & Requirements
 
 ### System Requirements
+
 - **OS:** Linux Mint/Ubuntu (tested on Mint 22.1)
 - **Python:** Version 3.8+
 - **Editor:** `xed` (Linux Mint default text editor)
 
-### Required System Packages
-To ensure `xed` can load its Python plugins without errors, install the following:
-```bash
-sudo apt update
-sudo apt install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-glib-2.0 libpeas-1.0-0 gir1.2-peas-1.0 xed
-```
-
 ### Python Environment
+
 No additional Python packages are required; the script uses only the Python standard library.
-
-## Usage
-
-1. Make the script executable:
-   ```bash
-   chmod +x daily_journal.py
-   ```
-2. Run the script:
-   ```bash
-   ./daily_journal.py
-   ```
-   This will create/open today’s journal entry in `daily/`.
-
-## Notes
 
 - The script strips Python environment variables before launching `xed` to avoid PyGObject/libpeas errors caused by pyenv or virtual environments.
 - You can edit `daily.md` to change the layout or fields for future entries.
 - Existing entries are **never** overwritten; to edit a past day, just open the corresponding file in `daily/`.
-
----

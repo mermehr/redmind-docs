@@ -1,12 +1,12 @@
 # Python Network Sniffer & UDP/ICMP Scanner
 
-This dir contains two small Python 3 tools adapted from *Black Hat Python, 2nd Edition* and cleaned up for direct use in a lab environment. Both rely on raw sockets, so **root/admin privileges are required**.
+Two small Python tools adapted from *Black Hat Python, 2nd Edition* and cleaned up for direct use in a lab environment. Both rely on raw sockets, so **root/admin privileges are required**.
 
 ------------------------------------------------------------------------
 
 ## Scripts
 
-### 1. `icmp_sniffer.py`
+ `icmp_sniffer.py`
 
 A minimal ICMP sniffer that parses IP headers and ICMP headers from captured packets.
 
@@ -28,12 +28,12 @@ python icmp_sniffer.py 192.168.56.1
 
 ------------------------------------------------------------------------
 
-### 2. `udp_icmp_scanner.py`
+`udp_icmp_scanner.py`
 
 A UDP spray and ICMP response sniffer that discovers live hosts by sending UDP packets containing a magic payload across a subnet, then listening for ICMP Type 3 / Code 3 (Port Unreachable) replies.
 
--   **Default subnet:** `192.168.56.0/24`\
--   **Magic string:** `DoNoT3tHi$`\
+-   **Default subnet:** `192.168.56.0/24`
+-   **Magic string:** `DoNoT3tHi$`
 -   **Destination port:** `65212`
 
 Hosts that respond with an ICMP error containing the magic string are reported as up.

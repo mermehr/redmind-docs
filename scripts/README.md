@@ -6,7 +6,7 @@ This repo is meant as a personal toolbox and reference; if you stumbled in here,
 
 ---
 
-## What’s Inside
+## Inside
 
 - **Scripts** for everyday ops, networking, security, Git hygiene, and logging
 - **Readme docs** in each folder with quick usage notes
