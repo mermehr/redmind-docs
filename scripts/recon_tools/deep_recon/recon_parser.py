@@ -13,11 +13,10 @@ Outputs:
 from __future__ import annotations
 import argparse
 import csv
-import os
 import pathlib
 import re
 import xml.etree.ElementTree as ET
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Optional, Tuple
 
 def parse_nmap_text(path: str) -> Tuple[Optional[str], List[str], List[Dict], List[str]]:
     host = None
@@ -64,14 +63,11 @@ def parse_nmap_xml(path: str) -> Tuple[Optional[str], List[str], List[Dict]]:
     try:
         tree = ET.parse(path)
         root = tree.getroot()
-        # Nmap XML usually has namespaceless structure; handle multiple hosts
         for host_el in root.findall("host"):
-            # addresses
             for addr in host_el.findall("address"):
                 ip = addr.get("addr")
                 if ip and ip not in ips:
                     ips.append(ip)
-            # hostname
             hostnames = host_el.find("hostnames")
             if hostnames is not None:
                 hn = hostnames.find("hostname")
@@ -100,7 +96,6 @@ def parse_nmap_xml(path: str) -> Tuple[Optional[str], List[str], List[Dict]]:
                         if v:
                             pieces.append(v)
                     version = " ".join(pieces).strip()
-                # collect script outputs under this port if present
                 scripts = p.findall("script")
                 script_out = ""
                 if scripts:
@@ -130,29 +125,27 @@ def parse_gobuster_text(path: str) -> List[str]:
     try:
         with open(path, "r", errors="ignore") as fh:
             data = fh.read()
-            # ffuf csv lines may contain URL or path; try to grab 'url' or path-like pieces
-            # common ffuf csv form: "url,status_code,content_length,words,lines,ref"
             for line in data.splitlines():
-                # try csv-style: url,...  (take first field if it looks like a path or url)
+                line = line.strip()
+                # ffuf csv-style: first field may be a URL
                 if "," in line:
                     first = line.split(",", 1)[0].strip()
                     if first.startswith("http"):
-                        # extract path portion
                         m = re.search(r"https?://[^/]+(/.*)$", first)
                         if m:
-                            endpoints.append(m.group(1))
+                            endpoints.append(m.group(1).rstrip("/"))
                         continue
                     if first.startswith("/"):
-                        endpoints.append(first)
+                        endpoints.append(first.rstrip("/"))
                         continue
                 # gobuster line: "/admin (Status: 403) [Size: ...]"
                 m = re.search(r"(/\S+)\s+\(Status:\s*\d+", line)
                 if m:
-                    endpoints.append(m.group(1))
+                    endpoints.append(m.group(1).rstrip("/"))
     except FileNotFoundError:
         pass
     # normalize and dedupe
-    cleaned = sorted({e.rstrip("/") if e != "/" else e for e in endpoints})
+    cleaned = sorted({e if e == "/" else e.rstrip("/") for e in endpoints})
     return cleaned
 
 def write_txt(path: str, target: str, ips: List[str], ports: List[Dict], os_info: List[str], endpoints: List[str]) -> None:
@@ -166,7 +159,7 @@ def write_txt(path: str, target: str, ips: List[str], ports: List[Dict], os_info
         lines.append("")
     if ports:
         lines.append("[+] Open ports:")
-        for p in sorted(ports, key=lambda x: (x.get("proto",""), int(x.get("port", 0)))):
+        for p in sorted(ports, key=lambda x: (x.get("proto", ""), int(x.get("port", 0)))):
             ver = f" | {p.get('version')}" if p.get("version") else ""
             scr = f" | script: {p.get('script')}" if p.get("script") else ""
             lines.append(f"  - {p.get('proto','').upper()} {p.get('port')} | {p.get('service','')}{ver}{scr}")
@@ -194,7 +187,7 @@ def write_md(path: str, target: str, ips: List[str], ports: List[Dict], os_info:
     if ports:
         md.append("## Open Ports")
         md.append("")
-        for p in sorted(ports, key=lambda x: (x.get("proto",""), int(x.get("port", 0)))):
+        for p in sorted(ports, key=lambda x: (x.get("proto", ""), int(x.get("port", 0)))):
             ver = f" — {p.get('version')}" if p.get("version") else ""
             script = f"\n\n  - script: `{p.get('script')}`" if p.get("script") else ""
             md.append(f"- **{p.get('proto','').upper()} {p.get('port')}**: {p.get('service','unknown')}{ver}{script}")
@@ -217,7 +210,7 @@ def write_csv(path: str, ports: List[Dict]) -> None:
     with open(path, "w", newline="") as csvf:
         w = csv.writer(csvf)
         w.writerow(["proto", "port", "state", "service", "version", "script"])
-        for p in sorted(ports, key=lambda x: (x.get("proto",""), int(x.get("port", 0)))):
+        for p in sorted(ports, key=lambda x: (x.get("proto", ""), int(x.get("port", 0)))):
             w.writerow([p.get("proto"), p.get("port"), p.get("state"), p.get("service"), p.get("version", ""), p.get("script", "")])
 
 def merge_ports(text_ports: List[Dict], xml_ports: List[Dict]) -> List[Dict]:
@@ -242,12 +235,13 @@ def main() -> None:
     host, ips, text_ports, os_info = parse_nmap_text(args.nmap)
 
     xml_ports: List[Dict] = []
+    ips2: List[str] = []
     if args.xml:
-        _, ips2, xml_ports = parse_nmap_xml(args.xml)
-        # merge IP lists, keep order
-        combined_ips = []
+        h2, ips2, xml_ports = parse_nmap_xml(args.xml)
+        # merge IP lists, keep order and dedupe
+        combined_ips: List[str] = []
         for ip in (ips + ips2):
-            if ip not in combined_ips:
+            if ip and ip not in combined_ips:
                 combined_ips.append(ip)
         ips = combined_ips or ips
 
