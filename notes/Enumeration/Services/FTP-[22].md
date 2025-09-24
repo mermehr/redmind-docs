@@ -50,36 +50,36 @@ wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
 
 ### FTP Command Line
 
-| Type | Command | What it Does |
-| --- |  --- |  --- |
-| Command Line | \-v | Suppresses verbose display of remote server responses. |
-| Command Line | \-n | Suppresses auto login |
-| Command Line | \-i | Turns off interactive prompting during multiple file transfers. |
-| Command Line | \-d | Enables debugging, displaying all ftp commands passed between the client and server. |
-| Command Line | --g | Disables filename globbing, which permits the use of wildcard chracters in local file and path names. |
-| Command Line | \-s:filename | Specifies a text file containing ftp commands; the commands will automatically run after ftp starts. No spaces are allowed in this parameter. Use this switch instead of redirection (>). |
-| Command Line | \-a | Use any local interface when binding data connection. |
-| Command Line | \-w:windowsize | Overrides the default transfer buffer size of 4096. |
-| Command Line | \-computer | Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line. |
+| Command | Description |
+|  --- |  --- |
+| \-v | Suppresses verbose display of remote server responses. |
+| \-n | Suppresses auto login |
+| \-i | Turns off interactive prompting during multiple file transfers. |
+| \-d | Enables debugging, displaying all ftp commands passed between the client and server. |
+| --g | Disables filename globbing, which permits the use of wildcard chracters in local file and path names. |
+| \-s:filename | Specifies a text file containing ftp commands; the commands will automatically run after ftp starts. No spaces are allowed in this parameter. Use this switch instead of redirection (>). |
+| \-a | Use any local interface when binding data connection. |
+| \-w:windowsize | Overrides the default transfer buffer size of 4096. |
+| \-computer | Specifies the computer name or IP address of the remote computer to connect to. The computer, if specified, must be the last parameter on the line. |
 
 ### CLI Command List
 
-| Type | Command | What it Does |
-| --- |  --- |  --- |
-| Command | ! | Runs the specified command on the local computer |
-| Command | ? | Displays descriptions for ftp commands |
-| Command | append | Appends a local file to a file on the remote computer |
-| Command | ascii | Sets the file transfer type to ASCII, the default |
-| Command | bell | Toggles a bell to ring after each file transfer command is completed (default = OFF) |
-| Command | binary | Sets the file transfer type to binary |
-| Command | bye | Ends the FTP session and exits ftp |
-| Command | cd | Changes the working directory on the remote computer |
-| Command | close | Ends the FTP session and returns to the command interpreter |
-| Command | debug | Toggles debugging (default = OFF) |
-| Command | delete | Deletes a single file on a remote computer |
-| Command | dir | Displays a list of a remote directoryâ€™s files and subdirectories |
-| Command | disconnect | Disconnects from the remote computer, retaining the ftp prompt |
-| Command | get | Copies a single remote file to the local computer |
-| Command | glob | Toggles filename globbing (wildcard characters) (default = ON) |
-| Command | hash | Toggles hash sign (#) printing for each data block transferred (default = OFF) |
-| Command | help | Displays descriptions for ftp commands |
+| Command | Description |
+|  --- |  --- |
+| ! | Runs the specified command on the local computer |
+| ? | Displays descriptions for ftp commands |
+| append | Appends a local file to a file on the remote computer |
+| ascii | Sets the file transfer type to ASCII, the default |
+| bell | Toggles a bell to ring after each file transfer command is completed (default = OFF) |
+| binary | Sets the file transfer type to binary |
+| bye | Ends the FTP session and exits ftp |
+| cd | Changes the working directory on the remote computer |
+| close | Ends the FTP session and returns to the command interpreter |
+| debug | Toggles debugging (default = OFF) |
+| delete | Deletes a single file on a remote computer |
+| dir | Displays a list of a remote directoryâ€™s files and subdirectories |
+| disconnect | Disconnects from the remote computer, retaining the ftp prompt |
+| get | Copies a single remote file to the local computer |
+| glob | Toggles filename globbing (wildcard characters) (default = ON) |
+| hash | Toggles hash sign (#) printing for each data block transferred (default = OFF) |
+| help | Displays descriptions for ftp commands |

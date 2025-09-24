@@ -47,10 +47,3 @@ Example:
 - Connect and mount local share:  
   `xfreerdp3 /u:pentest /p:Summer2025 /v:192.168.1.50 /drive:loot,/home/user/loot`  
 
----
-
-## Practical Notes
-- Omit `/p:` to be prompted for password  
-- Drive shares appear under *This PC → Redirected drives*  
-- `/dynamic-resolution` is useful when resizing the window  
-- `/cert:ignore` avoids noisy cert warnings  

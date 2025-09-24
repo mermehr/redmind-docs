@@ -52,6 +52,9 @@ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 # Recursive
 grep -r 'ERROR' /var/log/
 
+# Files containing
+grep -rn /mnt/Finance/ -ie cred
+
 # RegEx
 grep -E "(my|false)" /etc/passwd
 ```

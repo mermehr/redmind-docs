@@ -7,14 +7,8 @@ tools: ['netexec', 'hydra']
 
 # Spraying, Stuffing, and Default Credentials
 
-Spraying, stuffing, and checking for default credentials are quick and effective ways to gain access.  
-They target common weaknesses in authentication systems and are often overlooked by defenders.  
-
----
-
 ## Password Spraying
 
-Spraying means trying **one password across many accounts**.  
 This avoids account lockouts while still finding weak, org-wide passwords like `Spring2025!` or `Welcome123`.  
 
 ```shell-session

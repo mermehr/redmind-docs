@@ -6,7 +6,7 @@ tags: [tool, pcap, wireshark, cheatsheet]
 
 # Wireshark
 
-Some basic but useful filters include:
+Some basic but useful filters:
 
 | Wireshark filter                                  | Description                                                  |
 | ------------------------------------------------- | ------------------------------------------------------------ |

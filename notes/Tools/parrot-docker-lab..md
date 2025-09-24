@@ -6,7 +6,7 @@ tags: [docker, parrot]
 
 # Parrot Lab (Docker)
 
-A minimal, no-bullshit Parrot Security workstation running in Docker with GUI apps, host networking, and a persistent home. No VM drama, full CPU, reverse shells “just work”.
+A minimal, no-bullshit Parrot Security workstation running in Docker with GUI apps, host networking, and a persistent home. No VM drama, full CPU, reverse shells.
 
 ---
 
@@ -72,7 +72,7 @@ xhost +local:docker
 
 ---
 
-## Why this works (and is fast)
+## Why
 
 - Shares the **host kernel** (no OS boot, no hypervisor).
 - X11 connects to your host’s display; no desktop stack inside.
@@ -140,7 +140,7 @@ parrot.sh
 
 ---
 
-## Resource limits (optional)
+## Resource limits
 
 ```bash
 # e.g., 2 CPUs, 4GB RAM
@@ -154,9 +154,9 @@ docker run -it --name parrot-x11 \
 
 ---
 
-## noVNC desktop option
+## noVNC desktop
 
-If X11 is annoying, run a lightweight XFCE desktop in-browser (quick sketch):
+If X11 is annoying, run a lightweight XFCE desktop in-browser:
 
 ```bash
 docker run -it --name parrot-vnc -p 6901:6901 \
@@ -169,15 +169,6 @@ docker run -it --name parrot-vnc -p 6901:6901 \
 ```
 
 Open `http://localhost:6901` → XFCE desktop (no GPU/X11 on host required).
-
----
-
-## Troubleshooting
-
-- **GUI won’t show after reboot:** run `xhost +local:docker` again.
-- **Wireshark capture perms:** run as root inside the container (simplest) or add group capabilities.
-- **No HTB reachability:** confirm host VPN is up; with `--network host`, the container shares it.
-- **Nothing in `docker ps`:** container is stopped; use `docker ps -a` or `docker start -ai parrot-x11`.
 
 ---
 

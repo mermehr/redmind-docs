@@ -13,7 +13,7 @@
 6) **Use secretsdump with -k -no-pass** to dump Administrator hash.  
 7) **Evil-WinRM** with PTH to fully compromise.  
 
-References: impacket-ntlmrelayx, printerbug.py, PKINITtools, oscrypto, secretsdump, evil-winrm. 【42†playbook2.md】
+References: impacket-ntlmrelayx, printerbug.py, PKINITtools, oscrypto, secretsdump, evil-winrm. 
 
 ---
 

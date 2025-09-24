@@ -9,27 +9,31 @@ tools: [finalrecon, recon-ng, theharvester, spiderfoot, scrapy, reconspider, nik
 
 ## Attack Path (Web Enumeration)
 
-1. **Automation / OSINT**  
-   - Run FinalRecon or Recon-ng to gather initial intelligence.  
-   - Supplement with theHarvester and SpiderFoot for emails, subdomains, and banners.  
-   - Reference OSINT Framework for manual lookups.  
+**Automation / OSINT**  
 
-2. **Surface Expansion (Crawling)**  
-   - Map the site with Burp/ZAP spiders.  
-   - Use Scrapy/ReconSpider for structured crawling.  
-   - Goal: expand directories, params, and hidden links.  
+- Run FinalRecon or Recon-ng to gather initial intelligence.  
+- Supplement with theHarvester and SpiderFoot for emails, subdomains, and banners.  
+- Reference OSINT Framework for manual lookups.  
 
-3. **Fingerprinting**  
-   - curl headers and redirects.  
-   - wafw00f for WAF detection.  
-   - Nikto for outdated software and misconfigurations.  
+**Surface Expansion (Crawling)**  
 
-4. **Deep Discovery (vHosts / Hidden Domains)**  
-   - Gobuster/ffuf/Feroxbuster for vHosts and dirs.  
-   - crt.sh lookups for certificate-registered subdomains.  
+- Map the site with Burp/ZAP spiders.  
+- Use Scrapy/ReconSpider for structured crawling.  
+- Goal: expand directories, params, and hidden links.  
 
-5. **Pivot**  
-   - Feed new hosts/domains back into Step 1 and repeat cycle.  
+**Fingerprinting**  
+
+- curl headers and redirects.  
+- wafw00f for WAF detection.  
+- Nikto for outdated software and misconfigurations.  
+
+**Deep Discovery (vHosts / Hidden Domains)**  
+
+- Gobuster/ffuf/Feroxbuster for vHosts and dirs.  
+- crt.sh lookups for certificate-registered subdomains.  
+
+**Pivot**  
+- Feed new hosts/domains back into Step 1 and repeat cycle.  
 
 ------
 
