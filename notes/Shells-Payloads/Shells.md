@@ -7,6 +7,8 @@ tools: ['nc', 'netcat', 'ncat']
 
 # Reverse Shells
 
+- [Reverse Shell Generator](https://www.revshells.com/)
+
 ## Listener Setup & Shell Stabilisation
 
 ### Start Listener

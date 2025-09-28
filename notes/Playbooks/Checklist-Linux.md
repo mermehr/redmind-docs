@@ -23,7 +23,7 @@ tools: [linpeas, ssh]
 - [ ] World-writable directories/files
 
 ## Privilege Escalation
-- [ ] Check for password reuse → `.bash_history`, config files
+- [ ] Check for password reuse → `.bash_history`, config files (running services)
 - [ ] Weak file permissions on `/etc/shadow` or `/etc/passwd`
 - [ ] Kernel exploits (if old version) → searchsploit / exploit-db
 - [ ] Installed packages with known vulns → `dpkg -l` / `rpm -qa`

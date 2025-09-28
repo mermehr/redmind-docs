@@ -9,7 +9,7 @@
 
 ---
 
-### Objectives
+### Methodology
 
 - Enumerate services and discover exposed files.  
 - Extract credentials from backups/mail archives.  
@@ -24,7 +24,7 @@
 ### Nmap
 
 ```bash
-sudo nmap -sC -sV -T5 -oA logs/nmap 10.10.10.98
+sudo nmap -sC -sV -T5 -oN logs/nmap 10.10.10.98
 ```
 
 ```

