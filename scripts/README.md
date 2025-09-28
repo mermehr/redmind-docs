@@ -2,8 +2,6 @@
 
 A collection of small, pragmatic scripts and notes I actually use—focused on hands‑on workflows over heavy frameworks.
 
-This repo is meant as a personal toolbox and reference; if you stumbled in here, feel free to use anything that helps you.
-
 ---
 
 ## Inside
@@ -21,6 +19,3 @@ This repo is meant as a personal toolbox and reference; if you stumbled in here,
 
 ---
 
-## Changelog
-
-- 2025-09-06 13:48: auto‑generated README refresh (script index + SSH/keychain notes).
