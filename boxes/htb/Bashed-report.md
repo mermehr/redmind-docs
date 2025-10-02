@@ -3,7 +3,7 @@
 ## Engagement Overview
 
 **Target:** Bashed
-**Box IP:** 10.10.10.68 
+**Box IP:** 10.10.10.68
 **Date:** 2025-07-06
 **Attacker Host:** 10.10.14.3
 
@@ -26,7 +26,7 @@
 nmap -sC -sV -oN nmap.txt 10.10.10.68
 ```
 
-```
+```bash
 PORT   STATE SERVICE VERSION
 80/tcp open  http    Apache httpd 2.4.18 (Ubuntu)
 ```

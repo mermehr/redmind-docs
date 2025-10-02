@@ -1,6 +1,7 @@
 # HTB: Soccer
 
 ## Engagement Overview
+
 **Target:** Soccer
 **Box IP:** 10.10.11.194
 **Date:** 2025-09-06
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Obtain initial foothold on the web server.
 - Escalate to a user shell and capture `user.txt`.
 - Escalate to root and capture `root.txt`.
@@ -18,6 +20,7 @@
 ## Service Enumeration
 
 ### Nmap
+
 ```bash
 nmap -sC -sV -oA soccer.init 10.10.11.194
 ```
@@ -31,6 +34,7 @@ PORT     STATE SERVICE VERSION
 - Gobuster found `/tiny` (Tiny File Manager).
 
 ### Directory Brute Force
+
 ```bash
 gobuster dir -u http://soccer.htb -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
 ```

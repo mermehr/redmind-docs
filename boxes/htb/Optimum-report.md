@@ -1,5 +1,7 @@
-# HTB: Cronos  
+# HTB: Cronos
+
 ## Engagement Overview
+
 **Target:** Cronos
 **Box IP:** 10.10.10.13
 **Local IP:** 10.10.14.10
@@ -8,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Exploit SQL injection vulnerability
 - Achieve shell access and escalate to root via cron job abuse
 
@@ -16,6 +19,7 @@
 ## Service Enumeration
 
 ### Nmap
+
 ```
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)

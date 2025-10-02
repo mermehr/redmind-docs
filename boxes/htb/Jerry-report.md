@@ -1,6 +1,7 @@
 # HTB: Jerry
 
 ## Engagement Overview
+
 **Target:** Jerry
 **Box IP:** 10.10.10.95
 **Local IP:** 10.10.16.9
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Enumerate Tomcat service and discover valid manager credentials.  
 - Upload a WAR payload to get a SYSTEM-level shell.  
 - Capture `user.txt` and `root.txt` (SYSTEM).
@@ -31,10 +33,12 @@ Host identified as Windows Server 2012 R2.
 ## Initial Access
 
 ### Tomcat manager login discovery
+
 - Used Metasploit auxiliary scanner for Tomcat manager credentials: `tomcat:s3cret` discovered via `scanner/http/tomcat_mgr_login`.  
 - Valid credentials allowed Manager deployment privileges.
 
 ### WAR upload → Meterpreter (SYSTEM)
+
 - Used `exploit/multi/http/tomcat_mgr_upload` to upload a WAR and run a staged payload, resulting in meterpreter session as `JERRY$` which escalated to `NT AUTHORITY\SYSTEM` (process spawn and `whoami` confirm).
 
 ```text

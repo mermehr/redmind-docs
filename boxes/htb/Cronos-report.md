@@ -1,6 +1,7 @@
 # HTB: Cronos
 
 ## Engagement Overview
+
 **Target:** Cronos
 **Box IP:** 10.10.10.13
 **Local IP:** 10.10.14.10
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Exploit SQL injection and command injection to obtain a shell
 - Compromise cron jobs to achieve privilege escalation to root
 - Capture user and root flags
@@ -23,6 +25,7 @@ nmap -sC -sV -oN nmap.txt 10.10.10.13
 ```
 
 **Relevant output (condensed):**
+
 ```
 22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1
 53/tcp open  domain  ISC BIND 9.10.3-P4
@@ -38,6 +41,7 @@ nmap -sC -sV -oN nmap.txt 10.10.10.13
 ## Initial Access
 
 ### SQL Injection → Command Injection
+
 - Bypassed login at `admin.cronos.htb` using typical injection: `' or 1=1-- -`
 - Used Burp Suite to craft a command injection payload via a parameter that executed arbitrary commands on the server, e.g.:
   ```
@@ -50,6 +54,7 @@ nmap -sC -sV -oN nmap.txt 10.10.10.13
 ## Privilege Escalation
 
 ### Cron Job Poisoning
+
 - Observed root cron entry running Laravel scheduled task:
   ```
   * * * * *  root  php /var/www/laravel/artisan schedule:run >> /dev/null 2>&1

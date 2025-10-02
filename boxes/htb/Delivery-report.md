@@ -45,7 +45,6 @@ sudo nmap -sC -sV -p- -oN logs/nmap.full 10.10.10.222
 - Requires corp email activation to sign up and login, used miss configured support center ticket system.
 - Access gained.
 
-
 ![screenshot](assets/20250927-063509.png)
 
 - Given the information we'll be looking for user hashes and cracking with `PleaseSubscribe!`

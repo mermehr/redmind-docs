@@ -1,6 +1,7 @@
 # HTB: Shocker
 
-## Engagement Overview  
+## Engagement Overview
+
 **Target:** Shocker
 **Box IP:** 10.10.10.56
 **Date:** 2025-07-08
@@ -8,7 +9,8 @@
 
 ---
 
-### Objectives  
+### Objectives
+
 - Enumerate HTTP and SSH services  
 - Identify and exploit the Shellshock vulnerability  
 - Escalate privileges to root  
@@ -26,6 +28,7 @@ nmap -sV -sC -p- 10.10.10.56
 - **Port 2222/tcp** – OpenSSH 7.2p2 Ubuntu
 
 ### Dirsearch Results
+
 ```bash
 dirsearch -u http://10.10.10.56 -e cgi,sh,pl,py
 ```

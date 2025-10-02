@@ -1,6 +1,7 @@
 # HTB: Lame
 
 ## Engagement Overview
+
 **Target:** Lame
 **Box IP:** 10.10.10.3
 **Local IP:** 10.10.10.152
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Enumerate network services (SMB/FTP/SSH) and writable shares.  
 - Exploit Samba (usermap_script) to gain command execution.  
 - Escalate to root and capture flags.
@@ -35,6 +37,7 @@ SMB shares (from smbmap): `tmp` share is READ,WRITE — usable for uploads.
 ## Initial Access
 
 ### SMB foothold
+
 ```bash
 smbmap -H 10.10.10.3
 smbclient -N \\10.10.10.3\tmp
@@ -42,6 +45,7 @@ smbclient -N \\10.10.10.3\tmp
 ```
 
 ### Exploitation attempted/used
+
 - vsftpd 2.3.4 backdoor (CVE-2011-2523) noted but port filtered/unusable.  
 - Successfully used `exploit/multi/samba/usermap_script` (Metasploit) to execute commands, resulting in a reverse shell to attacker listener.
 

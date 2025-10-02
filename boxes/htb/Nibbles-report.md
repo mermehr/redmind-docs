@@ -1,5 +1,7 @@
-# HTB: Nibbles  
+# HTB: Nibbles
+
 ## Engagement Overview
+
 **Target:** Nibbles
 **Box IP:** 10.10.10.75
 **Local IP:** 10.10.14.7
@@ -8,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Enumerate services to discover web applications and credentials.
 - Exploit an arbitrary file upload vulnerability in Nibbleblog.
 - Escalate privileges via misconfigured sudo permissions to obtain root access.
@@ -17,6 +20,7 @@
 ## Service Enumeration
 
 ### Nmap Results
+
 ```
 nmap -sV -sC -A 10.10.10.75
 ```
@@ -29,6 +33,7 @@ nmap -sV -sC -A 10.10.10.75
 - Detected Nibbleblog version: **v4.0.3 Codename: Coffee** (2014-04-01)
 
 ### Gobuster Results
+
 ```
 gobuster dir -u http://10.10.10.75/nibbleblog/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,txt -t 20
 ```

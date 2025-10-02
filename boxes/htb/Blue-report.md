@@ -1,6 +1,7 @@
 # HTB: Blue
 
 ## Engagement Overview
+
 **Target:** Blue
 **Box IP:** 10.10.10.40
 **Local IP:** 10.10.14.10
@@ -9,6 +10,7 @@
 ---
 
 ### Objectives
+
 - Exploit SMBv1 vulnerability (EternalBlue/MS17-010) to gain remote shell access
 - Capture user and root flags
 
@@ -36,15 +38,18 @@ Host details indicate Windows 7 Professional SP1, SMBv1 enabled and vulnerable; 
 ## Initial Access
 
 ### Methodologies & Exploitation
+
 **Vulnerability:** CVE-2017-0144 (EternalBlue / SMBv1 RCE)
 
 **Attempts & tools used:**
+
 - Metasploit `windows/smb/ms17_010_eternalblue` (initial attempt — failed)
 - Manual PoC from ExploitDB (`42031.py`) — modified and executed successfully
 
 **Notes:** Modern tooling sometimes fails against older exploits; manual adaptation of PoC/payload was required to get a working shell.
 
 **Execution (conceptual):**
+
 ```bash
 # adapted PoC execution (details preserved in original notes)
 python3 42031.py --target 10.10.10.40 --payload <adjusted-shell>
