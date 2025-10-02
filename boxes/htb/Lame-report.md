@@ -2,9 +2,9 @@
 
 ## Engagement Overview
 
-**Target:** Lame
-**Box IP:** 10.10.10.3
-**Local IP:** 10.10.10.152
+**Target:** Lame    
+**Box IP:** 10.10.10.3  
+**Local IP:** 10.10.10.152  
 **Date:** 2025-07-02
 
 ---

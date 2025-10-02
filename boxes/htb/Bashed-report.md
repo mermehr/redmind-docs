@@ -2,10 +2,10 @@
 
 ## Engagement Overview
 
-**Target:** Bashed
-**Box IP:** 10.10.10.68
-**Date:** 2025-07-06
-**Attacker Host:** 10.10.14.3
+**Target:** Bashed  
+**Box IP:** 10.10.10.68     
+**Date:** 2025-07-06    
+**Attacker Host:** 10.10.14.3   
 
 ---
 

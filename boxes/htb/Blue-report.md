@@ -2,9 +2,9 @@
 
 ## Engagement Overview
 
-**Target:** Blue
-**Box IP:** 10.10.10.40
-**Local IP:** 10.10.14.10
+**Target:** Blue    
+**Box IP:** 10.10.10.40     
+**Local IP:** 10.10.14.10   
 **Date:** 2025-07-10
 
 ---
