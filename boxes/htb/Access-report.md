@@ -3,8 +3,8 @@
 ## Engagement Overview
 
 **Target:** Access
-**Box IP:** 10.10.10.98 
-**Date:** 2025-09-16 
+**Box IP:** 10.10.10.98
+**Date:** 2025-09-16
 **Attacker Host:** 10.10.14.3
 
 ---
