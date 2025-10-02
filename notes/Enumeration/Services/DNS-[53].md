@@ -1,14 +1,3 @@
----
-title: DNS
-tags: [service, enum]
-service: DNS
-protocol: ['udp', 'tcp']
-port: [53]
-auth: ['none']    # TSIG exists but rare in CTF/HTB
-tools: ['nmap', 'dig', 'nslookup', 'fierce', 'dnsrecon']
-notes: "Often overlooked for zone transfers and internal enum"
----
-
 # Domain Name System
 
 ## Common Attack Paths

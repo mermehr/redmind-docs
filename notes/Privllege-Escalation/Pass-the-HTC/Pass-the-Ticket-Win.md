@@ -1,10 +1,3 @@
----
-title: Pass the Ticket Windows
-category: Post-Exploitation
-tags: [ptt, credential, hunting, tgt, ticket, kerberos]
-tools: ['mimikatz', 'Rubeus', 'evil-winrm', 'netexec', 'impacket']
----
-
 # Pass the Ticket Windows
 
 ## Harvesting Kerberos tickets from Windows

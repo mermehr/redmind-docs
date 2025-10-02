@@ -1,10 +1,3 @@
----
-title: Linux Credential Hunting
-category: Post-Exploitation
-tags: [linux, credential-hunting, passwd, shadow, unshadow, logs]
-tools: ['john', 'hashcat', 'mimipenguin', 'lazagne', 'firefox_decrypt']
----
-
 # Linux Credential Hunting
 
 Techniques for finding and extracting credentials on Linux systems, including password hashes, config files, and memory.

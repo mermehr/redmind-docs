@@ -1,9 +1,3 @@
----
-title: Windows CMD Reference
-tags: [windows, cmd, enumeration, persistence, red-team]
-tools: [cmd, findstr, robocopy, xcopy, fsutil, sc, schtasks, wmic, net, tasklist]
----
-
 # Windows CMD Reference
 
 ## File commands CMD

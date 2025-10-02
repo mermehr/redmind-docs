@@ -1,9 +1,3 @@
----
-title: Linux Bash Reference
-tags: [linux, bash, enumeration, persistence, red-team]
-tools: [bash, grep, find, locate, ss, netstat, curl, wget, nc, ssh, scp, rsync, sudo, systemctl, crontab]
----
-
 # Linux Bash Reference
 
 ## Quick file commands

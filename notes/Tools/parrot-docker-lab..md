@@ -1,9 +1,3 @@
----
-title: Parrot Docker Lab
-category: Reference
-tags: [docker, parrot]
----
-
 # Parrot Lab (Docker)
 
 A minimal, no-bullshit Parrot Security workstation running in Docker with GUI apps, host networking, and a persistent home. No VM drama, full CPU, reverse shells.

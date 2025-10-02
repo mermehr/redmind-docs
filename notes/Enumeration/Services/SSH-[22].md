@@ -1,14 +1,3 @@
----
-title: SSH
-tags: [service, enum, remote]
-service: SSH
-protocol: ['tcp']
-port: [22]
-auth: ['password', 'key-based', 'kerberos-gssapi']
-tools: ['nmap', 'ssh', 'hydra', 'medusa']
-notes: "Password brute force, weak keys, outdated versions"
----
-
 # Secure Shell
 
 ## Common Attack Paths

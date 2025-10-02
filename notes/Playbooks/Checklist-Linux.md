@@ -1,10 +1,3 @@
----
-tittle: Linux Engagement Checklist
-category: Reference
-tags: [linux, enum, privesc, recon, exploit, checklist]
-tools: [linpeas, ssh]
----
-
 # 🐧 Linux Engagement Checklist
 
 ## Initial Access

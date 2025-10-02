@@ -1,12 +1,3 @@
----
-title: gobuster
-tags: [tool, web, fuzzing, dirbusting, cheatsheet, dns]
-service: HTTP
-protocol: ['tcp']
-tools: ['gobuster']
-notes: "Directory brute forcing, vHost discovery, DNS fuzzing"
----
-
 # gobuster Cheat Sheet
 
 ## Modes

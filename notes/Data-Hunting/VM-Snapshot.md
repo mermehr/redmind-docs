@@ -1,10 +1,3 @@
----
-title: VM Snapshot & Disk Image Attacks
-category: Post-Exploitation
-tags: [virtualbox, vmware, snapshots, disk, creds, offline]
-tools: ['qemu-img', 'mount', 'mimikatz', 'secretsdump']
----
-
 # VM Snapshot & Disk Image Attacks
 
 ## Concept

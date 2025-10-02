@@ -1,10 +1,3 @@
----
-title: Pass the Certificate
-category: Post-Exploitation
-tags: [ptc, ptt credential, hunting, tgt, ticket, kerberos]
-tools: ['ntlmrelayx', 'gettgtpkinit', 'evil-winrm', 'pywhisker']
----
-
 # Pass the Certificate
 
 Used in conjunction with:

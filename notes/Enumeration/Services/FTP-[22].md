@@ -1,14 +1,3 @@
----
-title: FTP
-tags: [service, enum]
-service: FTP
-protocol: ['tcp']
-port: [21]
-auth: ['anonymous', 'password', 'tls-auth']
-tools: ['nmap', 'ftp', 'hydra', 'medusa']
-notes: "Check anonymous login, weak creds, cleartext vs AUTH TLS"
----
-
 # File Transfer Protocol
 
 ## Common Attack Paths

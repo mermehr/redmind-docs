@@ -1,9 +1,3 @@
----
-title: Wireshark
-category: Reference
-tags: [tool, pcap, wireshark, cheatsheet]
----
-
 # Wireshark
 
 Some basic but useful filters:

@@ -1,10 +1,3 @@
----
-title: Enumeration Cheat Sheet
-category: Recon
-tags: [service, enum, cheatsheet]
-notes: "Enumeration cheat sheet for common services"
----
-
 # Enumeration Cheat Sheet
 
 ## DNS Enumeration

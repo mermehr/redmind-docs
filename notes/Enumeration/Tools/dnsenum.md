@@ -1,12 +1,3 @@
----
-title: DNSEnum
-tags: [tool, dns, recon, enum, cheatsheet, vhost]
-service: DNS
-protocol: ['udp', 'tcp']
-tools: ['dnsenum']
-notes: "DNS record enumeration, subdomain brute force, zone transfer, WHOIS, Google scraping"
----
-
 # DNSEnum Cheat Sheet
 
 ## Basic Usage

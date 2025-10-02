@@ -1,9 +1,3 @@
----
-title: YAML tag search
-category: Reference
-tags: [cheatsheet, yaml, front-matter, regex]
----
-
 # YAML tag search
 
 ## Basics - ripgrep

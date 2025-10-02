@@ -1,11 +1,3 @@
----
-title: Windows Credential Dumping
-category: Post-Exploitation
-tags: [windows, credential-dumping, lsass, mimikatz, registry, dpapi]
-tools: ['secretsdump', 'smbserver', 'mimikatz', 'hashcat', 'pypykatz' ]
----
-Post-exploitation techniques for extracting credentials on Windows, including registry hive dumping, LSASS memory capture, DPAPI secrets, and Mimikatz usage. Enables escalation and lateral movement.
-
 # Windows Credential Dumping
 
 ## Registry Hives

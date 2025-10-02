@@ -1,10 +1,3 @@
----
-title: Web Enumeration - Attack Path
-category: Recon
-tags: [recon, web, crawling, fingerprinting, fuzzing, vhost, automation]
-tools: [finalrecon, recon-ng, theharvester, spiderfoot, scrapy, reconspider, nikto, wafw00f, gobuster, ffuf, feroxbuster, burp, zap]
----
-
 # Web Enumeration - Attack Path
 
 ## Attack Path (Web Enumeration)

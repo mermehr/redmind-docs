@@ -1,14 +1,3 @@
----
-title: Rsync
-tags: [service, enum]
-service: Rsync
-protocol: ['tcp']
-port: [873]
-auth: ['anonymous', 'password']
-tools: ['nmap', 'rsync']
-notes: "Anonymous modules often expose sensitive files; check configs"
----
-
 # Rsync
 
 ## Common Attack Paths

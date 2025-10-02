@@ -1,10 +1,3 @@
----
-title: Custom Wordlists with CeWL & Hashcat
-category: Access
-tags: [wordlist, osint, brute]
-tools: ['cewl', 'hashcat']
----
-
 # Custom Wordlists with [CeWL](https://github.com/digininja/CeWL) & [Hashcat](https://hashcat.net/hashcat/)
 
 This file explains how to build **target-specific password wordlists** using OSINT, CeWL, and rules.  

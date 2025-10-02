@@ -1,9 +1,3 @@
----
-title: Windows PowerShell Reference
-tags: [windows, powershell, enumeration, persistence, red-team]
-tools: [powershell, Invoke-WebRequest, Get-ChildItem, Get-LocalUser, Get-Service, Select-String, Get-ADUser, schtasks]
----
-
 # Windows PowerShell Reference
 
 ## Web / Download

@@ -1,14 +1,3 @@
----
-title: R-services
-tags: [service, enum, legacy]
-service: R-services (rsh, rexec, rlogin)
-protocol: ['tcp']
-port: [512, 513, 514]
-auth: ['trusted-hosts', 'cleartext-passwords', '.rhosts/.netrc']
-tools: ['nmap', 'rsh', 'rexec']
-notes: "Legacy protocols, trust relationships exploitable; check .rhosts"
----
-
 # R-Services
 
 ## Common Attack Paths

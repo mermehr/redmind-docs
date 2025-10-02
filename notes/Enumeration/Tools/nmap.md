@@ -1,12 +1,3 @@
----
-title: Nmap
-tags: [tool, scanner, enum, cheatsheet]
-service: Multiple
-protocol: ['tcp', 'udp']
-tools: ['nmap']
-notes: "Host discovery, port/service enumeration, NSE scripts, output, performance tuning"
----
-
 # Nmap Cheat Sheet
 
 ## Basic Discovery

@@ -1,10 +1,3 @@
----
-title: General Password Cracking
-category: Access
-tags: [cracking, wordlist, masks, brute]
-tools: ['john', 'hashcat', 'hashid']
----
-
 # General Password Cracking
 
 This file covers core password cracking techniques using John the Ripper (JtR) and Hashcat.  

@@ -1,10 +1,3 @@
----
-title: Pass the Hash
-category: Post-Exploitation
-tags: [pth, credential, hunting, passwd, hash, smb]
-tools: ['mimikatz', 'invoke-thehash', 'evil-winrm', 'netexec', 'impacket']
----
-
 # Pass the Hash ([PtH](https://attack.mitre.org/techniques/T1550/002/))
 
 ## [Mimikatz](https://github.com/gentilkiwi) (Windows)

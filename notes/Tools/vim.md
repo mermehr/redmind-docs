@@ -1,10 +1,3 @@
----
-title: Vim
-category: Reference
-tags: [tool, editor, cheatsheet]
-tools: ['vim', 'vi']
----
-
 # Vim
 
 ## Modes

@@ -1,9 +1,3 @@
----
-title: Tmux commands and shortcuts
-category: Reference
-tags: [tool, terminal, multiplexing, cheatsheet]
----
-
 # Tmux commands and shortcuts
 
 ## Session Management

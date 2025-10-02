@@ -1,10 +1,3 @@
----
-title: Network Credential Hunting
-category: Post-Exploitation
-tags: [pcap, credential-hunting, passwd, network, smb]
-tools: ['pcredz', 'wireshark', 'snaffler', 'powerhuntshares', 'manspider', 'netexec']
----
-
 # Network Credential Hunting
 
 ## Network Traffic

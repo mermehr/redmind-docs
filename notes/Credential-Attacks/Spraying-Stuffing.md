@@ -1,10 +1,3 @@
----
-title: Spraying, Stuffing, and Default Credentials
-category: Access
-tags: [password-spraying, credential-stuffing, defaults]
-tools: ['netexec', 'hydra']
----
-
 # Spraying, Stuffing, and Default Credentials
 
 ## Password Spraying

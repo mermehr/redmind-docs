@@ -1,12 +1,3 @@
----
-title: dig
-tags: [tool, dns, recon, cheatsheet]
-service: DNS
-protocol: ['udp', 'tcp']
-tools: ['dig']
-notes: "DNS record lookups, trace resolution, reverse lookups"
----
-
 # dig Cheat Sheet
 
 ## Basic Usage

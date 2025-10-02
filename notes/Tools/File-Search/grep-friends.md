@@ -1,10 +1,3 @@
----
-title: Grep & Text Processing
-category: Reference
-tags: [cheatsheet, grep, awk, sed, ripgrep, text, cli]
-tools: ['grep', 'rg', 'awk', 'sed']
----
-
 # Grep & Friends – Fast Text-Fu
 
 ## Common Commands

@@ -1,10 +1,3 @@
----
-title: Cross-Site Scripting (XSS)
-category: Web-Attacks
-tags: [recon, exploit, webvuln, xss, payload]
-tools: ['xsstrike', 'xsstrike', 'knoxss', 'asshunter', 'beef']
----
-
 # Cross-Site Scripting (XSS)
 
 **Cross-Site Scripting (XSS)** is a web security  vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts execute in the victim's  browser within the security context of the vulnerable website.

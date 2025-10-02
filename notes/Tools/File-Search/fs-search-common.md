@@ -1,10 +1,3 @@
----
-title: File System Search
-tags: [cheatsheet, grep, awk, sed, ripgrep, text, cli]
-category: Reference
-notes: "Focus on practical, memorable incantations. Prefer ripgrep (rg) where available for speed and sane defaults. GNU grep/awk/sed syntax assumed."
----
-
 # File System Search
 
 ## Common Combinations

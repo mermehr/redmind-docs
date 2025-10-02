@@ -1,14 +1,3 @@
----
-title: MSSQL
-tags: [service, enum, database]
-service: MSSQL
-protocol: ['tcp']
-port: [1433]
-auth: ['password', 'integrated-auth', 'ntlm', 'kerberos', 'sa-default']
-tools: ['nmap', 'sqsh', 'impacket-mssqlclient']
-notes: "Check xp_cmdshell, weak creds, trusted links"
----
-
 # Microsoft SQL Server
 
 ## Common Attack Paths

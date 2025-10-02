@@ -1,12 +1,3 @@
----
-title: Pivoting_Playbook_Active
-tags: [pivoting, tunnels, ssh, ligolo-ng, sshuttle, chisel, meterpreter]
-tools: [ssh, sshuttle, ligolo-ng, chisel, proxychains, nmap, impacket]
-status: validated
-validated_on: 2025-10-02
-env: Kali_rolling, HTB_Academy
----
-
 # Pivoting
 
 **Goal:** fast, stable access to internal subnets with the least moving parts. Use this when a box is live and you need results now.

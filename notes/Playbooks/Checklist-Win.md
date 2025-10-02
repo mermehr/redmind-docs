@@ -1,10 +1,3 @@
----
-title: Active Directory Engagement Checklist
-category: Reference
-tags: [checklist, recon, privesc, exploit]
-tools: ['ftp', 'openssl', 'python', 'impacket-smb-server']
----
-
 # 🏰 Active Directory Engagement Checklist
 
 ## Recon / Enumeration

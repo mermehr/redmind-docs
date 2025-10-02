@@ -1,14 +1,3 @@
----
-title: IPMI
-tags: [service, enum]
-service: IPMI
-protocol: ['udp', 'tcp']
-port: [623]
-auth: ['default-creds', 'password', 'null-auth (cipher0)']
-tools: ['nmap', 'ipmitool', 'hydra']
-notes: "Baseboard management; weak/default creds and cipher0"
----
-
 # Intelligent Platform Management Interface
 
 ## Common Attack Paths

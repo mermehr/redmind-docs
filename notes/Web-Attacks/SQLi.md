@@ -1,10 +1,3 @@
----
-title: SQL Injection
-category: Web-Attacks
-tags: [recon, exploit, webvuln, sql, payload]
-tools: ['sqlmap', 'nuclei']
----
-
 # SQL Injection
 
 **SQL Injection (SQLi)** is a web security vulnerability that allows an attacker to interfere with the queries that an  application makes to its database. It enables attackers to view, modify, or delete data they are not normally able to access.

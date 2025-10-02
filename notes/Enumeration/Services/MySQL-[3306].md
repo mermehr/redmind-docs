@@ -1,14 +1,3 @@
----
-title: MySQL
-tags: [service, enum, database]
-service: MySQL
-protocol: ['tcp']
-port: [3306, 2433]
-auth: ['password', 'default-creds', 'local-socket']
-tools: ['nmap', 'mysql', 'mysql-client', 'hydra']
-notes: "Try default creds; LOAD DATA INFILE for file read/write"
----
-
 # MySQL
 
 ## Common Attack Paths

@@ -1,10 +1,3 @@
----
-title: Network Password Attacks
-category: Access
-tags: [network, winrm, ssh, smb, rdp, brute]
-tools: ['netexec', 'evil-winrm', 'hydra', 'msfconsole', 'xfreerdp']
----
-
 # Network Password Attacks
 
 Commands and tools for brute forcing network services (WinRM, SSH, RDP, SMB) to gain initial access.  

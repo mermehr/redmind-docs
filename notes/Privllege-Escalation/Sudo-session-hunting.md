@@ -1,10 +1,3 @@
----
-title: Process & Sudo Session Hunting
-category: Post-Exploitation
-tags: [linux, privesc, sudo, proc, tty, creds]
-tools: ['system']
----
-
 # Process & Sudo Session Hunting
 
 ## Inspect Running Processes

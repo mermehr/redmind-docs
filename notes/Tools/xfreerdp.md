@@ -1,9 +1,3 @@
----
-title: xfreerdp3
-category: Reference
-tags: [tool, rdp, remote, cheatsheet]
----
-
 # xfreerdp3
 
 ## Basic Connection

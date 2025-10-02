@@ -1,10 +1,3 @@
----
-title: Windows Credential Hunting
-category: Post-Exploitation
-tags: [windows, credential-hunting, lazagne, findstr, gpo, config]
-tools: ['lazagne', 'findstr']
----
-
 # Windows Credential Hunting
 
 Methods for locating credentials stored in files, shares, Group Policy, and configuration. Includes LaZagne usage and manual searches.

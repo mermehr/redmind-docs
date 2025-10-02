@@ -1,10 +1,3 @@
----
-title: Command Injection
-category: Web-Attacks
-tags: [recon, exploit, command, webvuln, injection, automated, payload]
-tools: ['nulcei', 'burpsuite', 'metasploit']
----
-
 # Command Injection
 
 **Command Injection** is a web security vulnerability  that allows an attacker to execute arbitrary system commands on the host operating system. This vulnerability occurs when an application passes  unsafe user supplied data to a system shell.

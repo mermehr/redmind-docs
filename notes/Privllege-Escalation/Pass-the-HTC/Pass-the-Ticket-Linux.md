@@ -1,10 +1,3 @@
----
-title: Pass the Ticket Linux
-category: Post-Exploitation
-tags: [ptt, credential, hunting, tgt, ticket, kerberos, keytab, ccache]
-tools: ['limikatz', 'chisel', 'evil-winrm']
----
-
 # Pass the Ticket Linux
 
 - [Keytab](https://kb.iu.edu/d/aumh) files

@@ -1,9 +1,3 @@
----
-title: Active Directory NTDS Dumping
-category: Post-Exploitation
-tags: [active-directory, ntds, credential-dumping, impacket, evil-winrm]
-tools: ['kerbrute', 'username-anarchy', 'netexec', 'evil-winrm', 'hashcat']
----
 # Active Directory CReds and NTDS.dit
 
 ## Username dictionary attacks against AD accounts

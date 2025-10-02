@@ -1,10 +1,3 @@
----
-title: File Hunting and Encrypted Data Attacks
-category: Post-Exploitation
-tags: [file-hunting, encrypted, john, hashcat, bitlocker]
-tools: ['ssh2john', 'office2john', 'pdf2john', 'zip2john', 'bitlocker2john', 'openssl', 'dislocker']
----
-
 # File Hunting and Encrypted Data Attacks
 
 Techniques for locating sensitive files and attacking encrypted data such as SSH keys, documents, archives, and drives.
