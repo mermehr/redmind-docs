@@ -1,9 +1,9 @@
 # HTB: Soccer
 
 ## Engagement Overview
-**Target:** Soccer (HTB)  
-**Box IP:** 10.10.11.194  
-**Date:** 2025-09-06  
+**Target:** Soccer
+**Box IP:** 10.10.11.194
+**Date:** 2025-09-06
 **Attacker Host:** 10.10.14.13  
 
 ---

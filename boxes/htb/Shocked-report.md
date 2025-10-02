@@ -1,9 +1,9 @@
 # HTB: Shocker
 
 ## Engagement Overview  
-**Target:** Shocker (HTB)  
-**Box IP:** 10.10.10.56  
-**Date:** 2025-07-08  
+**Target:** Shocker
+**Box IP:** 10.10.10.56
+**Date:** 2025-07-08
 **Difficulty:** Easy
 
 ---

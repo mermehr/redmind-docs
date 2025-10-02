@@ -2,14 +2,14 @@
 
 ## Engagement Overview
 
-Target: Delivery (HTB)
+Target: Delivery
 Box IP: 10.10.10.222
 Date: 2025-09-27
 Attacker Host: 10.10.14.6
 
 ---
 
-### Methodology
+### Objectives
 
 - Compromise internal chat system Matter Most.
 - Extract credentials and artifacts from internal chat.

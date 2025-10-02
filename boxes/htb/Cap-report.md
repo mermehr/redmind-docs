@@ -1,7 +1,7 @@
 # HTB: Cap
 
 ## Engagement Overview
-**Target:** Cap (HTB)
+**Target:** Cap
 **Box IP:** 10.10.10.245
 **Local IP:** 10.10.14.16
 **Date:** 2025-07-21

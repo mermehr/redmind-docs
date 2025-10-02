@@ -1,8 +1,8 @@
 # HTB: Nibbles  
 ## Engagement Overview
-**Target:** HTB Nibbles  
-**Box IP:** 10.10.10.75  
-**Local IP:** 10.10.14.7  
+**Target:** Nibbles
+**Box IP:** 10.10.10.75
+**Local IP:** 10.10.14.7
 **Date:** 07-20-2025
 
 ---

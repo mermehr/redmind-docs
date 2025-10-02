@@ -3,11 +3,11 @@
 **Target:** Cronos
 **Box IP:** 10.10.10.13
 **Local IP:** 10.10.14.10
-**Date:** 2025-07-12  
+**Date:** 2025-07-12
 
 ---
 
-## Objectives
+### Objectives
 - Exploit SQL injection vulnerability
 - Achieve shell access and escalate to root via cron job abuse
 

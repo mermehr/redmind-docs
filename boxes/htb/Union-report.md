@@ -1,8 +1,10 @@
 # HTB: Union
 
 ## Engagement Overview
-**Target:** Union  
-**Box IP:** 10.10.11.128  
+**Target:** Union
+**Local IP:** 10.10.16.9
+**Box IP:** 10.10.11.128
+**Date:** 2025-07-28
 
 ---
 

@@ -2,14 +2,14 @@
 
 ## Engagement Overview
 
-- **Target:** Netmon  
-- **Box IP:** 10.10.10.152  
-- **Local IP:** 10.10.14.16  
-- **Date:** 2025-07-22
+**Target:** Netmon
+**Box IP:** 10.10.10.152
+**Local IP:** 10.10.14.16
+**Date:** 2025-07-22
 
 ---
 
-## Objectives
+### Objectives
 
 - Gain root access
 

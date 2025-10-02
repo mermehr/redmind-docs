@@ -1,17 +1,16 @@
 # HTB: TwoMillion
 
-**Operating System:** Linux  
-**Difficulty:** Easy  
-**Author:** TRX & TheCyberGeek  
-**Date of Engagement:** 2025-07-28  
+## Engagement Overview
+
+**Target**: TwoMillion
+**Target IP:** 10.10.11.221
+**Local IP:** 10.10.16.9
+**Date:** 2025-07-28
 
 ---
 
-## Engagement Overview
+### Objectives
 
-**Target IP:** 10.10.11.221  
-**Local IP:** 10.10.16.9  
-**Objective Summary:**
 - Enumerate available API endpoints
 - Gain initial access via web application vulnerabilities
 - Escalate privileges to root using a kernel exploit (CVE-2023-0386)

@@ -1,9 +1,9 @@
 # HTB: Lame
 
 ## Engagement Overview
-**Target:** Lame (HTB)  
-**Box IP:** 10.10.10.3  
-**Local IP:** (recorded in original notes)  
+**Target:** Lame
+**Box IP:** 10.10.10.3
+**Local IP:** 10.10.10.152
 **Date:** 2025-07-02
 
 ---

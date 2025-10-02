@@ -1,9 +1,9 @@
 # HTB: Jerry
 
 ## Engagement Overview
-**Target:** Jerry (HTB)  
-**Box IP:** 10.10.10.95  
-**Local IP:** 10.10.16.9  
+**Target:** Jerry
+**Box IP:** 10.10.10.95
+**Local IP:** 10.10.16.9
 **Date:** 2025-07-30
 
 ---

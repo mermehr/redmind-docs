@@ -2,13 +2,10 @@
 
 ## Engagement Overview
 
-**Target:** Devel (HTB)
- **Box IP:** 10.10.10.5
- **Host IP:** 10.10.14.6
- **Date:** 2025-09-27
-
-**Host Name:** DEVEL
- **OS:** Microsoft Windows 7 Enterprise (Build 7600)
+**Target:** Devel
+**Box IP:** 10.10.10.5
+**Host IP:** 10.10.14.6
+**Date:** 2025-09-27
 
 ------
 

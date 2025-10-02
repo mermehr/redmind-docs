@@ -2,14 +2,14 @@
 
 ## Engagement Overview
 
-**Target:** Access (HTB)  
-**Box IP:** 10.10.10.98  
-**Date:** 2025-09-16  
-**Attacker Host:** 10.10.14.3  
+**Target:** Access
+**Box IP:** 10.10.10.98 
+**Date:** 2025-09-16 
+**Attacker Host:** 10.10.14.3
 
 ---
 
-### Methodology
+### Objectives
 
 - Enumerate services and discover exposed files.  
 - Extract credentials from backups/mail archives.  
